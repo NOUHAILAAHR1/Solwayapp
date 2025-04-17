@@ -68,20 +68,22 @@ const Navbar = () => {
                   </li>
                    <li><Link to="/soldeskpage" className="cursor-pointer">SOLDESK</Link></li>
                   <li><Link to="/solwayhrpage" className="cursor-pointer">SOLWAY HR</Link></li>
-                  <li className="cursor-pointer">SOLWAY INVOICE</li>
-                  <li className="cursor-pointer flex flex-col">
-                  <span>ASSOCIATION SOLWAY</span> 
-                  <span>POUR LA SOLIDARITE</span>
+                  <li><Link to="/solwayInvoice" className="cursor-pointer">SOLWAY INVOICE</Link></li>
+                  <li className="cursor-pointer flex flex-col"><Link to="/associationsolway" >
+                    <span>ASSOCIATION SOLWAY</span><br/>
+                    <span>POUR LA SOLIDARITE</span>
+                    </Link>
                   </li>
                 </ul>
               </div>
               <div>
                 <h3 className="font-bold text-lg mb-6">Carrières</h3>
                 <ul className="space-y-6 w-44">
-                  <li className="cursor-pointer">Nos Offres D'emploi</li>
-                  <li className="cursor-pointer">Candidatures</li>
-                  <li className="cursor-pointer">Nos Missions</li>
-                  <li className="cursor-pointer">Vos Missions</li>
+                  <li><Link to="/OffresdemploisPage" className="cursor-pointer">Nos Offres D’emploi</Link></li>
+                  <li><Link to="/CandidaturePage " className="cursor-pointer"> Candidatures</Link></li>
+                  <li><Link to="/NosmissionsPage " className="cursor-pointer">Nos Missions</Link></li>
+                 <li><Link to="/VosmissionsPage " className="cursor-pointer">Vos Missions</Link></li>
+                
                 </ul>
               </div>
               <div>
@@ -156,9 +158,9 @@ const Navbar = () => {
                     <li><Link to="/verifdsn" className="cursor-pointer">VERIF'DSN</Link></li>
                     <li><Link to="/solwayhrpage" className="cursor-pointer">SOLWAY HR</Link></li>
                     <li><Link to="/verifdsnplus" className="cursor-pointer">VERIF'DSN PLUS</Link></li>
-                    <li className="cursor-pointer">SOLWAY INVOICE</li>
+                    <li><Link to="/solwayInvoice" className="cursor-pointer">SOLWAY INVOICE</Link></li>
                     <li className="cursor-pointer"><Link to="/SolwaySynchronisationHRPage" className="cursor-pointer">SOLWAY <br/>Synchronisation HR</Link></li>
-                    <li className="cursor-pointer">ASSOCIATION SOLWAY POUR LA SOLIDARITE</li>
+                    <li className="cursor-pointer"><Link to="/associationsolway" className="cursor-pointer">ASSOCIATION SOLWAY POUR LA SOLIDARITE</Link></li>
                      <li><Link to="/soldeskpage" className="cursor-pointer">SOLDESK</Link></li>
                   </ul>
                 </div>
@@ -166,10 +168,10 @@ const Navbar = () => {
                 <div>
                   <h3 className="font-bold text-lg mb-4">Carrières</h3>
                   <ul className="grid grid-cols-2 gap-4 w-full">
-                    <li className="cursor-pointer">Nos Offres D'emploi</li>
-                    <li className="cursor-pointer">Nos Missions</li>
-                    <li className="cursor-pointer">Candidatures</li>
-                    <li className="cursor-pointer">Vos Missions</li>
+                    <li><Link to="/OffresdemploisPage" className="cursor-pointer">Nos Offres D’emploi</Link></li>
+                    <li><Link to="/NosmissionsPage " className="cursor-pointer">Nos Missions</Link></li>
+                   <li><Link to="/CandidaturePage " className="cursor-pointer"> Candidatures</Link></li>
+                   <li><Link to="/VosmissionsPage " className="cursor-pointer">Vos Missions</Link></li>
                   </ul>
                 </div>
 

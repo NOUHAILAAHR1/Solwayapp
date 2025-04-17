@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import { Menu, X, ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from 'react-router-dom';
 import logoImage from "../../assets/img/logo.png";
 import containerImage from "../../assets/img/background.png";
-import containerImage1 from "../../assets/img/imgbg.png";
 import containerImagesvg from "../../assets/Svg/Imgcontainer.svg";
-import soldesklogo from "../../assets/img/Soldesklogo.png";
-import soldesketap1 from "../../assets/img/soldesketap1.png";
-import soldesketap2 from "../../assets/img/soldesketap2.png";
-import soldesketap3 from "../../assets/img/soldesketap3.png";
+import invoicelogo from "../../assets/img/inovoicelogopng.png";
+import soldesketap1 from "../../assets/img/invoiceetap1.png";
+import soldesketap2 from "../../assets/img/invoiceetap2.png";
+import soldesketap3 from "../../assets/img/invoiceetap3.png";
 
 const Navbar = () => {
-    const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -156,16 +155,16 @@ const Navbar = () => {
 
           <div className="w-full flex flex-col items-center pt-8 text-center pb-14">
           <div>
-              <h1 className="text-[48px] font-extrabold text-[#030712]">
-                SOLDESK
+              <h1 className="text-[36px] font-extrabold text-[#030712]">
+                SOLWAY INVOICE
               </h1>
-              <p className="pl-4 pr-4 text-medium mb-10 text-[#030712] max-w-xl mx-auto">
-                SOLDESK est une plateforme de gestion de tickets qui offre une gamme complète de fonctionnalités pour optimiser le processus de traitement des tickets et améliorer la collaboration au sein de votre équipe.
+              <p className="pl-4 pt-4 pr-4 text-medium mb-10 text-[#030712] max-w-xl mx-auto">
+                SOLWAY INVOICE est un outil de gestion de la facturation conçu pour simplifier et optimiser le processus de facturation. Il offre une gamme de fonctionnalités pour assurer une gestion fluide et efficace des transactions financières.
               </p>
             </div>
 
             <div className="w-full px-16 pt-10">
-              <img src={soldesklogo} alt="soldesk" className="max-w-full h-auto" />
+              <img src={invoicelogo} alt="soldesk" className="max-w-full h-auto" />
             </div>
           </div>
         </div>
@@ -221,6 +220,7 @@ const Navbar = () => {
                     <li><Link to="/NosmissionsPage " className="cursor-pointer">Nos Missions</Link></li>
                    <li><Link to="/CandidaturePage " className="cursor-pointer"> Candidatures</Link></li>
                    <li><Link to="/VosmissionsPage " className="cursor-pointer">Vos Missions</Link></li>
+                
                   </ul>
                 </div>
 
@@ -238,32 +238,26 @@ const Navbar = () => {
       </nav>
 
       <main className="w-full flex flex-col bg-[#F9FAFB] mb-4 z-40">
-        <div className="hidden md:block h-auto w-full">
-          <div className="w-full text-center p-20 py-8 ipad-pro:p-8 md:p-8 lg:p-20"
+      
+      <div className="hidden md:block h-auto w-full">
+          <div className="w-full text-center p-20 py-8 ipad-pro:p-8 md:p-6 lg:p-20"
             style={{
-              backgroundImage: `url(${
-                isMdOrIpadPro() ? containerImage1 : 
-                isLgOrLarger() ? containerImage : 'none'
-              })`,
+              backgroundImage: `url(${containerImage})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
-              backgroundPosition: "center ",
+              backgroundPosition: "center",
             }}
           >
            <div className="w-full mx-auto ">
             <div className="bg-white shadow-lg rounded-lg p-6 flex flex-row justify-between items-center">
-              <div className="w-1/2 text-center">
-                <h1 className="text-5xl mb-4 font-extrabold text-[#030712]">SOLDESK</h1>
+              <div className="w-1/2 lg:w-1/2 ipad-pro:1/2 md:w-1/2 text-center">
+                <h1 className="text-5xl mb-4 font-extrabold text-[#030712]">SOLWAY INVOICE</h1>
                 <p className="text-medium text-[#030712]">
-                  SOLDESK est une plateforme de gestion de tickets qui offre une
-                  gamme complète de fonctionnalités pour optimiser le processus de
-                  traitement des tickets et améliorer la collaboration au sein de votre
-                  équipe.
-                </p>
+                SOLWAY INVOICE est un outil de gestion de la facturation conçu pour simplifier et optimiser le processus de facturation. Il offre une gamme de fonctionnalités pour assurer une gestion fluide et efficace des transactions financières.</p>
               </div>
-              <div className="w-1/2 flex justify-end">
+              <div className="w-1/2  flex justify-end">
                 <img 
-                  src={soldesklogo} alt="Soldesk Logo" 
+                  src={invoicelogo} alt="Invoice Logo" 
                   className="w-1/2 h-auto object-contain" 
                 />
               </div>
@@ -271,35 +265,25 @@ const Navbar = () => {
           </div>
           </div>
 
-          <h1 className="text-4xl pt-0 lg:pt-0 ipad-pro:pt-8 md:pt-9  font-extrabold text-center mb-3">Fonctionnalités de SOLDESK</h1>
+          <h1 className="text-4xl pt-0 lg:pt-0 ipad-pro:pt-8 md:pt-9  font-extrabold text-center mb-3">Fonctionnalités de SOLWAY INVOICE</h1>
 
           <div className="w-full flex justify-center"
-            style={{
-              backgroundImage: isMdOrIpadPro() ? 
-                `url(${containerImage1}), url(${containerImage1})` : 
-                isLgOrLarger() ? 
-                  `url(${containerImagesvg}), url(${containerImagesvg})` : 
-                  'none', 
+             style={{
+              backgroundImage: `url(${containerImagesvg}), url(${containerImagesvg})`, 
               backgroundRepeat: 'no-repeat', 
-              backgroundPosition: ' center 23%, center 65%', 
+              backgroundPosition: isLgOrLarger() ? 'center 13%, center 93%' : 'center 30%, center 93%',  
               backgroundSize: 'contain', 
             }}
           >
             <div className="w-full px-12 pt-12 lg:px-20 md:px-6 ipad-pro:px-8">
               <div className="bg-white shadow-lg rounded-lg p-7 mx-auto">
                 
-                <div className="flex flex-col lg:flex-row md:flex-row justify-between  mb-12">
-                  <div className="w-full lg:w-1/2 pr-0 lg:pr-6 mb-6 lg:mb-0 md:w-1/2 md:pr-4 md:mb-0 text-center lg:text-left md:text-left">
-                    <h2 className="text-3xl font-extrabold mb-4 pt-4">SUIVI EN TEMPS RÉEL</h2>
+                <div className="flex flex-col lg:flex-row md:flex-row justify-between items-center mb-12">
+                  <div className="w-full lg:w-[48%]   pr-0 lg:pr-6 mb-6 lg:mb-0 md:w-1/2 md:pr-4 md:mb-0 text-center lg:text-left md:text-left">
+                    <h2 className="text-3xl font-extrabold mb-4 pt-4">Génération Facile du Compte Rendu d'Activité pour Chaque Utilisateur</h2>
                     <p className="text-medium text-[#030712] mb-3">
-                      Suivez l'évolution des tickets en temps réel avec une transparence totale à chaque étape du processus.
-                    </p>
-                    <p className="text-medium text-[#030712] mb-3">
-                      SOLDESK vous permet de vérifier l'état de vos demandes à tout moment, assurant une communication claire et immédiate.
-                    </p>
-                    <p className="text-medium text-[#030712]">
-                      Grâce à ce suivi détaillé, les utilisateurs peuvent voir précisément où en est leur demande et recevoir des mises à jour instantanées à chaque changement d'état.
-                    </p>
+                    Créez facilement des comptes rendus d'activité pour chaque utilisateur, offrant une vue d'ensemble claire et détaillée des transactions et des performances financières.</p>
+                    
                   </div>
                   <div className="w-full lg:w-1/2 md:w-1/2  pt-4 flex justify-center">
                     <img src={soldesketap1} alt="Etape 1" className="max-w-full h-auto rounded-lg" />
@@ -307,37 +291,25 @@ const Navbar = () => {
                 </div>
                 
                 <div className="flex flex-col mb-12">
-                  <div className="flex flex-col  lg:flex-row md:flex-row justify-between ">
+                  <div className="flex flex-col  lg:flex-row md:flex-row  items-center justify-between ">
                     <div className="w-full pt-10 lg:w-1/2 md:w-1/2 flex justify-center">
                       <img src={soldesketap2} alt="Etape 2" className="max-w-full h-auto rounded-lg" />
                     </div>
-                    <div className="w-full lg:w-1/2 md:w-1/2 pl-0 lg:pl-6 md:pl-4 mb-6 lg:mb-0 md:mb-0 text-center lg:text-left md:text-left">
-                      <h2 className="text-3xl font-extrabold mb-4">COMMUNICATION EFFICACE</h2>
+                    <div className="w-full lg:w-[48%] md:w-1/2 pl-0 lg:pl-6 md:pl-4 mb-6 lg:mb-0 md:mb-0 text-center lg:text-left md:text-left">
+                      <h2 className="text-3xl font-extrabold mb-4">Génération Automatique des Factures</h2>
                       <p className="text-medium text-[#030712] mb-3">
-                        Facilitez les échanges entre les utilisateurs et les responsables de la gestion des tickets grâce à SOLDESK.
-                      </p>
-                      <p className="text-medium text-[#030712] mb-3">
-                        Notre plateforme permet aux clients de communiquer directement avec l'équipe en charge de leurs tickets en cas de besoin, assurant ainsi une réponse rapide et personnalisée. De plus, les managers et les membres de l'équipe de traitement des tickets peuvent également échanger des messages entre eux et avec l'ensemble de l'équipe.
-                      </p>
-                      <p className="text-medium text-[#030712]">
-                        Cette communication bidirectionnelle et transparente garantit que toutes les parties concernées restent informées et peuvent collaborer efficacement pour résoudre les demandes.
-                      </p>
+                      Générez automatiquement des factures professionnelles et personnalisées. Configurez des modèles de factures et des paramètres pour automatiser la création et l'envoi des factures.</p>
+                      
                     </div>
                   </div>
                 </div>
                 
-                <div className="flex flex-col lg:flex-row md:flex-row justify-between  ">
-                  <div className="w-full lg:w-1/2 md:w-1/2 pr-0 lg:pr-4 md:pr-6 mb-4 lg:mb-0 md:mb-0 text-center lg:text-left md:text-left">
-                    <h1 className="text-3xl font-extrabold mb-4">GESTION FLUIDE ET EFFICACE</h1>
+                <div className="flex flex-col lg:flex-row md:flex-row items-center justify-between  ">
+                  <div className="w-full lg:w-[48%]  md:w-1/2 pr-0 lg:pr-4 md:pr-6 mb-4 lg:mb-0 md:mb-0 text-center lg:text-left md:text-left">
+                    <h1 className="text-3xl font-extrabold mb-4">Suivi Facile du Paiement des Factures</h1>
                     <p className="text-medium text-[#030712] mb-3">
-                      Avec SOLDESK, la gestion des tickets est simplifiée et efficace. En un seul clic, vous pouvez facilement créer un ticket en remplissant les champs nécessaires.
-                    </p>
-                    <p className="text-medium text-[#030712] mb-3">
-                      Vous avez également la possibilité de joindre des fichiers pertinents directement au ticket.
-                    </p>
-                    <p className="text-medium text-[#030712]">
-                      Cette simplicité d'utilisation permet de gagner du temps et d'assurer que toutes les informations nécessaires sont immédiatement disponibles, ce qui facilite une gestion rapide et précise des demandes.
-                    </p>
+                    Suivez facilement le paiement des factures avec des outils de suivi en temps réel. Recevez des notifications et des rappels automatiques pour les factures en attente et les paiements à venir.</p>
+                   
                   </div>
                   <div className="w-full   lg:w-1/2 md:w-1/2 flex  justify-center">
                     <img src={soldesketap3} alt="Etape 3" className="max-w-full h-auto  rounded-lg" />
@@ -349,22 +321,16 @@ const Navbar = () => {
         </div>
        
         <div className="md:hidden w-full">
-          <h1 className="p-4 text-3xl font-extrabold pt-8 text-center mb-2">Fonctionnalités de SOLDESK</h1>
+          <h1 className="p-4 text-3xl font-extrabold pt-8 text-center mb-2">Fonctionnalités de SOLWAY INVOICE</h1>
           
           <div className="p-4 w-full flex justify-center pt-5 bg-[#F9FAFB]">
             <div className="bg-white shadow-lg rounded-lg p-4 flex flex-col space-y-10 w-full">
 
               <div>
-                <h2 className="text-2xl font-bold mb-4 text-center">SUIVI EN TEMPS RÉEL</h2>
+                <h2 className="text-2xl font-bold mb-4 text-center">Génération Facile du Compte Rendu d'Activité pour Chaque Utilisateur</h2>
                 <p className="text-medium text-[#030712] text-left mb-3">
-                  Suivez l'évolution des tickets en temps réel avec une transparence totale à chaque étape du processus.
-                </p>
-                <p className="text-medium text-[#030712] text-left mb-3">
-                  SOLDESK vous permet de vérifier l'état de vos demandes à tout moment, assurant une communication claire et immédiate.
-                </p>
-                <p className="text-medium text-[#030712] text-left mb-6">
-                  Grâce à ce suivi détaillé, les utilisateurs peuvent voir précisément où en est leur demande et recevoir des mises à jour instantanées à chaque changement d'état.
-                </p>
+                Créez facilement des comptes rendus d'activité pour chaque utilisateur, offrant une vue d'ensemble claire et détaillée des transactions et des performances financières.</p>
+                
                 <div className="flex justify-center pt-4">
                   <img src={soldesketap1} alt="Etape 1" className="max-w-full h-auto rounded-lg" />
                 </div>
@@ -372,16 +338,11 @@ const Navbar = () => {
 
               <div className="space-y-4 pt-10">
                 <div>
-                  <h2 className="text-2xl font-bold mb-4 text-center">COMMUNICATION EFFICACE</h2>
+                  <h2 className="text-2xl font-bold mb-4 text-center">Génération Automatique des Factures</h2>
                   <p className="text-medium text-[#030712] text-left mb-3">
-                    Facilitez les échanges entre les utilisateurs et les responsables de la gestion des tickets grâce à SOLDESK.
+                    Générez automatiquement des factures professionnelles et personnalisées. Configurez des modèles de factures et des paramètres pour automatiser la création et l'envoi des factures.
                   </p>
-                  <p className="text-medium text-[#030712] text-left mb-3">
-                    Notre plateforme permet aux clients de communiquer directement avec l'équipe en charge de leurs tickets en cas de besoin, assurant ainsi une réponse rapide et personnalisée. De plus, les managers et les membres de l'équipe de traitement des tickets peuvent également échanger des messages entre eux et avec l'ensemble de l'équipe.
-                  </p>
-                  <p className="text-medium text-[#030712] text-left mb-6">
-                    Cette communication bidirectionnelle et transparente garantit que toutes les parties concernées restent informées et peuvent collaborer efficacement pour résoudre les demandes.
-                  </p>
+                 
                   
                   <div className="flex justify-center mt-4">
                     <img src={soldesketap2} alt="Etape 2" className="max-w-full h-auto pt-4 rounded-lg" />
@@ -390,16 +351,10 @@ const Navbar = () => {
               </div>
 
               <div>
-                <h1 className="text-2xl font-bold mb-4 text-center">GESTION FLUIDE ET EFFICACE</h1>
+                <h1 className="text-2xl font-bold mb-4 text-center">Suivi Facile du Paiement des Factures</h1>
                 <p className="text-medium text-[#030712] text-left mb-3">
-                  Avec SOLDESK, la gestion des tickets est simplifiée et efficace. En un seul clic, vous pouvez facilement créer un ticket en remplissant les champs nécessaires.
-                </p>
-                <p className="text-medium text-[#030712] text-left mb-3">
-                  Vous avez également la possibilité de joindre des fichiers pertinents directement au ticket.
-                </p>
-                <p className="text-medium text-[#030712] text-left mb-6">
-                  Cette simplicité d'utilisation permet de gagner du temps et d'assurer que toutes les informations nécessaires sont immédiatement disponibles, ce qui facilite une gestion rapide et précise des demandes.
-                </p>
+                Suivez facilement le paiement des factures avec des outils de suivi en temps réel. Recevez des notifications et des rappels automatiques pour les factures en attente et les paiements à venir. </p>
+                
                 <div className="flex justify-center">
                   <img src={soldesketap3} alt="Etape 3" className="max-w-full h-auto rounded-lg" />
                 </div>

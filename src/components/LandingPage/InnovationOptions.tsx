@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import containerImage from "../../assets/img/background.png";
 import youtubeImage from "../../assets/img/youtube.png";
 
@@ -16,11 +17,13 @@ const InnovationOptions = () => {
         </>
       ),
       img: youtubeImage,
+      link: "/verifdsn"
     },
     "VERIF'DSN PLUS": {
       title: "VERIF'DSN PLUS",
       text: "VERIF'DSN PLUS est un outil complémentaire de VERIF'DSN qui permet de contrôler votre DSN sur plusieurs périodes de paie. Cela vous permettra de réaliser facilement et rapidement des contrôles trimestrielle, semestrielle ou annuelle de vos cotisations. Pour plus d'informations, veuillez nous contacter, nous serons ravis à répondre à vos interrogations.",
       img: youtubeImage,
+      link: "/verifdsnplus"
     },
     "SOLWAY Synchronisation HR": {
       title: "SOLWAY Synchronisation HR",
@@ -29,7 +32,8 @@ const InnovationOptions = () => {
           SOLWAY SYNCHRONISATION HR est un outil SAP qui permet de copier rapidement et facilement les données des salariés d'un système à un&nbsp;
           autre <br/> N'hésitez pas à nous contacter pour avoir plus d'informations ou pour demander un essai gratuit.
         </>
-      )
+      ),
+      link: "/SolwaySynchronisationHRPage"
     },
   };
 
@@ -81,9 +85,9 @@ const InnovationOptions = () => {
               <div className={`${selectedContent.img ? "w-[500px] pr-6" : "w-full max-w-lg"} text-left`}>
                 <h1 className="font-bold text-2xl">{selectedContent.title}</h1>
                 <p className="mt-4 text-gray-600">{selectedContent.text}</p>
-                <a className="text-[#E0AC00] font-bold pt-2 cursor-pointer flex items-center">
+                <Link to={selectedContent.link} className="text-[#E0AC00] font-bold pt-2 cursor-pointer flex items-center">
                   Discover <ArrowRight className="ml-2 mt-1" size={18} />
-                </a>
+                </Link>
               </div>
 
            
@@ -131,9 +135,9 @@ const InnovationOptions = () => {
             <div className="w-full md:w-1/2 mb-6 md:pr-6 md:space-y-6">
               <h1 className="font-bold text-2xl text-left">{selectedContent.title}</h1>
               <p className="mt-4 text-gray-600 text-left">{selectedContent.text}</p>
-              <a className="text-[#E0AC00] font-bold pt-2 cursor-pointer flex items-center">
+              <Link to={selectedContent.link} className="text-[#E0AC00] font-bold pt-2 cursor-pointer flex items-center">
                 Discover <ArrowRight className="ml-2 mt-1" size={18} />
-              </a>
+              </Link>
             </div>
             
          
@@ -173,9 +177,9 @@ const InnovationOptions = () => {
             <h1 className="font-bold text-2xl w-full text-center">{selectedContent.title}</h1>
             <p className="mt-4 text-gray-600 w-full text-center">{selectedContent.text}</p>
             <div className="w-full flex justify-start mt-4">
-              <a className="text-black font-bold cursor-pointer flex items-center">
+              <Link to={selectedContent.link} className="text-black font-bold cursor-pointer flex items-center">
                 Discover <ArrowRight className="ml-2 mt-1" size={18} />
-              </a>
+              </Link>
             </div>
           
             {selectedContent.img && (

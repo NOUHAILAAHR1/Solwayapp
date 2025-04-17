@@ -1,5 +1,4 @@
-import Navbar from '../components/VerifdsnPlusPage/Navbar'
-import Footer from '../components/LandingPage/Footer';
+import Navbar from '../components/VerifdsnPlusPage/Navbar';
 import PayrollSettings from '../components/VerifdsnPage/PayrollSettings';
 import PayrollSlider from '../components/VerifdsnPage/PayrollSlider';
 
@@ -14,8 +13,7 @@ function VerifdsnPlus() {
         <Navbar/>
         <PayrollSettings/>
         < PayrollSlider/>
-       
-        <Footer/>
+     
       </div>
         
   );}

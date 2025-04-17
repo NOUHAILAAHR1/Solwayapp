@@ -6,12 +6,14 @@ const Navbar = () => {
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
+  const [fileName, setFileName] = useState("");
 
   const menuRef = useRef(null);
   const moreRef = useRef(null);
   const moreButtonRef = useRef(null);
   const menuButtonRef = useRef(null);
+  const fileInputRef = useRef(null);
+  const mobileFileInputRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -27,10 +29,8 @@ const Navbar = () => {
     }
   }, [windowWidth]);
 
-
   useEffect(() => {
     const handleClickOutside = (event) => {
-
       if (
         menuRef.current && 
         !menuRef.current.contains(event.target) && 
@@ -40,7 +40,6 @@ const Navbar = () => {
         setIsMenuOpen(false);
       }
       
-    
       if (
         moreRef.current && 
         !moreRef.current.contains(event.target) && 
@@ -54,6 +53,18 @@ const Navbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  const handleFileChange = (e) => {
+    if (e.target.files[0]) {
+      setFileName(e.target.files[0].name);
+    } else {
+      setFileName("");
+    }
+  };
+
+  const triggerFileInput = (inputRef) => {
+    inputRef.current.click();
+  };
 
   const FormLabel = ({ children }) => (
     <span className="text-sm text-[#374151] block mb-1">{children}</span>
@@ -119,8 +130,8 @@ const Navbar = () => {
                 <ul className="space-y-6 w-44">
                   <li><Link to="/OffresdemploisPage" className="cursor-pointer">Nos Offres D'emploi</Link></li>
                   <li><Link to="/CandidaturePage " className="cursor-pointer"> Candidatures</Link></li>
-                  <li><Link to="/NosmissionsPage " className="cursor-pointer">Nos Missions</Link></li>
-                  <li><Link to="/VosmissionsPage " className="cursor-pointer">Vos Missions</Link></li>
+                 <li><Link to="/NosmissionsPage " className="cursor-pointer">Nos Missions</Link></li>
+                 <li><Link to="/VosmissionsPage " className="cursor-pointer">Vos Missions</Link></li>
                 </ul>
               </div>
               <div>
@@ -138,12 +149,12 @@ const Navbar = () => {
             <div className={`w-full ${isTablet ? 'flex flex-col items-center' : 'flex flex-row justify-between items-start'}`}>
               <div className={`${isTablet ? 'max-w-2xl text-center mb-8' : 'max-w-[35rem] text-left pl-14'} space-y-6`}>
                 <div>
-                  <h1 className="text-3xl font-extrabold pt-4 text-[#000000] mb-4">
-                    N'hésitez pas à nous contacter pour plus d'informations
-                  </h1>
+                  <h1 className="text-3xl font-extrabold  text-[#000000] mb-4">
+                  SOLWAY Recrute<br/>
+                  Déposez votre candidature</h1>
                   <p className={`text-medium text-[#000000] ${isTablet ? 'mx-auto' : 'max-w-xl'}`}>
-                    Nous sommes à votre disposition pour répondre à vos questions et vous fournir les informations nécessaires à la réussite de vos projets.
-                  </p>
+                  Train people well enough so they can leave.</p>
+                  <p>Treat them well enough so they don't want to. </p>
                 </div>
               </div>
               <div className={`${isTablet ? 'w-full max-w-md' : 'w-1/2 pl-32'} flex items-center ${isTablet ? 'justify-center' : ''}`}>
@@ -175,26 +186,51 @@ const Navbar = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Téléphone</FormLabel>
+                    <FormLabel>Poste (requis)</FormLabel>
                     <input 
-                      type="tel" 
+                      type="text" 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
+                      required 
                     />
                   </div>
-                  <div className="grid grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <FormLabel>Fonction</FormLabel>
+                  <div className="mb-4">
+                    <FormLabel>Niveau d'expérience : (requis)</FormLabel>
+                    <select 
+                      className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#6B7280]" 
+                      required
+                    >
+                      <option value="">Sélectionnez votre niveau</option>
+                      <option value="etudiant">Étudiant</option>
+                      <option value="stage">Stage</option>
+                      <option value="junior">Junior (0-2 ans)</option>
+                      <option value="intermediaire">Intermédiaire (3-5 ans)</option>
+                      <option value="senior">Senior (5+ ans)</option>
+                      <option value="expert">Expert</option>
+                    </select>
+                  </div>
+                  <div className="mb-4">
+                    <FormLabel>Veuillez joindre votre CV (requis)</FormLabel>
+                    <div className="flex items-center">
                       <input 
-                        type="text" 
-                        className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
+                        ref={fileInputRef}
+                        type="file" 
+                        accept=".pdf,.doc,.docx"
+                        className="hidden" 
+                        onChange={handleFileChange}
+                        required
                       />
-                    </div>
-                    <div>
-                      <FormLabel>Société</FormLabel>
-                      <input 
-                        type="text" 
-                        className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
-                      />
+                      <div className="w-full flex items-center">
+                        <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] truncate">
+                          {fileName ||" No file selected"}
+                        </div>
+                        <button 
+                          type="button" 
+                          onClick={() => triggerFileInput(fileInputRef)}
+                          className="bg-[#F9FAFB] text-[#374151]  p-2 rounded-r-md border-t border-r border-b border-[#D1D5DB] hover:bg-gray-300"
+                        >
+                          Choose file
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <div className="mb-4">
@@ -205,16 +241,16 @@ const Navbar = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Votre Message</FormLabel>
+                    <FormLabel>Message</FormLabel>
                     <textarea 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md h-32 focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
                     />
                   </div>
                   <button 
                     type="submit" 
-                    className="w-32 bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 transition duration-300"
+                    className="w-52 bg-yellow-500 text-white p-2  rounded hover:bg-yellow-600 transition duration-300"
                   >
-                    Envoyer
+                   Envoyer ma candidature
                   </button>
                 </form>
               </div>
@@ -275,9 +311,9 @@ const Navbar = () => {
                   <h3 className="font-bold text-lg mb-4">Carrières</h3>
                   <ul className="grid grid-cols-2 gap-4 w-full">
                     <li><Link to="/OffresdemploisPage" className="cursor-pointer">Nos Offres D'emploi</Link></li>
-                    <li><Link to="/NosmissionsPage " className="cursor-pointer">Nos Missions</Link></li>
-                   <li><Link to="/CandidaturePage " className="cursor-pointer"> Candidatures</Link></li>
-                   <li><Link to="/VosmissionsPage " className="cursor-pointer">Vos Missions</Link></li>
+                   <li><Link to="/NosmissionsPage " className="cursor-pointer">Nos Missions</Link></li>
+                  <li><Link to="/CandidaturePage " className="cursor-pointer"> Candidatures</Link></li>
+                  <li><Link to="/VosmissionsPage " className="cursor-pointer">Vos Missions</Link></li>
                   </ul>
                 </div>
 
@@ -294,10 +330,12 @@ const Navbar = () => {
       )}
 
     
-      <div className="md:hidden w-full flex flex-col items-center text-center pt-6">
-        <h1 className="text-3xl font-extrabold text-[#000000] pt-5">N'hésitez pas à nous contacter pour plus d'informations</h1>
-        <p className="text-md max-w-xs text-[#000000] p-4">
-          Nous sommes à votre disposition pour répondre à vos questions et vous fournir les informations nécessaires à la réussite de vos projets.
+      <div className="md:hidden w-full flex flex-col items-center text-center pt-6 ">
+        <h1 className="text-3xl font-extrabold text-[#000000] p-6">SOLWAY Recrute
+        Déposez votre candidature</h1>
+        <p className="text-md max-w-xs text-[#000000] ">
+        Train people well enough so they can leave.
+        Treat them well enough so they don't want to.
         </p>
 
         <div className="w-full px-4 pt-6">
@@ -329,39 +367,56 @@ const Navbar = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-left mb-1">Téléphone</label>
+              <label className="block text-left mb-1">Poste</label>
               <input
-                type="email"
+                type="text"
                 className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
                 required
               />
             </div>
             <div className="mb-4">
-              <label className="block text-left mb-1">Fonction</label>
-              <input
-                type="email"
-                className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
+              <label className="block text-left mb-1">Niveau d'expérience : (requis)</label>
+              <select
+                className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#6B7280]"
                 required
-              />
+              >
+                <option value="">Sélectionnez votre niveau</option>
+                <option value="etudiant">Étudiant</option>
+                <option value="stage">Stage</option>
+                <option value="junior">Junior (0-2 ans)</option>
+                <option value="intermediaire">Intermédiaire (3-5 ans)</option>
+                <option value="senior">Senior (5+ ans)</option>
+                <option value="expert">Expert</option>
+              </select>
             </div>
             <div className="mb-4">
-              <label className="block text-left mb-1">Société</label>
-              <input
-                type="email"
-                className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
-                required
-              />
+              <label className="block text-left mb-1">Veuillez joindre votre CV (requis)</label>
+              <div className="flex items-center">
+                <input 
+                  ref={mobileFileInputRef}
+                  type="file" 
+                  accept=".pdf,.doc,.docx"
+                  className="hidden" 
+                  onChange={handleFileChange}
+                  required
+                />
+                <div className="w-full flex items-center">
+                  <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] text-left truncate">
+                    {fileName || " No file selected"}
+                  </div>
+                  <button 
+                    type="button" 
+                    onClick={() => triggerFileInput(mobileFileInputRef)}
+                    className="bg-[#F9FAFB] text-[#374151] p-2 rounded-r-md border-t border-r border-b border-[#D1D5DB] hover:bg-gray-300"
+                  >
+                    Choose file
+                  </button>
+                </div>
+              </div>
             </div>
+            
             <div className="mb-4">
-              <label className="block text-left mb-1">Objet</label>
-              <input
-                type="email"
-                className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block text-left mb-1">Votre Message</label>
+              <label className="block text-left mb-1"> Message</label>
               <textarea
                 className="w-full p-2 border border-[#D1D5DB] rounded-md h-32 focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
               />
@@ -370,7 +425,7 @@ const Navbar = () => {
               type="submit"
               className="w-full bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 transition duration-300"
             >
-              Envoyer
+            Envoyer ma candidature
             </button>
           </form>
         </div>

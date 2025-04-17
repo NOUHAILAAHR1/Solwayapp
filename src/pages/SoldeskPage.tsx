@@ -1,5 +1,5 @@
 import Navbar from '../components/SoldeskPage/Navbar';
-import Footer from '../components/LandingPage/Footer';
+
 
 
 
@@ -10,8 +10,8 @@ import Footer from '../components/LandingPage/Footer';
 function SolwaySynchronisationHRPage() {
   return (
       <div>
-      <Navbar/>
-        <Footer/>
+       <Navbar/>
+       
       </div>
         
   );}

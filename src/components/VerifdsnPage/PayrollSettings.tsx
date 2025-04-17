@@ -153,7 +153,7 @@ const PayrollSettings = () => {
               backgroundPositionY: "center"
             }}
           >
-            <div className="bg-white shadow-lg rounded-lg p-7 flex flex-wrap justify-center items-center mx-auto max-w-[60rem]">
+            <div className="bg-white shadow-lg rounded-lg p-7 flex flex-wrap justify-center items-center mx-auto max-w-[95%]">
               <div className="w-full md:w-1/2 mb-6 md:pr-6 md:space-y-6">
                 <h1 className="font-bold text-2xl text-left">{selectedContent.title}</h1>
                 <p className="mt-4 text-gray-600 text-left">{selectedContent.text}</p>

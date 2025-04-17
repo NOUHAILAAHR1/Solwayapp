@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef  } from "react";
 import { Menu, X, ArrowRight, ArrowLeft } from "lucide-react";
 import { Link } from 'react-router-dom';
 import logoImage from "../../assets/img/logo.png";
 import containerImage from "../../assets/img/background.png";
+import containerImage1 from "../../assets/img/imgbg.png";
 import containerImagesvg from "../../assets/Svg/Imgcontainer.svg";
 import solwayhr from "../../assets/img/Solwayhr.png";
 import solwayhretap1 from "../../assets/img/solwayhretap1.png";
@@ -14,6 +15,11 @@ const Navbar = () => {
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  const moreMenuRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+  const moreButtonRef = useRef(null);
+  const menuButtonRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -27,13 +33,45 @@ const Navbar = () => {
     }
   }, [windowWidth]);
 
- 
-  
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isMoreOpen && 
+        moreMenuRef.current && 
+        !moreMenuRef.current.contains(event.target) &&
+        moreButtonRef.current && 
+        !moreButtonRef.current.contains(event.target)
+      ) {
+        setIsMoreOpen(false);
+      }
+
+      if (
+        isMenuOpen && 
+        mobileMenuRef.current && 
+        !mobileMenuRef.current.contains(event.target) &&
+        menuButtonRef.current && 
+        !menuButtonRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMoreOpen, isMenuOpen]);
+
+  const isMdOrIpadPro = () => {
+    return windowWidth >= 768 && windowWidth < 1366;
+  };
+
+  const isLgOrLarger = () => {
+    return windowWidth >= 1024;
+  };
 
   return (
     <>
       <nav className="relative w-full z-50">
-        <div className="hidden md:flex flex-col w-full">
+        <div className="hidden md:flex bg-white flex-col w-full">
           <div className="w-full flex flex-row items-center justify-between px-14 py-6">
             <div className="flex items-center space-x-6">
               <div className="w-24 h-8">
@@ -46,6 +84,7 @@ const Navbar = () => {
                   <li><Link to="/clients" className="cursor-pointer">Clients</Link></li>
                   <li><Link to="/contact" className="cursor-pointer">Contact</Link></li>
                   <li
+                    ref={moreButtonRef}
                     className="cursor-pointer"
                     onClick={() => setIsMoreOpen(!isMoreOpen)}
                   >
@@ -57,40 +96,46 @@ const Navbar = () => {
           </div>
 
           {isMoreOpen && (
-            <div className="absolute top-24 left-1/2 transform -translate-x-1/2 w-[600px] bg-white shadow-lg p-6 border rounded-lg z-50">
+            <div 
+              ref={moreMenuRef}
+              className="absolute top-24 left-1/2 transform -translate-x-1/2 w-[600px] bg-white shadow-lg p-6 border rounded-lg z-50"
+            >
               <div className="flex flex-row justify-center space-x-8">
                 <div>
                   <h3 className="font-bold text-lg mb-6">Nos Solutions</h3>
                   <ul className="space-y-6 w-44">
-                    <li><Link to="/verifdsn" className="cursor-pointer">VERIF'DSN</Link></li>
-                    <li><Link to="/verifdsnplus" className="cursor-pointer"> VERIF'DSN PLUS</Link></li>
-                    <li className="cursor-pointer flex flex-col"><Link to="/SolwaySynchronisationHRPage" >
-                      <span>SOLWAY</span><br />
-                      <span>Synchronisation HR</span>
-                    </Link>
-                    </li>
-                     <li><Link to="/soldeskpage" className="cursor-pointer">SOLDESK</Link></li>
-                     <li><Link to="/solwayhrpage" className="cursor-pointer">SOLWAY HR</Link></li>
-                    <li className="cursor-pointer">SOLWAY INVOICE</li>
+                    <li><Link to="/verifdsn" className="cursor-pointer" onClick={() => setIsMoreOpen(false)}>VERIF'DSN</Link></li>
+                    <li><Link to="/verifdsnplus" className="cursor-pointer" onClick={() => setIsMoreOpen(false)}> VERIF'DSN PLUS</Link></li>
                     <li className="cursor-pointer flex flex-col">
-                    <span>ASSOCIATION SOLWAY</span> 
-                    <span>POUR LA SOLIDARITE</span>
+                      <Link to="/SolwaySynchronisationHRPage" onClick={() => setIsMoreOpen(false)}>
+                        <span>SOLWAY</span><br />
+                        <span>Synchronisation HR</span>
+                      </Link>
+                    </li>
+                    <li><Link to="/soldeskpage" className="cursor-pointer" onClick={() => setIsMoreOpen(false)}>SOLDESK</Link></li>
+                    <li><Link to="/solwayhrpage" className="cursor-pointer" onClick={() => setIsMoreOpen(false)}>SOLWAY HR</Link></li>
+                    <li><Link to="/solwayInvoice" className="cursor-pointer" onClick={() => setIsMoreOpen(false)}>SOLWAY INVOICE</Link></li>
+                    <li className="cursor-pointer flex flex-col">
+                      <Link to="/associationsolway" onClick={() => setIsMoreOpen(false)}>
+                        <span>ASSOCIATION SOLWAY</span><br/>
+                        <span>POUR LA SOLIDARITE</span>
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-6">Carrières</h3>
                   <ul className="space-y-6 w-44">
-                    <li className="cursor-pointer">Nos Offres D'emploi</li>
-                    <li className="cursor-pointer">Candidatures</li>
-                    <li className="cursor-pointer">Nos Missions</li>
-                    <li className="cursor-pointer">Vos Missions</li>
+                    <li><Link to="/OffresdemploisPage" className="cursor-pointer" onClick={() => setIsMoreOpen(false)}>Nos Offres D'emploi</Link></li>
+                    <li ><Link to="/CandidaturePage" className="cursor-pointer" onClick={() => setIsMoreOpen(false)}> Candidatures</Link></li>
+                    <li><Link to="/NosmissionsPage" className="cursor-pointer" onClick={() => setIsMoreOpen(false)}>Nos Missions </Link> </li>
+                    <li><Link to="/VosmissionsPage" className="cursor-pointer" onClick={() => setIsMoreOpen(false)}>Vos Missions</Link></li>
                   </ul>
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-6">Formations</h3>
                   <ul className="space-y-2">
-                    <li className="cursor-pointer">SOLWAY Executive Education</li>
+                    <li className="cursor-pointer" onClick={() => setIsMoreOpen(false)}>SOLWAY Executive Education</li>
                   </ul>
                 </div>
               </div>
@@ -98,41 +143,48 @@ const Navbar = () => {
           )}
         </div>
 
-       
         <div className="md:hidden w-full bg-white">
-       
           <div className="p-4 flex justify-between items-center">
             <img src={logoImage} alt="Logo" className="w-28 h-8" />
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="ml-auto">
+            <button 
+              ref={menuButtonRef}
+              onClick={() => setIsMenuOpen(!isMenuOpen)} 
+              className="ml-auto"
+            >
               {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
 
-         
-          {!isMenuOpen && (
-              <div className="w-full flex flex-col items-center pt-8 text-center pb-14">
-                <div>
-                  <h1 className="text-[48px] font-extrabold text-[#030712]">
-                  SOLWAY HR
-                  </h1>
-                  <p className="pl-4 pr-4 text-medium mb-10 text-[#030712] max-w-xl mx-auto">
-                  SOLWAY HR est une solution intuitive et complète conçue pour optimiser les différents processus des ressources humaines. Notre plateforme offre une gamme étendue de fonctionnalités, couvrant tous les aspects nécessaires et suffisants pour une gestion efficace des ressources humaines.</p>
-                </div>
-  
-                <div className="w-full px-16 pt-10">
-                  <img src={solwayhr} alt="soldesk" className="max-w-full h-auto" />
-                </div>
-              </div>
-          )}
+          <div className="w-full flex flex-col items-center pt-8 text-center pb-14">
+          <div>
+              <h1 className="text-[48px] font-extrabold text-[#030712]">
+                SOLWAY HR
+              </h1>
+              <p className="pl-4 pr-4 text-medium mb-10 text-[#030712] max-w-xl mx-auto">
+                SOLWAY HR est une solution intuitive et complète conçue pour optimiser les différents processus des ressources humaines. Notre plateforme offre une gamme étendue de fonctionnalités, couvrant tous les aspects nécessaires et suffisants pour une gestion efficace des ressources humaines.
+              </p>
+            </div>
+
+            <div className="w-full px-16 pt-10">
+              <img src={solwayhr} alt="solwayhr" className="max-w-full h-auto" />
+            </div>
+          </div>
         </div>
 
         {isMenuOpen && (
-          <div className="absolute top-[64px] left-1/2 transform -translate-x-1/2 w-[80%] bg-white max-w-[400px] z-50 p-6 flex flex-col items-center space-y-6 rounded-b-lg shadow-lg md:hidden">
+          <div 
+            ref={mobileMenuRef}
+            className="absolute top-[64px] left-1/2 transform -translate-x-1/2 w-[80%] bg-white max-w-[400px] z-50 p-6 flex flex-col items-center space-y-6 rounded-b-lg shadow-lg md:hidden"
+          >
             <ul className="text-lg font-semibold text-black space-y-4 w-full">
-              <li className="cursor-pointer pt-4 w-full text-center"><Link to="/" className="cursor-pointer">Home</Link></li>
-              <li className="cursor-pointer border-t border-gray-300 pt-4 w-full text-center">Features</li>
-              <li className="cursor-pointer border-t border-gray-300 pt-4 w-full text-center">Clients</li>
-              <li className="cursor-pointer border-t border-gray-300 pt-4 w-full text-center"><Link to="/contact" className="cursor-pointer">Contact</Link></li>
+              <li className="cursor-pointer pt-4 w-full text-center">
+                <Link to="/" className="cursor-pointer" onClick={() => setIsMenuOpen(false)}>Home</Link>
+              </li>
+              <li className="cursor-pointer border-t border-gray-300 pt-4 w-full text-center" onClick={() => setIsMenuOpen(false)}>Features</li>
+              <li className="cursor-pointer border-t border-gray-300 pt-4 w-full text-center" onClick={() => setIsMenuOpen(false)}>Clients</li>
+              <li className="cursor-pointer border-t border-gray-300 pt-4 w-full text-center">
+                <Link to="/contact" className="cursor-pointer" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              </li>
               <li
                 className="cursor-pointer flex items-center justify-center border-t pt-4 w-full text-center"
                 onClick={() => setIsMoreOpen(true)}
@@ -142,72 +194,73 @@ const Navbar = () => {
             </ul>
 
             {isMoreOpen && (
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[600px] bg-white z-50 p-4 flex flex-col items-start space-y-6 rounded-lg shadow-lg max-h-[80vh] overflow-y-auto">
-                <button
-                  onClick={() => setIsMoreOpen(false)}
-                  className="flex items-center bg-slate-100 border border-gray-300 p-2 rounded-lg"
-                >
-                  <ArrowLeft size={16} className="mr-2" /> Back
-                </button>
-                <div className="space-y-6 w-full">
-                  <div>
-                    <h3 className="font-bold text-lg mb-4">Nos Solutions</h3>
-                    <ul className="grid grid-cols-2 text-xs gap-4 w-full">
-                      <li><Link to="/verifdsn" className="cursor-pointer">VERIF'DSN</Link></li>
-                       <li><Link to="/solwayhrpage" className="cursor-pointer">SOLWAY HR</Link></li>
-                      <li><Link to="/verifdsnplus" className="cursor-pointer">VERIF'DSN PLUS</Link></li>
-                      <li className="cursor-pointer">SOLWAY INVOICE</li>
-                      <li className="cursor-pointer"><Link to="/SolwaySynchronisationHRPage" className="cursor-pointer">SOLWAY <br />Synchronisation HR</Link></li>
-                      <li className="cursor-pointer">ASSOCIATION SOLWAY POUR LA SOLIDARITE</li>
-                      <li><Link to="/soldeskpage" className="cursor-pointer">SOLDESK</Link></li>
-                    </ul>
-                  </div>
+              <div ref={moreMenuRef} className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[90%] md:w-[600px] bg-white z-50 p-4 flex flex-col items-start space-y-6 rounded-lg shadow-lg max-h-[80vh] overflow-y-auto">
+              <button
+                onClick={() => setIsMoreOpen(false)}
+                className="flex items-center bg-slate-100 border border-gray-300 p-2 rounded-lg "
+              >
+                <ArrowLeft size={16} className="mr-2" /> Back
+              </button>
+              <div className="space-y-6 w-full">
+                <div>
+                  <h3 className="font-bold text-lg mb-4">Nos Solutions</h3>
+                  <ul className="grid grid-cols-2 text-xs gap-4 w-full">
+                    <li><Link to="/verifdsn" className="cursor-pointer">VERIF’DSN</Link></li>
+                    <li><Link to="/solwayhrpage" className="cursor-pointer">SOLWAY HR</Link></li>
+                    <li><Link to="/verifdsnplus" className="cursor-pointer">VERIF'DSN PLUS</Link></li>
+                    <li><Link to="/solwayInvoice" className="cursor-pointer">SOLWAY INVOICE</Link></li>
+                    <li className="cursor-pointer"><Link to="/SolwaySynchronisationHRPage" className="cursor-pointer">SOLWAY <br />Synchronisation HR</Link></li>
+                    <li className="cursor-pointer"><Link to="/associationsolway" className="cursor-pointer">ASSOCIATION SOLWAY POUR LA SOLIDARITE</Link></li>
+                    <li><Link to="/soldeskpage" className="cursor-pointer">SOLDESK</Link></li>
+                  </ul>
+                </div>
 
-                  <div>
-                    <h3 className="font-bold text-lg mb-4">Carrières</h3>
-                    <ul className="grid grid-cols-2 gap-4 w-full">
-                      <li className="cursor-pointer">Nos Offres D'emploi</li>
-                      <li className="cursor-pointer">Nos Missions</li>
-                      <li className="cursor-pointer">Candidatures</li>
-                      <li className="cursor-pointer">Vos Missions</li>
-                    </ul>
-                  </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-4">Carrières</h3>
+                  <ul className="grid grid-cols-2 gap-4 w-full">
+                    <li><Link to="/OffresdemploisPage" className="cursor-pointer">Nos Offres D’emploi</Link></li>
+                    <li><Link to="/NosmissionsPage " className="cursor-pointer">Nos Missions</Link></li>
+                   <li><Link to="/CandidaturePage " className="cursor-pointer"> Candidatures</Link></li>
+                   <li><Link to="/VosmissionsPage " className="cursor-pointer">Vos Missions</Link></li>
+                  </ul>
+                </div>
 
-                  <div>
-                    <h3 className="font-bold text-lg mb-4">Formations</h3>
-                    <ul className="space-y-2">
-                      <li className="cursor-pointer">SOLWAY Executive Education</li>
-                    </ul>
-                  </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-4">Formations</h3>
+                  <ul className="space-y-2">
+                    <li className="cursor-pointer">SOLWAY Executive<br /> Education</li>
+                  </ul>
                 </div>
               </div>
-            )}
+            </div>
+          )}
           </div>
         )}
       </nav>
-
       <main className="w-full flex flex-col bg-[#F9FAFB] mb-4 z-40">
-      
         <div className="hidden md:block h-auto w-full">
-          <div className="w-full text-center p-20 py-8 ipad-pro:p-8 md:p-6 lg:p-20"
+          <div className="w-full text-center p-20 py-8 ipad-pro:p-8 md:p-8 lg:p-20"
             style={{
-              backgroundImage: `url(${containerImage})`,
+              backgroundImage: `url(${
+                isMdOrIpadPro() ? containerImage1 : 
+                isLgOrLarger() ? containerImage : 'none'
+              })`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
               backgroundPosition: "center",
             }}
           >
-           <div className="w-full mx-auto ">
+           <div className="w-full mx-auto">
             <div className="bg-white shadow-lg rounded-lg p-6 flex flex-row justify-between items-center">
               <div className="w-1/2 text-center">
                 <h1 className="text-5xl mb-4 font-extrabold text-[#030712]">SOLWAY HR</h1>
                 <p className="text-medium text-[#030712]">
-                SOLWAY HR est une solution intuitive et complète conçue pour optimiser les différents processus des ressources humaines. Notre plateforme offre une gamme étendue de fonctionnalités, couvrant tous les aspects nécessaires et suffisants pour une gestion efficace des ressources humaines.
+                  SOLWAY HR est une solution intuitive et complète conçue pour optimiser les différents processus des ressources humaines. Notre plateforme offre une gamme étendue de fonctionnalités, couvrant tous les aspects nécessaires et suffisants pour une gestion efficace des ressources humaines.
                 </p>
               </div>
               <div className="w-1/2 flex justify-end">
                 <img 
-                  src={solwayhr} alt="Soldesk Logo" 
+                  src={solwayhr} alt="Solway HR Logo" 
                   className="w-1/2 h-auto object-contain" 
                 />
               </div>
@@ -219,9 +272,13 @@ const Navbar = () => {
 
           <div className="w-full flex justify-center"
             style={{
-              backgroundImage: `url(${containerImagesvg}), url(${containerImagesvg}),url(${containerImagesvg})`, 
+              backgroundImage: isMdOrIpadPro() ? 
+                `url(${containerImage1}), url(${containerImage1}), url(${containerImage1})` : 
+                isLgOrLarger() ? 
+                  `url(${containerImagesvg}), url(${containerImagesvg}), url(${containerImagesvg})` : 
+                  'none', 
               backgroundRepeat: 'no-repeat', 
-              backgroundPosition: ' center 11%, center 63%, bottom',  
+              backgroundPosition: 'center 11%, center 63%, bottom', 
               backgroundSize: 'contain', 
             }}
           >
@@ -241,7 +298,7 @@ const Navbar = () => {
                       <li>Sortie</li>
                     </ul>
                   </div>
-                  <div className="w-full lg:w-1/2 md:w-1/2 pt-4  flex justify-center">
+                  <div className="w-full lg:w-1/2 md:w-1/2 pt-4 flex justify-center">
                     <img src={solwayhretap1} alt="Etape 1" className="max-w-full h-auto rounded-lg" />
                   </div>
                 </div>
@@ -301,10 +358,7 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-       
         
-
-
         <div className="md:hidden w-full">
           <h1 className="p-4 text-3xl font-extrabold pt-8 text-center mb-2">Fonctionnalités de SOLWAY HR</h1>
           
