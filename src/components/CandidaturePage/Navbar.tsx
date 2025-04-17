@@ -233,13 +233,7 @@ const Navbar = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="mb-4">
-                    <FormLabel>Objet</FormLabel>
-                    <input 
-                      type="text" 
-                      className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
-                    />
-                  </div>
+                  
                   <div className="mb-4">
                     <FormLabel>Message</FormLabel>
                     <textarea 
