@@ -247,7 +247,7 @@ const Navbar = () => {
                         required
                       />
                       <div className="w-full flex items-center">
-                        <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#030712] truncate">
+                        <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white  text-[#6B7280] truncate">
                           {fileName ||" No file selected"}
                         </div>
                         <button 
@@ -450,7 +450,7 @@ const Navbar = () => {
                   required
                 />
                 <div className="w-full flex items-center">
-                  <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#030712] text-left truncate">
+                  <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] text-left truncate">
                     {fileName || " No file selected"}
                   </div>
                   <button 

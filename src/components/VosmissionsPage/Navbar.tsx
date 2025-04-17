@@ -70,7 +70,7 @@ const Navbar = () => {
 
   const inputClass = "w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]";
 
-  const selectClass = "w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]";
+  const selectClass = "w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]  text-[#030712]";
   
   return (
     <nav className="relative w-full bg-white rounded-lg z-50">
@@ -268,7 +268,7 @@ const Navbar = () => {
                   
                   <div className="mb-4">
                     <label className="block text-[#374151] text-sm mb-1 text-left">Fiche de poste</label>
-                    <div className="flex">
+                    <div className="flex ">
                       <input 
                         ref={fileInputRef}
                         type="file" 
@@ -498,7 +498,7 @@ const Navbar = () => {
             
             <div className="mb-4">
               <label className="block text-[#374151] text-sm mb-1 text-left">Fiche de poste</label>
-              <div className="flex">
+              <div className="flex text-left">
                 <input 
                   ref={mobileFileInputRef}
                   type="file" 
