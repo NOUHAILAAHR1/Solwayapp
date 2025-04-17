@@ -253,7 +253,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="md:hidden w-full bg-[#F9FAFB] p-4 flex justify-between items-center rounded-b-lg">
+      <div className="md:hidden w-full bg-[#F9FAFB] p-4 flex justify-between items-center rounded-b-lg ">
         <img src="./src/assets/img/logo.png" alt="Logo" className="w-28 h-8" />
         <button 
           ref={menuButtonRef} 
@@ -324,7 +324,7 @@ const Navbar = () => {
       )}
 
     
-      <div className="md:hidden w-full flex flex-col items-center text-center pt-6 ">
+      <div className="md:hidden w-full flex flex-col items-center text-center pt-6  mb-8">
         <h1 className="text-3xl font-extrabold text-[#000000] p-6">SOLWAY Recrute
         Déposez votre candidature</h1>
         <p className="text-md max-w-xs text-[#000000] ">
@@ -333,7 +333,7 @@ const Navbar = () => {
         </p>
 
         <div className="w-full px-4 pt-6">
-          <form className="w-full bg-white p-4 rounded-lg shadow-lg">
+          <form className="w-full  bg-white p-4 rounded-lg shadow-lg">
             <div className="mb-4">
               <div className="mb-2">
                 <label className="block text-left mb-1">Nom (requis)</label>

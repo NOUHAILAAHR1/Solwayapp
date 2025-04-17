@@ -360,7 +360,7 @@ const Navbar = () => {
         </p>
 
         <div className="w-full px-4 pt-6">
-          <form className="w-full bg-white p-4 rounded-lg shadow-lg">
+          <form className="w-full bg-white p-4 rounded-lg shadow-lg mb-8">
             <div className="mb-4">
               <div className="mb-2">
                 <label className="block text-left mb-1">Nom (requis)</label>
