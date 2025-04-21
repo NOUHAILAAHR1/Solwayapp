@@ -77,11 +77,11 @@ const Navbar = () => {
       <div className="hidden md:flex flex-col w-full">
         <div className="w-full flex flex-row items-center justify-between px-14 py-6">
           <div className="flex items-center space-x-6">
-            <div className="w-24 h-8">
+            <div className="w-24 ">
               <img
                 src="./src/assets/img/logo.png"
                 alt="Logo"
-                className="w-36 h-10"
+                className="w-36 "
               />
             </div>
             <div>
@@ -156,8 +156,8 @@ const Navbar = () => {
                  
                 </div>
               </div>
-              <div className={`${isTablet ? 'w-full max-w-md' : 'w-1/2 pl-32'} flex items-center ${isTablet ? 'justify-center' : ''}`}>
-                <form className="w-full max-w-md mb-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+              <div className={`${isTablet ? 'w-full max-w-lg' : 'w-1/2 pl-[4rem]'} flex items-center ${isTablet ? 'justify-center' : ''}`}>
+                <form className="w-full max-w-lg mb-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
                       <FormLabel>Nom (requis)</FormLabel>

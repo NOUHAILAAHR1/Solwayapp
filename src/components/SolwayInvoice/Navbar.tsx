@@ -72,8 +72,8 @@ const Navbar = () => {
         <div className="hidden md:flex bg-white flex-col w-full">
           <div className="w-full flex flex-row items-center justify-between px-14 py-6">
             <div className="flex items-center space-x-6">
-              <div className="w-24 h-8">
-                <img src={logoImage} alt="Logo" className="w-36 h-10" />
+              <div className="w-24 ">
+                <img src={logoImage} alt="Logo" className="w-36 " />
               </div>
               <div>
                 <ul className="flex space-x-6 text-lg font-semibold text-black">

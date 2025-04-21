@@ -1,5 +1,4 @@
-// Slider.jsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 const Slider = ({ 
   slides, 
@@ -8,20 +7,25 @@ const Slider = ({
   slideDuration = 500,
   renderSlide,
   renderControls,
-  backgroundImage = null
+  backgroundImage = null,
+  autoplay = false
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
   
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, autoplayInterval);
-    
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentSlide, autoplayInterval]);
+
+  React.useEffect(() => {
+
+    if (autoplay) {
+      const interval = setInterval(() => {
+        nextSlide();
+      }, autoplayInterval);
+      
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [currentSlide, autoplayInterval, autoplay]);
   
   const goToSlide = (index) => {
     setCurrentSlide(index);
@@ -39,7 +43,7 @@ const Slider = ({
     <div className="flex flex-col items-center">
       <div className="flex justify-center space-x-7 mb-4">
         <button 
-          className="bg-gray-300 hover:bg-gray-300 border text-white border-[#D1D5DB] rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
+          className="bg-gray-300 hover:bg-gray-300 border text-white border-gray-300 rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
           onClick={prevSlide}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -48,7 +52,7 @@ const Slider = ({
         </button>
         
         <button 
-          className="bg-[#E0AC00] hover:bg-[#c99b00] text-white rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
+          className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
           onClick={nextSlide}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,7 +65,7 @@ const Slider = ({
         {slides.map((_, index) => (
           <button 
             key={index}
-            className={`h-3 w-3 rounded-full cursor-pointer ${currentSlide === index ? 'bg-[#E0AC00]' : 'bg-[#D1D5DB]'}`}
+            className={`h-3 w-3 rounded-full cursor-pointer ${currentSlide === index ? 'bg-yellow-500' : 'bg-gray-300'}`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
           ></button>
@@ -94,7 +98,7 @@ const Slider = ({
                 <div 
                   className={`
                     ${currentSlide === index ? 'scale-100 ' : 
-                      index === (currentSlide + 1) % slides.length ? 'scale-96 ' : 
+                      index === (currentSlide + 1) % slides.length ? 'scale-95 ' : 
                       'scale-85 '}
                     transition-all duration-500 
                   `}
@@ -138,7 +142,7 @@ const Slider = ({
                 <div 
                   className={`
                     ${currentSlide === index ? 'scale-100 ' : 
-                      index === (currentSlide + 1) % slides.length ? 'scale-84 ' : 
+                      index === (currentSlide + 1) % slides.length ? 'scale-85 ' : 
                       'scale-100 '}
                     transition-all duration-500 w-full
                   `}

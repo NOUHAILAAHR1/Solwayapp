@@ -72,7 +72,7 @@ const InnovationOptions = () => {
               backgroundImage: `url(${containerImage})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "contain",
-              backgroundPositionY: selectedContent.img ? "bottom" : "top",
+              backgroundPositionY: selectedContent.img ?  " bottom" : "top",
             }}
           >
          
@@ -113,7 +113,7 @@ const InnovationOptions = () => {
             {Object.keys(contentOptions).map((key) => (
               <button
                 key={key}
-                className={`w-64 h-12 px-6 py-3 md:px-2 rounded-lg shadow-md ${
+                className={`w-80 h-12 px-6 py-3 md:px-2 rounded-lg shadow-md ${
                   selectedContent.title === key
                     ? "bg-[#E0AC00] text-white"
                     : "border border-[#D1D5DB] bg-[#F9FAFB] text-black"
@@ -128,7 +128,7 @@ const InnovationOptions = () => {
 
        
         <div className="w-full flex justify-center p-6 bg-[#F9FAFB]">
-          <div className={`bg-white shadow-lg rounded-lg p-7 flex flex-wrap justify-center mx-auto max-w-4xl ${
+          <div className={`bg-white shadow-lg rounded-lg p-7 flex flex-wrap justify-center mx-auto max-w-[75rem] ${
             selectedContent.img ? "flex-row justify-between w-full" : "flex justify-center max-w-3xl"
           }`}>
          
@@ -162,7 +162,7 @@ const InnovationOptions = () => {
           {Object.keys(contentOptions).map((key) => (
             <button
               key={key}
-              className={`w-full h-12 px-6 py-3 rounded-lg shadow-md ${
+              className={`w-[93%] h-12 px-6 py-3 rounded-lg shadow-md ${
                 selectedContent.title === key ? "bg-[#E0AC00] text-white" : "border border-[#D1D5DB] bg-[#F9FAFB] text-black"
               }`}
               onClick={() => setSelectedContent(contentOptions[key])}
@@ -172,7 +172,7 @@ const InnovationOptions = () => {
           ))}
         </div>
 
-        <div className="w-full flex justify-center p-6 bg-[#F9FAFB]">
+        <div className="w-full flex justify-center p-2 pt-7 bg-[#F9FAFB]">
           <div className="bg-white shadow-lg rounded-lg p-7 flex flex-wrap justify-center mx-auto max-w-xl">
             <h1 className="font-bold text-2xl w-full text-center">{selectedContent.title}</h1>
             <p className="mt-4 text-gray-600 w-full text-center">{selectedContent.text}</p>

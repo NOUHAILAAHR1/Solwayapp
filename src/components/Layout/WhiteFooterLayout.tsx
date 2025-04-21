@@ -7,8 +7,8 @@ export const WhiteFooterLayout = ({ children, theme = "yellow" }) => {
       <div className="flex-grow">
         {children}
       </div>
-      <div className="bg-bg-white ipad-pro:bg-bg-white md:bg-white sm:bg-white lg:bg-[#F9FAFB]">
-        <Footer bgColor="white" theme={theme} />
+      <div>
+        <Footer bgColor="bg-white ipad-pro:bg-white lg:bg-[#F9FAFB]" theme={theme} />
       </div>
     </div>
   );

@@ -73,15 +73,15 @@ const Navbar = () => {
   const selectClass = "w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]  text-[#030712]";
   
   return (
-    <nav className="relative w-full bg-white rounded-lg z-50">
+    <nav className="relative w-full bg-[#F9FAFB] rounded-lg z-50">
       <div className="hidden md:flex flex-col w-full">
         <div className="w-full flex flex-row items-center justify-between px-14 py-6">
           <div className="flex items-center space-x-6">
-            <div className="w-24 h-8">
+            <div className="w-24 ">
               <img
                 src="./src/assets/img/logo.png"
                 alt="Logo"
-                className="w-36 h-10"
+                className="w-36 "
               />
             </div>
             <div>
@@ -155,8 +155,8 @@ const Navbar = () => {
                   Déposez vos propositions de missions,<br/>Nous nous occupons du reste</p>
                 </div>
               </div>
-              <div className={`${isTablet ? 'w-full max-w-md' : 'w-1/2 pl-32'} flex items-center ${isTablet ? 'justify-center' : ''}`}>
-                <form className="w-full max-w-md mb-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200">
+              <div className={`${isTablet ? 'w-full max-w-lg' : 'w-1/2 pl-[4rem]'} flex items-center ${isTablet ? 'justify-center' : ''}`}>
+                <form className="w-full max-w-lg mb-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                 
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>

@@ -104,7 +104,7 @@ const ActivityShowcase = () => {
               Notre ambition est de vous servir tout en mettant en œuvre les meilleures pratiques issues du savoir-faire acquis au cours des nombreux projets réalisés pour différents clients.
             </p>
           </div>
-          <div className="w-full flex justify-center p-6 bg-[#F9FAFB]">
+          <div className="w-full flex justify-center p-4 pt-7 bg-[#F9FAFB]">
               <div className="bg-white shadow-lg rounded-lg p-7 flex flex-wrap justify-center mx-auto max-w-4xl">
                     
                   <div className="w-full md:w-1/2  md:pr-6 md:space-y-6">

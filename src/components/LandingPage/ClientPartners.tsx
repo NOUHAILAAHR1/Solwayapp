@@ -56,12 +56,12 @@ const ClientPartners = () => {
   return (
     <main className="w-full bg-slate-50 py-12 px-4">
     
-      <div className="hidden lg:block ipad-pro:hidden">
-        <div className="flex flex-row justify-between items-center max-w-6xl mx-auto gap-12">
-          <div className="w-1/2">
+      <div className="hidden lg:block ipad-pro:hidden ">
+        <div className="flex flex-row justify-between items-center max-w-[75rem]  mx-auto gap-10">
+          <div className="">
             <h1 className="text-3xl font-bold mb-4">Ils nous font confiance</h1>
           </div>
-          <div className="w-1/2">
+          <div className="">
             <PartnerGrid 
               firstRow={firstRow} 
               secondRow={secondRow} 

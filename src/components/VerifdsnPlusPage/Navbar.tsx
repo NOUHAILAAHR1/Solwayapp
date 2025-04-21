@@ -29,11 +29,11 @@ const Navbar = () => {
       <div className="hidden md:flex flex-col w-full">
         <div className="w-full flex flex-row items-center justify-between px-14 py-6">
           <div className="flex items-center space-x-6">
-            <div className="w-24 h-8">
+            <div className="w-24">
               <img
                 src="./src/assets/img/logo.png"
                 alt="Logo"
-                className="w-36 h-10"
+                className="w-36 "
               />
             </div>
             <div>

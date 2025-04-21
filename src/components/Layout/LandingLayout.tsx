@@ -5,11 +5,14 @@ import { CookiesProvider } from 'react-cookie';
 import { X } from 'lucide-react';
 
 const LandingLayout = ({ children, footerBgColor = "#F9FAFB", theme = "yellow" }) => {
-  const [showCookieBar, setShowCookieBar] = useState(true);
+  const [showCookieBar, setShowCookieBar] = useState(false);
   
   useEffect(() => {
-    const cookieExists = document.cookie.split(';').some(item => item.trim().startsWith('solway-cookie-consent='));
-    if (!cookieExists) {
+    const cookieDecisionExists = document.cookie.split(';').some(item => 
+      item.trim().startsWith('solway-cookie-consent=')
+    );
+
+    if (!cookieDecisionExists) {
       setShowCookieBar(true);
     }
   }, []);
@@ -28,6 +31,7 @@ const LandingLayout = ({ children, footerBgColor = "#F9FAFB", theme = "yellow" }
     setShowCookieBar(false);
   };
   
+  // Cette fonction ne fait que cacher temporairement la bannière
   const closeCookieBar = () => {
     setShowCookieBar(false);
   };

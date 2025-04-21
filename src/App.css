@@ -2,5 +2,11 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #F9FAFB; 
+  background-color: #F9FAFB;
+}
+
+@media (min-width: 1024px) and (min-height: 1366px) {
+  .ipad-pro\:bg-white {
+    background-color: white !important;
+  }
 }

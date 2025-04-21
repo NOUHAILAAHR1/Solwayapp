@@ -44,8 +44,8 @@ const Navbar = () => {
       <div className="hidden md:flex items-start justify-between w-full h-screen">
         <div className="w-1/2 lg:w-1/2 md:w-3/4 ipad-pro:w-3/4 lg:pl-14 md:pl-8 flex flex-col items-start justify-center pl-14 space-y-6">
           <div className="flex flex-row items-center space-x-6 mt-6 mb-20">
-            <div className="md:w-24 h-8">
-              <img src="./src/assets/img/logo.png" alt="Logo" className="w-36 h-10" />
+            <div className="md:w-24 ">
+              <img src="./src/assets/img/logo.png" alt="Logo" className="w-36 " />
             </div>
             <div>
               <ul className="flex space-x-6 text-lg font-semibold text-black">

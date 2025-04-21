@@ -26,13 +26,13 @@ const SolutionsShowcase = () => {
   ];
 
   const SolutionCard = ({ solution }) => (
-    <div className="bg-white shadow-lg rounded-lg overflow-hidden w-full lg:w-[23rem] md:w-80 h-[25rem] ">
+    <div className="bg-white shadow-lg rounded-lg overflow-hidden w-full lg:w-[24rem] md:w-80 max-h-screen ">
       <div className="h-52 p-4 flex items-center justify-center">
         <img src={solution.img} alt={solution.alt} className="max-h-full max-w-full object-contain" />
       </div>
-      <div className="p-4 h-44 text-center ">
+      <div className="p-6 text-center ">
         <h2 className="text-xl font-semibold">{solution.title}</h2>
-        <p className="text-gray-600 mt-2 ">{solution.description}</p>
+        <p className="text-gray-600 mt-2  ">{solution.description}</p>
       </div>
     </div>
   );
@@ -56,7 +56,7 @@ const SolutionsShowcase = () => {
           backgroundPositionY: "center",
         }}
       >
-        <div className="flex justify-center gap-8  px-8">
+        <div className="flex justify-center gap-5  px-8">
           {solutionsData.map((solution, index) => (
             <SolutionCard key={index} solution={solution} />
           ))}
