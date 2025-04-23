@@ -1,4 +1,4 @@
-import Navbar from '../components/AssociationSolwayPage/Navbar';
+import Hero from '../components/AssociationSolwayPage/Hero';
 
 
 
@@ -10,7 +10,7 @@ import Navbar from '../components/AssociationSolwayPage/Navbar';
 function SolwayInvoice() {
   return (
       <div >
-      <Navbar/>
+      <Hero/>
       </div>
         
   );}

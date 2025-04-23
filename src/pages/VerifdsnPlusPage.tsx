@@ -1,4 +1,4 @@
-import Navbar from '../components/VerifdsnPlusPage/Navbar';
+import Hero from '../components/VerifdsnPlusPage/Hero';
 import PayrollSettings from '../components/VerifdsnPage/PayrollSettings';
 import PayrollSlider from '../components/VerifdsnPage/PayrollSlider';
 
@@ -10,7 +10,7 @@ import PayrollSlider from '../components/VerifdsnPage/PayrollSlider';
 function VerifdsnPlus() {
   return (
       <div>
-        <Navbar/>
+        <Hero/>
         <PayrollSettings/>
         < PayrollSlider/>
      

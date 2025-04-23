@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/LandingPage/Navbar';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -24,6 +25,7 @@ import AssociationLayout from './components/Layout/AssociationLayout';
 const OffreEmploiLayout = ({ children, theme }) => {
   return (
     <div className="min-h-screen bg-gray-50 ipad-pro:bg-white">
+      <Navbar alwaysWhite={true} />
       <WhiteFooterLayout theme={theme}>
         {children}
       </WhiteFooterLayout>
@@ -50,9 +52,9 @@ function App() {
        
        
         <Route path="/about" element={
-          <DefaultLayout theme="yellow">
+           <LandingLayout theme="yellow">
             <AboutPage />
-          </DefaultLayout>
+          </LandingLayout>
         } />
         <Route path="/verifdsn" element={
           <DefaultLayout theme="yellow">
@@ -65,7 +67,7 @@ function App() {
           </DefaultLayout>
         } />
         <Route path="/contact" element={
-          <DefaultLayout theme="yellow">
+          <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <ContactPage />
           </DefaultLayout>
         } />
@@ -95,17 +97,18 @@ function App() {
           </OffreEmploiLayout>
         } />
         <Route path="/CandidaturePage" element={
-          <DefaultLayout theme="yellow">
+          <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <CandidaturePage />
           </DefaultLayout>
         } />
          <Route path="/NosmissionsPage" element={
-          <DefaultLayout theme="yellow">
+        <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <NosmissionsPage />
           </DefaultLayout>
         } />
+        
          <Route path="/VosmissionsPage" element={
-          <DefaultLayout theme="yellow">
+          <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <VosmissionsPage/>
           </DefaultLayout>
         } />

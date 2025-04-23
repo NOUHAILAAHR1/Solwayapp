@@ -4,14 +4,19 @@ import Footer from '../LandingPage/Footer';
 import { CookiesProvider } from 'react-cookie';
 import { X } from 'lucide-react';
 
-const LandingLayout = ({ children, footerBgColor = "#F9FAFB", theme = "yellow" }) => {
+const LandingLayout = ({ 
+  children, 
+  footerBgColor = "#F9FAFB", 
+  theme = "yellow",
+  alwaysWhiteNavbar = false 
+}) => {
   const [showCookieBar, setShowCookieBar] = useState(false);
   
   useEffect(() => {
     const cookieDecisionExists = document.cookie.split(';').some(item => 
       item.trim().startsWith('solway-cookie-consent=')
     );
-
+    
     if (!cookieDecisionExists) {
       setShowCookieBar(true);
     }
@@ -30,8 +35,7 @@ const LandingLayout = ({ children, footerBgColor = "#F9FAFB", theme = "yellow" }
     document.cookie = `solway-cookie-consent=false; expires=${date.toUTCString()}; path=/`;
     setShowCookieBar(false);
   };
-  
-  // Cette fonction ne fait que cacher temporairement la bannière
+
   const closeCookieBar = () => {
     setShowCookieBar(false);
   };
@@ -39,7 +43,7 @@ const LandingLayout = ({ children, footerBgColor = "#F9FAFB", theme = "yellow" }
   return (
     <CookiesProvider>
       <div className="flex flex-col min-h-screen">
-        <Navbar />
+        <Navbar alwaysWhite={alwaysWhiteNavbar} />
         <div className="flex-grow">
           {children}
         </div>

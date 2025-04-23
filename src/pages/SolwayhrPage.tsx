@@ -1,4 +1,4 @@
-import Navbar from '../components/SolwayhrPage/Navbar';
+import Hero from '../components/SolwayhrPage/Hero';
 import PayrollSliders from '../components/SolwayhrPage/PayrollSliders';
 
 
@@ -10,7 +10,7 @@ import PayrollSliders from '../components/SolwayhrPage/PayrollSliders';
 function SolwayrhPage() {
   return (
       <div>
-        <Navbar/>
+        <Hero/>
         <PayrollSliders/>
       
       </div>

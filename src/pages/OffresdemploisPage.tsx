@@ -1,4 +1,4 @@
-import Navbar from '../components/OffresdemploisPage/Navbar';
+import Hero from '../components/OffresdemploisPage/Hero';
 
 
 
@@ -10,7 +10,7 @@ import Navbar from '../components/OffresdemploisPage/Navbar';
 function OffresdemploisPage() {
   return (
       <div>
-       <Navbar/>
+        <Hero/>
        
       </div>
         

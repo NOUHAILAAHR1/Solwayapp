@@ -1,11 +1,11 @@
-import Navbar from '../components/CandidaturePage/Navbar';
+import Hero from '../components/CandidaturePage/Hero';
 
 
 
 function CandidaturePage() {
   return (
       <div>
-       <Navbar/>
+       <Hero/>
       </div>
         
   );}

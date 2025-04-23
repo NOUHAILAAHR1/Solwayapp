@@ -1,11 +1,11 @@
-import Navbar from '../components/NosmissionsPage/Navbar';
+import Hero from '../components/NosmissionsPage/Hero';
 
 
 
 function NosmissionsPage() {
   return (
       <div>
-       <Navbar/>
+        <Hero/>
       </div>
         
   );}

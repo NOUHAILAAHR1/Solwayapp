@@ -1,4 +1,4 @@
-import Navbar from '../components/SoldeskPage/Navbar';
+import Hero from '../components/SoldeskPage/Hero';
 
 
 
@@ -10,7 +10,7 @@ import Navbar from '../components/SoldeskPage/Navbar';
 function SolwaySynchronisationHRPage() {
   return (
       <div>
-       <Navbar/>
+       <Hero/>
        
       </div>
         

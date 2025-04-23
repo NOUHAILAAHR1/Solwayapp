@@ -1,11 +1,14 @@
 import React from 'react';
+import Navbar from '../LandingPage/Navbar';
 import Footer from '../LandingPage/Footer';
+import AssociationSolway from '../AssociationSolwayPage/Hero';
 
-export const AssociationLayout = ({ children }) => {
+const AssociationLayout = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <Navbar alwaysWhite={true} />
       <div className="flex-grow">
-        {children}
+        <AssociationSolway />
       </div>
       <Footer theme="green" />
     </div>

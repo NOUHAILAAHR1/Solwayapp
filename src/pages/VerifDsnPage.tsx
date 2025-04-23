@@ -1,4 +1,4 @@
-import Navbar from '../components/VerifdsnPage/Navbar'
+import Hero from '../components/VerifdsnPage/Hero'
 import PayrollSettings from '../components/VerifdsnPage/PayrollSettings';
 import PayrollSlider from '../components/VerifdsnPage/PayrollSlider';
 import SolwayRecruitment from '../components/VerifdsnPage/SolwayRecruitment';
@@ -10,7 +10,7 @@ import SolwayRecruitment from '../components/VerifdsnPage/SolwayRecruitment';
 function VerifdsnPage() {
   return (
       <div>
-        <Navbar/>
+        <Hero/>
         <PayrollSettings/>
         < PayrollSlider/>
         <SolwayRecruitment/>

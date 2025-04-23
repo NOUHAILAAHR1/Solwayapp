@@ -1,4 +1,4 @@
-import Navbar from '../components/AboutPage/Navbar';
+import Hero from '../components/AboutPage/Hero';
 import SolwayIntroSection from '../components/AboutPage/SolwayIntroSection';
 import SolwayRecrute from '../components/AboutPage/SolwayRecrute';
 
@@ -10,7 +10,7 @@ import SolwayRecrute from '../components/AboutPage/SolwayRecrute';
 function AboutPage() {
   return (
       <div>
-        <Navbar />
+        <Hero/>
         <SolwayIntroSection/>
         <SolwayRecrute/>
     

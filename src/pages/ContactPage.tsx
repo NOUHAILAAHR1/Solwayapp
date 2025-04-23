@@ -1,11 +1,11 @@
-import Navbar from '../components/ContactPage/Navbar';
+import Hero from '../components/ContactPage/Hero';
 import SolwayRecrute from '../components/AboutPage/SolwayRecrute';
 
 
 function ContactPage() {
   return (
       <div>
-        <Navbar />
+        <Hero/>
         <SolwayRecrute/>
      
       </div>
