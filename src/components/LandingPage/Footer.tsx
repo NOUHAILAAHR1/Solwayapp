@@ -10,21 +10,21 @@ const Footer = ({ bgColor = "#F9FAFB", theme = "yellow" }) => {
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
           <div className="text-center max-w-[55rem] lg:max-w-[55rem] ipad-pro:max-w-[45rem] md:max-w-[30rem] mx-auto">
             <p className="text-lg">
-              Copyright © 2024 Solway | All Rights Reserved{' '}
+              Copyright © 2024 Solway | Tous droits réservés{' '}
               <a href="#" className={theme === "green" ? "text-[#22C55E] underline hover:text-green-300" : "text-[#E0AC00] underline hover:text-yellow-300"}>
-                Terms of Service
+              Conditions d'utilisation
               </a>{' '}
               |{' '}
               <a href="#" className={theme === "green" ? "text-[#22C55E] underline hover:text-green-300" : "text-[#E0AC00] underline hover:text-yellow-300"}>
-                Privacy Policy
+              Politique de confidentialité
               </a>{' '}
               |{' '}
               <a href="#" className={theme === "green" ? "text-[#22C55E] underline hover:text-green-300" : "text-[#E0AC00] underline hover:text-yellow-300"}>
-                Cookies Policy
+              Politique des cookies
               </a>{' '}
               |{' '}
               <a href="#" className={theme === "green" ? "text-[#22C55E] underline hover:text-green-300" : "text-[#E0AC00] underline hover:text-yellow-300"}>
-                Contact Support
+              Contacter le support
               </a>
             </p>
           </div>

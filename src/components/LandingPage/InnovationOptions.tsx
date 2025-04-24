@@ -86,7 +86,7 @@ const InnovationOptions = () => {
                 <h1 className="font-bold text-2xl">{selectedContent.title}</h1>
                 <p className="mt-4 text-gray-600">{selectedContent.text}</p>
                 <Link to={selectedContent.link} className="text-[#E0AC00] font-bold pt-2 cursor-pointer flex items-center">
-                  Discover <ArrowRight className="ml-2 mt-1" size={18} />
+                Découvrez <ArrowRight className="ml-2 mt-1" size={18} />
                 </Link>
               </div>
 
@@ -136,7 +136,7 @@ const InnovationOptions = () => {
               <h1 className="font-bold text-2xl text-left">{selectedContent.title}</h1>
               <p className="mt-4 text-gray-600 text-left">{selectedContent.text}</p>
               <Link to={selectedContent.link} className="text-[#E0AC00] font-bold pt-2 cursor-pointer flex items-center">
-                Discover <ArrowRight className="ml-2 mt-1" size={18} />
+              Découvrez <ArrowRight className="ml-2 mt-1" size={18} />
               </Link>
             </div>
             
@@ -178,7 +178,7 @@ const InnovationOptions = () => {
             <p className="mt-4 text-gray-600 w-full text-center">{selectedContent.text}</p>
             <div className="w-full flex justify-start mt-4">
               <Link to={selectedContent.link} className="text-black font-bold cursor-pointer flex items-center">
-                Discover <ArrowRight className="ml-2 mt-1" size={18} />
+                Découvrez <ArrowRight className="ml-2 mt-1" size={18} />
               </Link>
             </div>
           

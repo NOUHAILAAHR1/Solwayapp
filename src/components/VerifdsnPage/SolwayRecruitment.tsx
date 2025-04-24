@@ -8,7 +8,7 @@ const SolwayRecruitment = () => {
       <div className="hidden xl:flex w-full bg-[#E0AC00] items-center justify-between px-20 2xl:px-40 py-16">
         <div className="w-1/2 space-y-6 px-6">
           <h1 className="text-4xl 2xl:text-5xl font-extrabold text-white">
-            Excited to work together on your next project
+           Ravi de travailler ensemble sur votre prochain projet
           </h1>
           <p className="text-white text-lg">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor mattis sit phasellus mollis sit aliquam sit nullam neques.
@@ -29,7 +29,7 @@ const SolwayRecruitment = () => {
       <div className="hidden lg:flex xl:hidden w-full bg-[#E0AC00] px-4 lg:p-16 ipad-pro:p-6 mx-auto items-center">
         <div className="lg:w-1/2 ipad-pro:w-[50rem] py-4 ipad-pro:px-2 lg:px-10">
           <h1 className="font-extrabold text-4xl text-white mb-3">
-            Excited to work together on your next project
+            Ravi de travailler ensemble sur votre prochain projet
           </h1>
           <p className="mt-4 text-white text-lg mb-4">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor mattis sit phasellus mollis sit aliquam sit nullam neques.
@@ -47,7 +47,7 @@ const SolwayRecruitment = () => {
       <div className="hidden lg:hidden md:flex w-full bg-[#E0AC00] p-6 mx-auto items-center">
         <div className="w-4/6 pt-6 px-4">
           <h1 className="font-extrabold text-3xl text-white mb-3">
-            Excited to work together on your next project
+          Ravi de travailler ensemble sur votre prochain projet
           </h1>
           <p className="mt-3 text-white text-base mb-3">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor mattis sit phasellus mollis sit aliquam sit nullam neques.

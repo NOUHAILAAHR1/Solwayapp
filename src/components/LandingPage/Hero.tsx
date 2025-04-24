@@ -9,8 +9,8 @@ const Hero = () => {
       <div className="hidden md:flex items-start justify-between w-full h-screen">
         <div className="w-1/2 lg:w-1/2 md:w-3/4 ipad-pro:w-3/4 lg:pl-14  lg:pt-36 md:pl-8  md:pt-52 flex flex-col items-start justify-center pl-14 space-y-6">
           <h1 className="text-3xl font-bold">
-            Welcome to <span className="md:text-[#E0AC00] ipad-pro:text-[#E0AC00] lg:text-black">SOLWAY Consulting & Services </span>
-            <span className="lg:text-[#E0AC00] ipad-pro:text-black">Cross our way, Find your solution.</span>
+          Bienvenue chez <span className="md:text-[#E0AC00] ipad-pro:text-[#E0AC00] lg:text-black">SOLWAY Consulting & Services </span>
+            <span className="lg:text-[#E0AC00] ipad-pro:text-black">Croisez notre chemin, trouvez votre solution.</span>
           </h1>
           <p className="max-w-lg text-lg">
             Libérez le potentiel de votre entreprise avec des solutions sur
@@ -40,9 +40,9 @@ const Hero = () => {
 
       <div className="md:hidden w-full flex flex-col items-center text-center pt-20">
         <h1 className="text-3xl p-6 font-bold">
-          Welcome to{" "}
+        Bienvenue chez{" "}
           <span className="text-[#E0AC00] "> SOLWAY Consulting & Services </span>
-          Cross our way, Find your solution.
+          Croisez notre chemin, trouvez votre solution.
         </h1>
         <p className="max-w-lg text-lg px-4">
           Libérez le potentiel de votre entreprise avec des solutions sur

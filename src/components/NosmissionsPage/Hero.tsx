@@ -73,7 +73,7 @@ const Hero  = () => {
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
                   required
                 >
-                  <option value="">—Please choose an option—</option>
+                  <option value="">—Veuillez choisir une option—</option>
                   <option value="developpeur-fullstack">Développeur Full Stack</option>
                   <option value="developpeur-frontend">Développeur Frontend</option>
                   <option value="developpeur-backend">Développeur Backend</option>
@@ -92,7 +92,7 @@ const Hero  = () => {
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
                   required
                 >
-                  <option value="">—Please choose an option—</option>
+                  <option value="">—Veuillez choisir une option—</option>
                   <option value="etudiant">Étudiant</option>
                   <option value="stage">Stage</option>
                   <option value="junior">Junior (0-2 ans)</option>
@@ -131,14 +131,14 @@ const Hero  = () => {
                   />
                   <div className="w-full flex items-center">
                     <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] text-left truncate">
-                      {fileName || " No file selected"}
+                      {fileName || " Aucun fichier sélectionné"}
                     </div>
                     <button 
                       type="button" 
                       onClick={() => triggerFileInput(mobileFileInputRef)}
                       className="bg-[#F9FAFB] text-[#374151] p-2 rounded-r-md border-t border-r border-b border-[#D1D5DB] hover:bg-gray-300"
                     >
-                      Choose file
+                      Choisir un fichier
                     </button>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ const Hero  = () => {
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]" 
                       required
                     >
-                      <option value="">—Please choose an option—</option>
+                      <option value="">—Veuillez choisir une option—</option>
                       <option value="developpeur-fullstack">Développeur Full Stack</option>
                       <option value="developpeur-frontend">Développeur Frontend</option>
                       <option value="developpeur-backend">Développeur Backend</option>
@@ -228,7 +228,7 @@ const Hero  = () => {
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]" 
                       required
                     >
-                      <option value="">—Please choose an option—</option>
+                      <option value="">—Veuillez choisir une option—</option>
                       <option value="etudiant">Étudiant</option>
                       <option value="stage">Stage</option>
                       <option value="junior">Junior (0-2 ans)</option>
@@ -267,14 +267,14 @@ const Hero  = () => {
                       />
                       <div className="w-full flex items-center">
                         <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] truncate">
-                          {fileName || " No file selected"}
+                          {fileName || " Aucun fichier sélectionné"}
                         </div>
                         <button 
                           type="button" 
                           onClick={() => triggerFileInput(fileInputRef)}
                           className="bg-[#F9FAFB] text-[#374151] p-2 rounded-r-md border-t border-r border-b border-[#D1D5DB] hover:bg-gray-300"
                         >
-                          Choose file
+                          Choisir un fichier
                         </button>
                       </div>
                     </div>

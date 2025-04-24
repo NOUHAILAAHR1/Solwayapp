@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 const Hero = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [fileName, setFileName] = useState("No file selected");
+  const [fileName, setFileName] = useState("Aucun fichier sélectionné");
   const isTablet = windowWidth >= 768 && windowWidth <= 1024;
   const fileInputRef = useRef(null);
   const mobileFileInputRef = useRef(null);
@@ -17,7 +17,7 @@ const Hero = () => {
     if (e.target.files[0]) {
       setFileName(e.target.files[0].name);
     } else {
-      setFileName("No file selected");
+      setFileName("Aucun fichier sélectionné");
     }
   };
 
@@ -34,7 +34,7 @@ const Hero = () => {
 
   return (
     <>
-     <div className="flex flex-col space-y-9 pt-12">
+     <div className="flex flex-col space-y-9 pt-12 mb-6">
         <div className="md:hidden w-full flex flex-col items-center text-center pt-6">
           <h1 className="text-3xl font-extrabold text-[#000000] pt-5">SOLWAY <br/>Vos Missions</h1>
           <p className="text-md max-w-xs text-[#000000] p-4">
@@ -87,7 +87,7 @@ const Hero = () => {
                 <select
                   className={selectClass}
                 >
-                  <option value="">—Please choose an option—</option>
+                  <option value="">—Veuillez choisir une option—</option>
                   <option value="etudiant">Étudiant</option>
                   <option value="stage">Stage</option>
                   <option value="junior">Junior (0-2 ans)</option>
@@ -131,7 +131,7 @@ const Hero = () => {
                 <select
                   className={selectClass}
                 >
-                  <option value="">—Please choose an option—</option>
+                  <option value="">—Veuillez choisir une option—</option>
                   <option value="presentiel">Présentiel</option>
                   <option value="remote">Remote</option>
                   <option value="hybride">Hybride</option>
@@ -156,7 +156,7 @@ const Hero = () => {
                       onClick={() => triggerFileInput(mobileFileInputRef)}
                       className="bg-white text-gray-700 p-2 rounded-r-md border border-gray-300 hover:bg-gray-300 transition duration-200 text-sm h-9"
                     >
-                      Choose file
+                     Choisir un fichier
                     </button>
                   </div>
                 </div>
@@ -190,7 +190,7 @@ const Hero = () => {
                   </p>
                 </div>
               </div>
-              <div className={`${isTablet ? 'w-full max-w-lg' : 'w-1/2 pl-24'} flex items-center ${isTablet ? 'justify-center' : ''}`}>
+              <div className={`${isTablet ? 'w-full max-w-lg' : 'w-1/2 pl-[4rem]'} flex items-center ${isTablet ? 'justify-center' : ''}`}>
                 <form className="w-full max-w-lg mb-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
@@ -240,7 +240,7 @@ const Hero = () => {
                     <select 
                       className={selectClass}
                     >
-                      <option value="">—Please choose an option—</option>
+                      <option value="">—Veuillez choisir une option—</option>
                       <option value="etudiant">Étudiant</option>
                       <option value="stage">Stage</option>
                       <option value="junior">Junior (0-2 ans)</option>
@@ -284,7 +284,7 @@ const Hero = () => {
                     <select 
                       className={selectClass}
                     >
-                      <option value="">—Please choose an option—</option>
+                      <option value="">—Veuillez choisir une option—</option>
                       <option value="presentiel">Présentiel</option>
                       <option value="remote">Remote</option>
                       <option value="hybride">Hybride</option>
@@ -309,7 +309,7 @@ const Hero = () => {
                           onClick={() => triggerFileInput(fileInputRef)}
                           className="bg-white text-gray-700 p-2 rounded-r-md border border-gray-300 hover:bg-gray-300 transition duration-200 text-sm h-9"
                         >
-                          Choose file
+                          Choisir un fichier
                         </button>
                       </div>
                     </div>

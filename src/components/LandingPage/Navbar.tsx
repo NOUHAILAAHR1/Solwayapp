@@ -73,18 +73,18 @@ const Navbar = ({ alwaysWhite = false }) => {
   return (
     <nav className={`fixed top-0 left-0 right-0 w-full transition-all duration-300 z-50 ${navBgClass}`}>
 
-      <div className="hidden md:flex items-center w-full px-8 lg:px-14 py-6">
+      <div className="hidden md:flex items-center w-full px-7 lg:px-14 py-6">
         <div className="flex items-center">
           <div className="mr-8">
           <Link to="/" className="cursor-pointer" onClick={handleNavLinkClick}><img src={logo} alt="Logo" className="w-24" /></Link>
           </div>
           <div>
-            <ul className="flex space-x-6 text-lg font-semibold text-black">
-              <li><Link to="/" className="cursor-pointer" onClick={handleNavLinkClick}>Home</Link></li>
-              <li><Link to="/features" className="cursor-pointer" onClick={handleNavLinkClick}>Features</Link></li>
+            <ul className="flex space-x-5 text-lg font-semibold text-black">
+              <li><Link to="/" className="cursor-pointer" onClick={handleNavLinkClick}>Accueil</Link></li>
+              <li><Link to="/features" className="cursor-pointer" onClick={handleNavLinkClick}>Fonctionnalités</Link></li>
               <li><Link to="/clients" className="cursor-pointer" onClick={handleNavLinkClick}>Clients</Link></li>
               <li><Link to="/contact" className="cursor-pointer" onClick={handleNavLinkClick}>Contact</Link></li>
-              <li ref={moreButtonRef} className="cursor-pointer" onClick={() => setIsMoreOpen(!isMoreOpen)}>More</li>
+              <li ref={moreButtonRef} className="cursor-pointer" onClick={() => setIsMoreOpen(!isMoreOpen)}>Plus</li>
             </ul>
           </div>
         </div>
@@ -141,12 +141,12 @@ const Navbar = ({ alwaysWhite = false }) => {
         <div ref={menuRef} className="absolute top-[64px] left-1/2 transform -translate-x-1/2 w-[80%] bg-zinc-50 max-w-[400px] z-50 p-6 flex flex-col items-center space-y-6 shadow-lg">
           {!mobileMoreOpen ? (
             <ul className="text-lg font-semibold text-black space-y-4 w-full">
-              <li className="cursor-pointer pt-4 w-full text-center"><Link to="/" onClick={handleNavLinkClick}>Home</Link></li>
-              <li className="cursor-pointer border-t pt-4 w-full text-center"><Link to="/features" onClick={handleNavLinkClick}>Features</Link></li>
+              <li className="cursor-pointer pt-4 w-full text-center"><Link to="/" onClick={handleNavLinkClick}>Accueil</Link></li>
+              <li className="cursor-pointer border-t pt-4 w-full text-center"><Link to="/features" onClick={handleNavLinkClick}>Fonctionnalités</Link></li>
               <li className="cursor-pointer border-t pt-4 w-full text-center"><Link to="/clients" onClick={handleNavLinkClick}>Clients</Link></li>
               <li className="cursor-pointer border-t pt-4 w-full text-center"><Link to="/contact" onClick={handleNavLinkClick}>Contact</Link></li>
               <li className="cursor-pointer flex items-center justify-center border-t pt-4 w-full text-center" onClick={() => setMobileMoreOpen(true)}>
-                More <ArrowRight size={16} className="ml-1" />
+              Plus <ArrowRight size={16} className="ml-1" />
               </li>
             </ul>
           ) : (
@@ -155,7 +155,7 @@ const Navbar = ({ alwaysWhite = false }) => {
                 onClick={() => setMobileMoreOpen(false)}
                 className="flex items-center bg-slate-100 border border-gray-300 p-2 rounded-lg"
               >
-                <ArrowLeft size={16} className="mr-2" /> Back
+                <ArrowLeft size={16} className="mr-2" /> Retour
               </button>
               <div className="space-y-6 w-full">
                 <div>

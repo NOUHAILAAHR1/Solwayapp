@@ -74,7 +74,7 @@ const Hero = () => {
                       <img src={solwayetape3} alt="Etape 3" className="max-w-full h-auto rounded-lg" />
                     </div>
                     <div className="w-full lg:w-1/2 md:w-1/2 pl-0 lg:pl-6 md:pl-4 mb-6 lg:mb-0 md:mb-0 text-center lg:text-left md:text-left">
-                      <h2 className="text-2xl font-extrabold mb-4">Highly effective solutions</h2>
+                      <h2 className="text-2xl font-extrabold mb-4">Solutions hautement efficaces</h2>
                       <h4 className="text-lg font-normal mb-3">Cet écran vous permet de sélectionner les matricules à synchroniser.</h4>
                       <ul className="list-disc pl-5  text-medium text-[#030712] font-normal">
                         <li>Soit en sélectionnant directement les matricules concernées.</li>
@@ -154,7 +154,7 @@ const Hero = () => {
 
               <div className="space-y-4 pt-10 ">
                 <div>
-                  <h2 className="text-2xl font-extrabold mb-6 text-center">Highly effective solutions</h2>
+                  <h2 className="text-2xl font-extrabold mb-6 text-center">Solutions hautement efficaces</h2>
                   <h4 className="text-lg font-normal mb-3 text-left">Cet écran vous permet de sélectionner les matricules à synchroniser.</h4>
                   <ul className="list-disc pl-5 mb-4 pt-6 text-medium text-[#030712] font-normal">
                     <li>Soit en sélectionnant directement les matricules concernées.</li>

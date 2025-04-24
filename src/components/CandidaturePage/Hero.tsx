@@ -37,8 +37,7 @@ const  Hero  = () => {
           <h1 className="text-3xl font-extrabold text-[#000000] p-6">SOLWAY Recrute<br/>
           Déposez votre candidature</h1>
           <p className="text-md max-w-xs text-[#000000]">
-            Train people well enough so they can leave.<br/>
-            Treat them well enough so they don't want to.
+          Formez suffisamment bien les gens pour qu'ils puissent partir. <br/> Traitez-les suffisamment bien pour qu'ils ne veuillent pas partir.
           </p>
 
           <div className="w-full px-4 pt-6">
@@ -105,14 +104,14 @@ const  Hero  = () => {
                   />
                   <div className="w-full flex items-center">
                     <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] text-left truncate">
-                      {fileName || " No file selected"}
+                      {fileName || " Aucun fichier sélectionné"}
                     </div>
                     <button 
                       type="button" 
                       onClick={() => triggerFileInput(mobileFileInputRef)}
                       className="bg-[#F9FAFB] text-[#374151] p-2 rounded-r-md border-t border-r border-b border-[#D1D5DB] hover:bg-gray-300"
                     >
-                      Choose file
+                      Choisir un fichier
                     </button>
                   </div>
                 </div>
@@ -144,9 +143,9 @@ const  Hero  = () => {
                     Déposez votre candidature
                   </h1>
                   <p className={`text-medium text-[#000000] ${isTablet ? 'mx-auto' : 'max-w-xl'}`}>
-                    Train people well enough so they can leave.
+                  Formez suffisamment bien les gens pour qu'ils puissent partir
                   </p>
-                  <p>Treat them well enough so they don't want to.</p>
+                  <p>Traitez-les suffisamment bien pour qu'ils ne veuillent pas partir.</p>
                 </div>
               </div>
               <div className={`${isTablet ? 'w-full max-w-lg' : 'w-1/2 pl-[4rem]'} flex items-center ${isTablet ? 'justify-center' : ''}`}>
@@ -213,14 +212,14 @@ const  Hero  = () => {
                       />
                       <div className="w-full flex items-center">
                         <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] truncate">
-                          {fileName || " No file selected"}
+                          {fileName || " Aucun fichier sélectionné"}
                         </div>
                         <button 
                           type="button" 
                           onClick={() => triggerFileInput(fileInputRef)}
                           className="bg-[#F9FAFB] text-[#374151] p-2 rounded-r-md border-t border-r border-b border-[#D1D5DB] hover:bg-gray-300"
                         >
-                          Choose file
+                         Choisir un fichier
                         </button>
                       </div>
                     </div>

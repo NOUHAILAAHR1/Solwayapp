@@ -55,9 +55,9 @@ const LandingLayout = ({
             style={{ zIndex: 9999 }}
           >
             <div className="flex-1 text-center md:text-left mb-3 md:mb-0">
-              We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.{" "}
+               Nous utilisons des cookies pour améliorer votre expérience. En continuant à visiter ce site, vous acceptez notre utilisation des cookies.{" "}
               <a href="/politique-de-confidentialite" className="text-yellow-300 hover:underline">
-                Learn more
+               En savoir plus
               </a>
             </div>
             
@@ -66,14 +66,14 @@ const LandingLayout = ({
                 onClick={declineCookies}
                 className="bg-red-600 text-white px-5 py-2 rounded-lg text-base"
               >
-                Decline
+                Refuser
               </button>
               
               <button
                 onClick={acceptCookies}
                 className="bg-white text-black px-5 py-2 rounded-lg text-base"
               >
-                Accept
+               Accepter
               </button>
               
               <div onClick={closeCookieBar} className="cursor-pointer ml-2 px-3">

@@ -79,15 +79,15 @@ const Hero = () => {
         
             <div className="w-full">
               <div className="border-2 border-[#E7F0FA] rounded-lg bg-white">
-                <div className="p-6">
-                  <h1 className="text-xl font-bold mb-6">Job Overview</h1>
+                <div className="p-6 ">
+                  <h1 className="text-xl font-bold mb-6">Aperçu du poste</h1>
                   
                   <div className="grid grid-cols-2 gap-6">
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
                         <CiCalendar size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EMPLOI POSTED:</h4>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EMPLOI PUBLIÉ:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">13/06/2022</h3>
                     </div>
                     
@@ -95,7 +95,7 @@ const Hero = () => {
                       <div className="text-[#E0AC00] mb-2">
                         <LuTimer size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EMPLOI EXPIRE IN:</h4>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EMPLOI EXPIRE LE:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">13/10/2022</h3>
                     </div>
                     
@@ -103,7 +103,7 @@ const Hero = () => {
                       <div className="text-[#E0AC00] mb-2">
                         <PiBriefcaseBold size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">JOB TYPE:</h4>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">TYPE D'EMPLOI:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">Stage</h3>
                     </div>
                     
@@ -119,15 +119,15 @@ const Hero = () => {
                       <div className="text-[#E0AC00] mb-2">
                         <PiBriefcaseBold size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EXPERIENCE:</h4>
-                      <h3 className="text-sm font-medium text-[#18191C]">1-5 Years</h3>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EXPÉRIENCE:</h4>
+                      <h3 className="text-sm font-medium text-[#18191C]">1-5 Ans</h3>
                     </div>
                     
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
                         <SlLocationPin size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">LOCATION:</h4>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">LOCALISATION:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">Rabat</h3>
                     </div>
 
@@ -135,8 +135,8 @@ const Hero = () => {
                       <div className="text-[#E0AC00] mb-2">
                         <IoWalletOutline size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">SALARY:</h4>
-                      <h3 className="text-sm font-medium text-[#18191C]">$100-300/month</h3>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">SALAIRE:</h4>
+                      <h3 className="text-sm font-medium text-[#18191C]">$100-300/mois</h3>
                     </div>
                   </div>
                 </div>
@@ -220,17 +220,17 @@ const Hero = () => {
             </div>
             
            
-            <div className="w-full md:w-1/3">
+            <div className="w-1/3 lg:w-1/3 ipad-pro:w-2/4 md:w-2/4">
               <div className="border-2 border-[#E7F0FA] rounded-lg bg-white">
                 <div className="p-6">
-                  <h1 className="text-xl font-bold mb-6">Job Overview</h1>
+                  <h1 className="text-xl font-bold mb-6">Aperçu du poste</h1>
                   
                   <div className="grid grid-cols-2 gap-6">
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
                         <CiCalendar size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EMPLOI POSTED:</h4>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EMPLOI PUBLIÉ:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">13/06/2022</h3>
                     </div>
                     
@@ -238,7 +238,7 @@ const Hero = () => {
                       <div className="text-[#E0AC00] mb-2">
                         <LuTimer size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EMPLOI EXPIRE IN:</h4>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EMPLOI EXPIRE LE:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">13/10/2022</h3>
                     </div>
                     
@@ -246,7 +246,7 @@ const Hero = () => {
                       <div className="text-[#E0AC00] mb-2">
                         <PiBriefcaseBold size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">JOB TYPE:</h4>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">TYPE D'EMPLOI:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">Stage</h3>
                     </div>
                     
@@ -262,15 +262,15 @@ const Hero = () => {
                       <div className="text-[#E0AC00] mb-2">
                         <PiBriefcaseBold size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EXPERIENCE:</h4>
-                      <h3 className="text-sm font-medium text-[#18191C]">1-5 Years</h3>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">EXPÉRIENCE:</h4>
+                      <h3 className="text-sm font-medium text-[#18191C]">1-5 Ans</h3>
                     </div>
                     
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
                         <SlLocationPin size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">LOCATION:</h4>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">LOCALISATION:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">Rabat</h3>
                     </div>
 
@@ -278,8 +278,8 @@ const Hero = () => {
                       <div className="text-[#E0AC00] mb-2">
                         <IoWalletOutline size={28} />
                       </div>
-                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">SALARY:</h4>
-                      <h3 className="text-sm font-medium text-[#18191C]">$100-300/month</h3>
+                      <h4 className="text-sm uppercase text-[#767F8C] mb-1">SALAIRE:</h4>
+                      <h3 className="text-sm font-medium text-[#18191C]">$100-300/mois</h3>
                     </div>
                   </div>
                 </div>

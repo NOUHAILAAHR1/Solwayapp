@@ -6,7 +6,7 @@ const SolwayIntroSection = () => {
   return (
     <main className="w-full flex flex-col pt-4 bg-[#F9FAFB] relative z-40 ">
       <div className=" w-full  text-center p-5  ">
-        <h4 className="text-[#E0AC00] font-bold">Introducing</h4>
+        <h4 className="text-[#E0AC00] font-bold">Présentation</h4>
         <h1 className="text-4xl mb-4 text-[#111827] font-bold">SOLWAY Consulting & Services</h1>
       </div>
       
@@ -14,7 +14,7 @@ const SolwayIntroSection = () => {
         <div className="bg-[#FFFFFF] shadow-lg rounded-xl overflow-hidden lg:max-w-7xl   ">
           <div className="w-full  p-3 pt-6 pb-6  lg:p-6  lg:pb-6 relative bg-[#FFFFFF]">
             <h1 className="text-3xl font-bold   text-[#111827] mb-6 pl-4 ">
-              About SOLWAY Consulting & Services
+            À propos de SOLWAY Consulting & Services
             </h1>
             
             <div className="space-y-4 pl-4">
@@ -39,7 +39,7 @@ const SolwayIntroSection = () => {
               <div className="w-2  lg:w-1 bg-[#E0AC00] mr-3 h-32 lg:h-24"></div>
               <div>
                 <h2 className="text-xl italic mb-2 font-bold">
-                  "Life shrinks and expands on the proportion of your willingness to take risks and try new things."
+                  "La vie se rétrécit et s'élargit proportionnellement à votre volonté de prendre des risques et d'essayer de nouvelles choses."
                 </h2>
                 <p className="text-xl text-left">- Gary Vaynerchuk</p>
               </div>
