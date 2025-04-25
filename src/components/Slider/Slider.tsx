@@ -13,9 +13,7 @@ const Slider = ({
   const [currentSlide, setCurrentSlide] = useState(0);
   const sliderRef = useRef(null);
   
-
   React.useEffect(() => {
-
     if (autoplay) {
       const interval = setInterval(() => {
         nextSlide();
@@ -39,11 +37,14 @@ const Slider = ({
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  const isFirstSlide = currentSlide === 0;
+  const isLastSlide = currentSlide === slides.length - 1;
+
   const defaultRenderControls = () => (
     <div className="flex flex-col items-center">
       <div className="flex justify-center space-x-7 mb-4">
         <button 
-          className="bg-gray-300 hover:bg-gray-300 border text-white border-gray-300 rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
+          className={`${isFirstSlide ? 'bg-gray-300 hover:bg-gray-300 border-gray-300' : 'bg-yellow-500 hover:bg-yellow-600 border-yellow-500'} border text-white rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center`}
           onClick={prevSlide}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -52,7 +53,7 @@ const Slider = ({
         </button>
         
         <button 
-          className="bg-yellow-500 hover:bg-yellow-600 text-white rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
+          className={`${isLastSlide ? 'bg-gray-300 hover:bg-gray-300 border-gray-300' : 'bg-yellow-500 hover:bg-yellow-600 border-yellow-500'} border text-white rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center`}
           onClick={nextSlide}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -197,7 +198,7 @@ const Slider = ({
       <TabletSlider />
       <MobileSlider />
       
-      {renderControls ? renderControls({ currentSlide, nextSlide, prevSlide, goToSlide }) : defaultRenderControls()}
+      {renderControls ? renderControls({ currentSlide, nextSlide, prevSlide, goToSlide, isFirstSlide, isLastSlide }) : defaultRenderControls()}
     </div>
   );
 };

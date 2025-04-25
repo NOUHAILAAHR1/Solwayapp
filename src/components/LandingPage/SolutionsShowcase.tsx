@@ -1,27 +1,30 @@
+import { useTranslation } from 'react-i18next';
 import containerImage from "../../assets/img/background.png";
 import soldesk from "../../assets/img/soldesk.png";
 import solway from "../../assets/img/solway-invoice.png";
 import soldeskhr from "../../assets/img/soldeskhr.png";
 
 const SolutionsShowcase = () => {
+  const { t } = useTranslation();
+
   const solutionsData = [
     {
       img: soldesk,
-      alt: "Soldesk",
-      title: "SOLDESK",
-      description: "SOLDESK est un outil interne de gestion de tickets permettant de traiter efficacement les demandes clients (anomalies, évolutions, etc.) via une interface simple et rapide."
+      alt: t('solutions.soldesk.alt'),
+      title: t('solutions.soldesk.title'),
+      description: t('solutions.soldesk.description')
     },
     {
       img: soldeskhr,
-      alt: "Soldesk HR",
-      title: "SOLWAY HR",
-      description: "SOLWAY HR est une solution complète pour optimiser la gestion des ressources humaines, couvrant l'embauche, le recrutement, la paie, et plus encore."
+      alt: t('solutions.soldeskhr.alt'),
+      title: t('solutions.soldeskhr.title'),
+      description: t('solutions.soldeskhr.description')
     },
     {
       img: solway,
-      alt: "Solway Invoice",
-      title: "SOLWAY INVOICE",
-      description: "SOLWAY INVOICE est un outil interne qui simplifie la facturation en permettant la saisie facile des comptes rendus d'activité et la génération automatique de factures pour les clients finaux."
+      alt: t('solutions.solwayInvoice.alt'),
+      title: t('solutions.solwayInvoice.title'),
+      description: t('solutions.solwayInvoice.description')
     }
   ];
 
@@ -38,16 +41,15 @@ const SolutionsShowcase = () => {
   );
 
   return (
-    <main className="w-full flex flex-col  bg-slate-50 relative z-40">
+    <main className="w-full flex flex-col bg-slate-50 relative z-40">
       <div className="w-full text-center py-8">
-        <h1 className="text-3xl mb-4 font-bold">Nos Solutions</h1>
+        <h1 className="text-3xl mb-4 font-bold">{t('solutions.title')}</h1>
         <p className="text-gray-500 mx-auto mb-6 max-w-md px-4">
-          Découvrez nos outils pour la gestion des demandes, des ressources humaines et de la facturation.
+          {t('solutions.description')}
         </p>
       </div>
       
-    
-      <div 
+      <div
         className="hidden ipad-pro:hidden lg:block w-full pb-16"
         style={{
           backgroundImage: `url(${containerImage})`,
@@ -56,14 +58,13 @@ const SolutionsShowcase = () => {
           backgroundPositionY: "center",
         }}
       >
-        <div className="flex justify-center gap-5  px-8">
+        <div className="flex justify-center gap-5 px-8">
           {solutionsData.map((solution, index) => (
             <SolutionCard key={index} solution={solution} />
           ))}
         </div>
       </div>
       
-   
       <div className="hidden md:block lg:hidden ipad-pro:block w-full pb-16">
         <div className="flex flex-row justify-between px-8">
           {solutionsData.map((solution, index) => (
@@ -72,7 +73,6 @@ const SolutionsShowcase = () => {
         </div>
       </div>
       
-    
       <div className="block sm:block md:hidden lg:hidden ipad-pro:hidden w-full pb-16">
         <div className="flex flex-col items-center gap-8 px-4">
           {solutionsData.map((solution, index) => (

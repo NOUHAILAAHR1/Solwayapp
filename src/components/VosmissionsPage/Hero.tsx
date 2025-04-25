@@ -35,13 +35,13 @@ const Hero = () => {
   return (
     <>
      <div className="flex flex-col space-y-9 pt-12 mb-6">
-        <div className="md:hidden w-full flex flex-col items-center text-center pt-6">
-          <h1 className="text-3xl font-extrabold text-[#000000] pt-5">SOLWAY <br/>Vos Missions</h1>
-          <p className="text-md max-w-xs text-[#000000] p-4">
-            Déposez vos propositions de missions,<br/>Nous nous occupons du reste
+        <div className="md:hidden px-4  w-full flex flex-col items-center text-center pt-6">
+          <h1 className="text-3xl font-extrabold text-[#000000] mb-4 pt-5">SOLWAY <br/>Vos Missions</h1>
+          <p className="text-md max-w-xs text-[#000000] mb-4">
+            Déposez vos propositions de missions Nous nous occupons du reste
           </p>
 
-          <div className="w-full px-4 pt-6">
+          <div className="w-full  pt-6">
             <form className="w-full bg-white p-4 rounded-lg shadow-lg">
               <div className="mb-4">
                 <label className="block text-left mb-1">Nom (requis)</label>

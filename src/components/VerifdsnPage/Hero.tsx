@@ -14,7 +14,7 @@ const  Hero = () => {
               <div className="md:w-full lg:w-full xl:w-full 2xl:w-full space-y-6 text-center md:text-center lg:text-center">
                 <div>
                   <h1 className="text-3xl font-extrabold text-[#030712] pt-12 mb-4">
-                    VERIF'DSN 
+                  Verif'dsn
                   </h1>
                   <p className="text-medium text-[#030712] max-w-xl mx-auto">
                     Optimisez la gestion de vos DSN comme jamais auparavant ! Détectez les erreurs en un instant, facilitez le travail de vos gestionnaires de paie avec des contrôles rapides et efficaces, et libérez un temps précieux pour vous consacrer à des tâches stratégiques. Avec Verif'DSN, dites adieu aux complications et bonjour à la simplicité et à la performance !
@@ -33,7 +33,7 @@ const  Hero = () => {
         <div className="md:hidden w-full flex flex-col items-center text-center pt-24">
           <div className="p-4">
             <h1 className="text-3xl font-extrabold text-[#030712] mb-4">
-              VERIF'DSN 
+              Verif'dsn
             </h1>
             <p className="text-medium text-[#030712] max-w-xl mx-auto">
               Optimisez la gestion de vos DSN comme jamais auparavant ! Détectez les erreurs en un instant, facilitez le travail de vos gestionnaires de paie avec des contrôles rapides et efficaces, et libérez un temps précieux pour vous consacrer à des tâches stratégiques. Avec Verif'DSN, dites adieu aux complications et bonjour à la simplicité et à la performance !

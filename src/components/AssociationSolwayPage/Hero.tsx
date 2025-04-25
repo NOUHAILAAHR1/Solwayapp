@@ -30,8 +30,8 @@ const Hero = () => {
           }}
         >
           <div className="w-full mx-auto">
-            <div className="bg-white shadow-lg rounded-lg p-6 flex flex-row justify-between items-center">
-              <div className="w-1/2 text-left pl-3">
+            <div className="bg-white shadow-lg rounded-lg p-6 flex flex-row justify-between items-center ">
+              <div className="w-1/2 lg:w-1/2 md:w-1/2 ipad-pro:w-2/3 text-left pl-3">
                 <h1 className="text-5xl lg:text-5xl ipad-pro:text-[36px] md:text-[36px] mb-4 font-extrabold text-[#030712]">ASSOCIATION SOLWAY POUR LA SOLIDARITÉ</h1>
                 <p className="text-medium text-[#030712] mb-4">
                   Conscients de leur responsabilité envers les actions caritatives, les salariés de SOLWAY ont créé l'Association SOLWAY Pour la Solidarité.

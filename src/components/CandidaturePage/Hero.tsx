@@ -37,7 +37,7 @@ const  Hero  = () => {
           <h1 className="text-3xl font-extrabold text-[#000000] p-6">SOLWAY Recrute<br/>
           Déposez votre candidature</h1>
           <p className="text-md max-w-xs text-[#000000]">
-          Formez suffisamment bien les gens pour qu'ils puissent partir. <br/> Traitez-les suffisamment bien pour qu'ils ne veuillent pas partir.
+          Formez suffisamment bien les gens pour qu'ils puissent partir. Traitez-les suffisamment bien pour qu'ils ne veuillent pas partir.
           </p>
 
           <div className="w-full px-4 pt-6">

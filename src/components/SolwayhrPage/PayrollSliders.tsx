@@ -46,7 +46,7 @@ const PayrollSliders = () => {
 
 
   ];
-
+  
   return (
     <div className="container mx-auto py-10">
        <h1 className="text-3xl font-bold text-center">Vérifier toutes les étapes</h1>
@@ -55,6 +55,7 @@ const PayrollSliders = () => {
       <Slider 
         slides={mesSlides}
         autoplayInterval={3000} 
+        containerClassName=" mx-auto"
          />
     </div>
   );

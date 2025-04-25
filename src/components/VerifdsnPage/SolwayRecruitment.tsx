@@ -5,7 +5,7 @@ const SolwayRecruitment = () => {
   return (
     <main className="w-full flex flex-col bg-[#F9FAFB] relative z-40">
       
-      <div className="hidden xl:flex w-full bg-[#E0AC00] items-center justify-between px-20 2xl:px-40 py-16">
+      <div className="hidden xl:flex w-full bg-[#E0AC00] items-center justify-between px-8  py-16">
         <div className="w-1/2 space-y-6 px-6">
           <h1 className="text-4xl 2xl:text-5xl font-extrabold text-white">
            Ravi de travailler ensemble sur votre prochain projet
@@ -62,23 +62,23 @@ const SolwayRecruitment = () => {
       </div>
 
      
-      <div className="flex md:hidden w-full bg-[#E0AC00] shadow-xl p-2 flex-col items-center text-center">
-        <div className="w-full px-2 py-6 mb-5">
+      <div className="flex md:hidden w-full mb-4 bg-[#E0AC00] shadow-xl p-2 flex-col items-center text-center">
+        <div className="w-full px-2 py-7 ">
           <h1 className="font-extrabold text-3xl text-white mb-3">
             Decouvrir verif'dsn plus
           </h1>
-          <p className="mt-2 text-white text-sm mb-8">
+          <p className="mt-2 text-white text-sm mb-6">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor mattis sit phasellus mollis sit aliquam sit nullam neques.
           </p>
           <button className="bg-[#F9FAFB] border border-[#D1D5DB] text-black w-full py-3 hover:bg-gray-300 transition duration-300">
             Voir Plus
           </button>
         </div>
-        <div className="w-full">
+        <div className="w-full mb-6">
           <img
             src={containerImage}
             alt="containerImage"
-            className="w-full pb-6 max-w-[22rem] mx-auto"
+            className="w-full p-2  mx-auto"
           />
         </div>
       </div>

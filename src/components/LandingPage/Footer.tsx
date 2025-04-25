@@ -1,30 +1,49 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 import linkedinImg from "../../assets/img/linkdin.png";
 import threadsImg from "../../assets/img/threads.png";
 import facebookImg from "../../assets/img/facebook.png";
 
 const Footer = ({ bgColor = "#F9FAFB", theme = "yellow" }) => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = () => {
+
+    const newLang = i18n.language === 'fr' ? 'en' : 'fr';
+    i18n.changeLanguage(newLang);
+  };
+
+  const buttonText = i18n.language === 'fr' ? 'English' : 'Français';
+
+  const linkClass = theme === "green" 
+    ? "text-[#22C55E] underline hover:text-green-300" 
+    : "text-[#E0AC00] underline hover:text-yellow-300";
+  
+  const buttonClass = theme === "green" 
+    ? "border border-[#22C55E] text-[#22C55E] px-4 py-2 rounded" 
+    : "border border-[#E0AC00] text-[#E0AC00] px-4 py-2 rounded";
+
   return (
     <footer className={`w-full flex justify-center items-center p-2 ${bgColor}`}>
       <div className="space-x-4">
         <div className="flex flex-col md:flex-row justify-center items-center gap-6">
           <div className="text-center max-w-[55rem] lg:max-w-[55rem] ipad-pro:max-w-[45rem] md:max-w-[30rem] mx-auto">
             <p className="text-lg">
-              Copyright © 2024 Solway | Tous droits réservés{' '}
-              <a href="#" className={theme === "green" ? "text-[#22C55E] underline hover:text-green-300" : "text-[#E0AC00] underline hover:text-yellow-300"}>
-              Conditions d'utilisation
+              {t('copyright')} {' '}
+              <a href="#" className={linkClass}>
+                {t('terms')}
               </a>{' '}
               |{' '}
-              <a href="#" className={theme === "green" ? "text-[#22C55E] underline hover:text-green-300" : "text-[#E0AC00] underline hover:text-yellow-300"}>
-              Politique de confidentialité
+              <a href="#" className={linkClass}>
+                {t('privacy')}
               </a>{' '}
               |{' '}
-              <a href="#" className={theme === "green" ? "text-[#22C55E] underline hover:text-green-300" : "text-[#E0AC00] underline hover:text-yellow-300"}>
-              Politique des cookies
+              <a href="#" className={linkClass}>
+                {t('cookies')}
               </a>{' '}
               |{' '}
-              <a href="#" className={theme === "green" ? "text-[#22C55E] underline hover:text-green-300" : "text-[#E0AC00] underline hover:text-yellow-300"}>
-              Contacter le support
+              <a href="#" className={linkClass}>
+                {t('contact')}
               </a>
             </p>
           </div>
@@ -42,8 +61,11 @@ const Footer = ({ bgColor = "#F9FAFB", theme = "yellow" }) => {
           </div>
           
           <div>
-            <button className={theme === "green" ? "border border-[#22C55E] text-[#22C55E] px-4 py-2 rounded" : "border border-[#E0AC00] text-[#E0AC00] px-4 py-2 rounded"}>
-              English
+            <button 
+              onClick={changeLanguage} 
+              className={buttonClass}
+            >
+              {buttonText}
             </button>
           </div>
         </div>

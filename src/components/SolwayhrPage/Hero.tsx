@@ -88,7 +88,7 @@ const Hero = () => {
             <div className="w-full px-12 pt-12 lg:px-20 md:px-6 ipad-pro:px-8">
               <div className="bg-white shadow-lg rounded-lg p-7 mx-auto">
                 
-                <div className="flex flex-col lg:flex-row md:flex-row justify-between mb-12">
+                <div className="flex flex-col lg:flex-row md:flex-row justify-between items-center mb-12">
                   <div className="w-full lg:w-1/2 pr-0 lg:pr-6 mb-12 lg:mb-0 md:w-1/2 md:pr-4 md:mb-0 text-center lg:text-left md:text-left">
                     <h2 className="text-3xl font-extrabold mb-4 pt-4">Administration du personnel</h2>
                     <p className="text-medium text-[#030712] mb-3">

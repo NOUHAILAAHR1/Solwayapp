@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 import Renault from "../../assets/img/GroupeRenault.png";
 import Etam from "../../assets/img/Etam.png";
 import Happn from "../../assets/img/happn.png";
@@ -6,8 +7,8 @@ import Domusvi from "../../assets/img/Domusvi.png";
 import Vinci from "../../assets/img/vinci.png";
 import Assemblee from "../../assets/img/Assemblee.png";
 
-
 const ClientPartners = () => {
+  const { t } = useTranslation();
 
   const partners = [
     { id: 1, name: "Groupe Renault", image: Renault },
@@ -23,9 +24,9 @@ const ClientPartners = () => {
 
   const PartnerLogo = ({ partner, maxHeight }) => (
     <div className="px-3 flex justify-center">
-      <img 
-        src={partner.image} 
-        alt={partner.name} 
+      <img
+        src={partner.image}
+        alt={partner.name}
         className={`max-h-${maxHeight} w-auto`}
       />
     </div>
@@ -55,17 +56,17 @@ const ClientPartners = () => {
 
   return (
     <main className="w-full bg-slate-50 py-12 px-4">
-    
+      
       <div className="hidden lg:block ipad-pro:hidden ">
-        <div className="flex flex-row justify-between items-center max-w-[75rem]  mx-auto gap-10">
+        <div className="flex flex-row justify-between items-center max-w-[75rem] mx-auto gap-10">
           <div className="">
-            <h1 className="text-3xl font-bold mb-4">Ils nous font confiance</h1>
+            <h1 className="text-3xl font-bold mb-4">{t('clients.title')}</h1>
           </div>
           <div className="">
-            <PartnerGrid 
-              firstRow={firstRow} 
-              secondRow={secondRow} 
-              maxHeight="14" 
+            <PartnerGrid
+              firstRow={firstRow}
+              secondRow={secondRow}
+              maxHeight="14"
               containerClass=""
             />
           </div>
@@ -74,27 +75,27 @@ const ClientPartners = () => {
 
       <div className="hidden md:block lg:hidden ipad-pro:block">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-4">Ils nous font confiance</h1>
+          <h1 className="text-3xl font-bold mb-4">{t('clients.title')}</h1>
         </div>
-        <PartnerGrid 
-          firstRow={firstRow} 
-          secondRow={secondRow} 
-          maxHeight="12" 
+        <PartnerGrid
+          firstRow={firstRow}
+          secondRow={secondRow}
+          maxHeight="12"
           containerClass="max-w-2xl mx-auto"
         />
       </div>
 
       <div className="block md:hidden">
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold mb-3">Ils nous font confiance</h1>
+          <h1 className="text-2xl font-bold mb-3">{t('clients.title')}</h1>
         </div>
         <div className="bg-white shadow-lg rounded-lg p-5 mx-auto">
           <div className="flex flex-wrap justify-center items-center mb-4">
             {firstRow.map((partner) => (
               <div key={partner.id} className="w-1/3 p-2 flex justify-center">
-                <img 
-                  src={partner.image} 
-                  alt={partner.name} 
+                <img
+                  src={partner.image}
+                  alt={partner.name}
                   className="max-h-10 w-auto"
                 />
               </div>
@@ -104,9 +105,9 @@ const ClientPartners = () => {
           <div className="flex flex-wrap justify-center items-center">
             {secondRow.map((partner) => (
               <div key={partner.id} className="w-1/3 p-2 flex justify-center">
-                <img 
-                  src={partner.image} 
-                  alt={partner.name} 
+                <img
+                  src={partner.image}
+                  alt={partner.name}
                   className="max-h-10 w-auto"
                 />
               </div>

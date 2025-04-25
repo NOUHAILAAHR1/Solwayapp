@@ -78,9 +78,9 @@ const PayrollSettings = () => {
   };
 
   return (
-    <main className="w-full flex flex-col bg-[#F9FAFB] pt-10  relative z-40">
-   
-      <div className="hidden lg:block  xl:block xxl:block ipad-pro:hidden w-full text-center py-8 ">
+    <main className="w-full flex flex-col bg-[#F9FAFB] pt-10 relative z-40">
+
+      <div className="hidden lg:block xl:block xxl:block ipad-pro:hidden w-full text-center py-8">
         <h1 className="text-3xl mb-4 font-bold">Contrôler votre DSN qu'en <br/> trois étapes :</h1>
         <div className="flex space-x-6 justify-center pt-6">
           {Object.keys(contentOptions).map((key) => (
@@ -98,7 +98,7 @@ const PayrollSettings = () => {
           ))}
         </div>
         <div className="w-full flex justify-center bg-[#F9FAFB]">
-          <div className="w-full pr-20 pl-20 pt-10 "   
+          <div className="w-full pr-20 pl-20 pt-10"   
             style={{ 
                 backgroundImage: `url(${containerImage})`, 
                 backgroundRepeat: "no-repeat", 
@@ -106,7 +106,7 @@ const PayrollSettings = () => {
                 backgroundPosition: "center 25% " 
               }}
             >
-            <div className="bg-white shadow-lg rounded-lg p-4 pb-10 flex justify-center mx-auto   flex-row justify-between w-full">
+            <div className="bg-white shadow-lg rounded-lg p-4 pb-10 flex justify-center mx-auto flex-row justify-between w-full">
               <div className="w-1/2 pr-6 text-left">
                 <h1 className="font-bold text-2xl">{selectedContent.title}</h1>
                 <p className="mt-4 text-gray-600">{selectedContent.text}</p>
@@ -121,16 +121,16 @@ const PayrollSettings = () => {
         </div>
       </div>
 
-     
-      <div className="hidden md:block ipad-pro:block lg:hidden  w-full">
+
+      <div className="hidden md:block ipad-pro:block lg:hidden w-full">
         <div className="bg-[#F9FAFB] w-full mx-auto py-8 text-center">
           <h1 className="text-3xl mb-4 font-bold">Contrôler votre DSN qu'en trois étapes :</h1>
           
-          <div className="flex space-x-4  md:p-6 justify-center pt-6">
+          <div className="flex space-x-4 md:p-6 justify-center pt-6">
             {Object.keys(contentOptions).map((key) => (
               <button
                 key={key}
-                className={`w-full  h-12 px-4 py-3 md:px-2 flex items-center justify-center gap-2 rounded-lg shadow-md ${
+                className={`w-full h-12 px-4 py-3 md:px-2 flex items-center justify-center gap-2 rounded-lg shadow-md ${
                   selectedContent.title === contentOptions[key].title
                     ? "bg-[#E0AC00] text-white"
                     : "border border-[#D1D5DB] bg-[#F9FAFB] text-black"
@@ -143,7 +143,7 @@ const PayrollSettings = () => {
           </div>
         </div>
 
-        <div className="w-full flex justify-center  bg-[#F9FAFB]">
+        <div className="w-full flex justify-center bg-[#F9FAFB]">
           <div 
             className="w-full"
             style={{ 
@@ -170,18 +170,18 @@ const PayrollSettings = () => {
       </div>
 
       <div className="block md:hidden w-full p-4 text-center py-8">
-      <h1 className="text-3xl mb-4  font-bold">Contrôler votre DSN qu'en  trois étapes :</h1>
-        
+        <h1 className="text-3xl mb-4 font-bold">Contrôler votre DSN qu'en trois étapes :</h1>
         
         <div className="flex flex-col space-y-4 items-center pt-6">
           {Object.keys(contentOptions).map((key) => (
             <button
               key={key}
-              className={`w-full h-12  flex items-center justify-center text-center gap-3 rounded-lg shadow-md ${
-                selectedContent.title === contentOptions[key].title 
-                ? "bg-[#E0AC00] text-white" 
-                : "border border-[#D1D5DB] bg-[#F9FAFB] text-black"
-              }`}
+              className="w-full h-12 flex items-center justify-center text-center gap-3 rounded-lg shadow-md"
+              style={{
+                backgroundColor: selectedContent.title === contentOptions[key].title ? "#E0AC00" : "#F9FAFB",
+                color: selectedContent.title === contentOptions[key].title ? "white" : "black",
+                border: selectedContent.title === contentOptions[key].title ? "none" : "1px solid #D1D5DB"
+              }}
               onClick={() => setSelectedContent(contentOptions[key])}
             >
               {buttonIcons[key]} <span>{key}</span>
@@ -189,20 +189,21 @@ const PayrollSettings = () => {
           ))}
         </div>
 
-        <div className="w-full flex justify-center pt-6  bg-[#F9FAFB]">
-         
-            <div className="bg-white shadow-lg rounded-lg p-6 flex flex-wrap justify-center mx-auto max-w-xl">
+        <div className="w-full flex justify-center pt-6 bg-[#F9FAFB]">
+          <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col justify-between w-full">
+            <div>
               <h1 className="font-bold text-2xl w-full text-left mb-4">{selectedContent.title}</h1>
               <p className="text-gray-600 w-full text-justify">{selectedContent.text}</p>
-              
-              {selectedContent.img && (
-                <div className="w-full flex justify-center pt-6">
-                  <img src={selectedContent.img} alt="Illustration" className="max-w-full h-auto rounded-lg" />
-                </div>
-              )}
             </div>
+            
+            {selectedContent.img && (
+              <div className="w-full flex justify-center pt-6">
+                <img src={selectedContent.img} alt="Illustration" className="max-w-full h-auto rounded-lg" />
+              </div>
+            )}
           </div>
         </div>
+      </div>
      
     </main>
   );

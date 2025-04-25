@@ -1,6 +1,5 @@
-
 import React from 'react';
-import Slider from '../Slider/Slider'; 
+import Slider from '../Slider/Slider';
 import containerImage from "../../assets/img/background.png";
 import etap1 from "../../assets/img/etap1.png";
 import etap2 from "../../assets/img/etap2-2.png";
@@ -42,13 +41,12 @@ const PayrollSettingsSlider = () => {
       alt: "ETAPE 3 : Exécution du contrôle"
     }
   ];
-
-
-  const renderCustomControls = ({ currentSlide, nextSlide, prevSlide, goToSlide }) => (
+  
+  const renderCustomControls = ({ currentSlide, nextSlide, prevSlide, goToSlide, isFirstSlide, isLastSlide }) => (
     <div className="flex flex-col items-center">
       <div className="flex justify-center space-x-7 mb-4">
         <button 
-          className="bg-gray-300 hover:bg-gray-300 border text-white border-[#D1D5DB] rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
+          className={`${isFirstSlide ? 'bg-gray-300 hover:bg-gray-300 border-[#D1D5DB]' : 'bg-[#E0AC00] hover:bg-[#c99b00] border-[#E0AC00]'} border text-white rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center`}
           onClick={prevSlide}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +55,7 @@ const PayrollSettingsSlider = () => {
         </button>
         
         <button 
-          className="bg-[#E0AC00] hover:bg-[#c99b00] text-white rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center"
+          className={`${isLastSlide ? 'bg-gray-300 hover:bg-gray-300 border-[#D1D5DB]' : 'bg-[#E0AC00] hover:bg-[#c99b00] border-[#E0AC00]'} border text-white rounded-lg p-2 focus:outline-none w-10 h-10 flex items-center justify-center`}
           onClick={nextSlide}
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -65,7 +63,7 @@ const PayrollSettingsSlider = () => {
           </svg>
         </button>
       </div>
-  
+      
       <div className="flex justify-center space-x-2">
         {slides.map((_, index) => (
           <button 
@@ -76,7 +74,7 @@ const PayrollSettingsSlider = () => {
           ></button>
         ))}
       </div>
-
+      
       <button className="hidden lg:block md:block ipad-pro:block sm:hidden bg-[#E0AC00] text-white font-bold mt-6 py-3 px-6 transition duration-300 hover:bg-[#c99b00] w-[134px] h-[48px]">
         Brochure
       </button>
@@ -87,13 +85,14 @@ const PayrollSettingsSlider = () => {
   );
 
   return (
-    <section className="relative py-12 bg-[#F9FAFB] w-full">
+    <section className="relative py-12 bg-[#F9FAFB] sm:bg-[#F9FAFB] md:bg-[#F9FAFB] bg-white w-full">
       <div className="">
         <h1 className="text-3xl font-bold text-center">Vérifier toutes les étapes</h1>
         
         <Slider 
           slides={slides}
           autoplayInterval={5000}
+          containerClassName="mx-auto"
           backgroundImage={containerImage}
           renderControls={renderCustomControls}
         />
