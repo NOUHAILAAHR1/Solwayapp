@@ -77,7 +77,7 @@ function App() {
             <VerifdsnPlusPage />
           </DefaultLayout>
         } />
-        <Route path="/Solway-Synchronisation-HR-Page" element={
+        <Route path="/solway-synchronisation-hr-page" element={
           <DefaultLayout theme="yellow">
             <SolwaySynchronisationHRPage />
           </DefaultLayout>
@@ -92,23 +92,23 @@ function App() {
             <SolwayInvoicePage />
           </DefaultLayout>
         } />
-        <Route path="/Offres-demplois-Page" element={
+        <Route path="offres-demplois-page" element={
           <OffreEmploiLayout theme="yellow">
             <OffresdemploisPage />
           </OffreEmploiLayout>
         } />
-        <Route path="/Candidature-Page" element={
+        <Route path="/candidature-page" element={
           <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <CandidaturePage />
           </DefaultLayout>
         } />
-         <Route path="/Nosmissions-Page" element={
+         <Route path="/nosmissions-page" element={
         <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <NosmissionsPage />
           </DefaultLayout>
         } />
         
-         <Route path="/Vosmissions-Page" element={
+         <Route path="/vosmissions-page" element={
           <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <VosmissionsPage/>
           </DefaultLayout>

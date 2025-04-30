@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useTranslation } from 'react-i18next';
-import { CiCalendar } from "react-icons/ci";
+import { FiCalendar } from "react-icons/fi";
 import { LuTimer } from "react-icons/lu";
 import { PiBriefcaseBold } from "react-icons/pi";
-import { SlLocationPin } from "react-icons/sl";
-import { IoWalletOutline } from "react-icons/io5";
+import { MdOutlineLocationOn } from "react-icons/md";
+import { PiWalletBold } from "react-icons/pi";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -78,7 +78,7 @@ const Hero = () => {
                   <div className="grid grid-cols-2 gap-6">
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
-                        <CiCalendar size={28} />
+                        < FiCalendar size={28} />
                       </div>
                       <h4 className="text-sm uppercase text-[#767F8C] mb-1">{t('jobs.published')}:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">13/06/2022</h3>
@@ -118,7 +118,7 @@ const Hero = () => {
                     
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
-                        <SlLocationPin size={28} />
+                        <MdOutlineLocationOn size={28} />
                       </div>
                       <h4 className="text-sm uppercase text-[#767F8C] mb-1">{t('jobs.location')}:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">{t('jobs.city')}</h3>
@@ -126,7 +126,7 @@ const Hero = () => {
 
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
-                        <IoWalletOutline size={28} />
+                        <PiWalletBold size={28} />
                       </div>
                       <h4 className="text-sm uppercase text-[#767F8C] mb-1">{t('jobs.salary')}:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">{t('jobs.salaryRange')}</h3>
@@ -220,7 +220,7 @@ const Hero = () => {
                   <div className="grid grid-cols-2 gap-6">
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
-                        <CiCalendar size={28} />
+                        < FiCalendar size={28} />
                       </div>
                       <h4 className="text-sm uppercase text-[#767F8C] mb-1">{t('jobs.published')}:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">13/06/2022</h3>
@@ -260,7 +260,7 @@ const Hero = () => {
                     
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
-                        <SlLocationPin size={28} />
+                        <MdOutlineLocationOn size={28} />
                       </div>
                       <h4 className="text-sm uppercase text-[#767F8C] mb-1">{t('jobs.location')}:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">{t('jobs.city')}</h3>
@@ -268,7 +268,7 @@ const Hero = () => {
 
                     <div className="flex flex-col items-start">
                       <div className="text-[#E0AC00] mb-2">
-                        <IoWalletOutline size={28} />
+                        <PiWalletBold size={28} />
                       </div>
                       <h4 className="text-sm uppercase text-[#767F8C] mb-1">{t('jobs.salary')}:</h4>
                       <h3 className="text-sm font-medium text-[#18191C]">{t('jobs.salaryRange')}</h3>

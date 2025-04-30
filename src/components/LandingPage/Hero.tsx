@@ -21,7 +21,7 @@ const Hero = () => {
             <Link to="/about">
               <button className="px-6 py-3 bg-[#E0AC00] text-white rounded-lg font-semibold shadow-md">{t('hero.aboutButton')}</button>
             </Link>
-            <Link to="/OffresdemploisPage">
+            <Link to="/offres-demplois-page">
               <button className="px-6 py-3 border border-[#D1D5DB] bg-[#F9FAFB] text-black font-semibold rounded-lg">{t('hero.jobsButton')}</button>
             </Link>
           </div>
