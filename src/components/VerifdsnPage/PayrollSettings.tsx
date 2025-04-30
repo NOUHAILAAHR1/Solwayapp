@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { IoLayers } from "react-icons/io5";
 import { AiOutlineDatabase } from "react-icons/ai";
 import { TbShieldChevron } from "react-icons/tb";
@@ -7,22 +8,23 @@ import etap1 from "../../assets/img/etap1.png";
 import etap2 from "../../assets/img/etap2.png";
 import etap3 from "../../assets/img/etap3.png";
 
-
 const PayrollSettings = () => {
+  const { t } = useTranslation();
+
   const contentOptions = {
     "Paramétrage des blocs DSN": {
-      title: "ETAPE 1 : Paramétrage Blocs DNS",
+      title: t('payrollSettings.step1.title', "ETAPE 1 : Paramétrage Blocs DNS"),
       text: (
         <>
-          Cette étape permet de :
+          {t('payrollSettings.step1.intro', "Cette étape permet de :")}
           <ul className="list-disc pl-5 pt-2 text-[#374151] text-justify">
-            <li>Sélectionner la source des données : Un fichier texte ou B2A</li>
-            <li>Renseigner la période de la paie.</li>
+            <li>{t('payrollSettings.step1.item1', "Sélectionner la source des données : Un fichier texte ou B2A")}</li>
+            <li>{t('payrollSettings.step1.item2', "Renseigner la période de la paie.")}</li>
             <li>
-              Affiner la sélection en renseignant des matricules, tranches de décompte, sociétés …
+              {t('payrollSettings.step1.item3', "Affiner la sélection en renseignant des matricules, tranches de décompte, sociétés …")}
             </li>
-            <li>Choisir le mode d'exécution du programme</li>
-            <li>Préciser la méthode de récupération des fichiers B2A ainsi que les résultats du contrôle (Par mail, fichiers Excel en local/serveur).
+            <li>{t('payrollSettings.step1.item4', "Choisir le mode d'exécution du programme")}</li>
+            <li>{t('payrollSettings.step1.item5', "Préciser la méthode de récupération des fichiers B2A ainsi que les résultats du contrôle (Par mail, fichiers Excel en local/serveur).")}
             </li>
           </ul>
         </>
@@ -30,18 +32,18 @@ const PayrollSettings = () => {
       img: etap1,
     },
     "Sélection des données": {
-      title: "ETAPE 2 : Sélection des données",
+      title: t('payrollSettings.step2.title', "ETAPE 2 : Sélection des données"),
       text: (
         <>
-          Cette étape permet de :
+          {t('payrollSettings.step2.intro', "Cette étape permet de :")}
           <ul className="list-disc pl-5 pt-2 text-[#374151] text-justify">
-            <li>Sélectionner la source des données : Un fichier texte ou B2A</li>
-            <li>Renseigner la période de la paie.</li>
+            <li>{t('payrollSettings.step2.item1', "Sélectionner la source des données : Un fichier texte ou B2A")}</li>
+            <li>{t('payrollSettings.step2.item2', "Renseigner la période de la paie.")}</li>
             <li>
-              Affiner la sélection en renseignant des matricules, tranches de décompte, sociétés …
+              {t('payrollSettings.step2.item3', "Affiner la sélection en renseignant des matricules, tranches de décompte, sociétés …")}
             </li>
-            <li>Choisir le mode d'exécution du programme</li>
-            <li>Préciser la méthode de récupération des fichiers B2A ainsi que les résultats du contrôle (Par mail, fichiers Excel en local/serveur).
+            <li>{t('payrollSettings.step2.item4', "Choisir le mode d'exécution du programme")}</li>
+            <li>{t('payrollSettings.step2.item5', "Préciser la méthode de récupération des fichiers B2A ainsi que les résultats du contrôle (Par mail, fichiers Excel en local/serveur).")}
             </li>
           </ul>
         </>
@@ -49,18 +51,18 @@ const PayrollSettings = () => {
       img: etap2,
     },
     "Exécution du contrôle": {
-      title: "ETAPE 3 : Exécution du contrôle",
+      title: t('payrollSettings.step3.title', "ETAPE 3 : Exécution du contrôle"),
       text: (
         <>
-          Cette étape permet de :
+          {t('payrollSettings.step3.intro', "Cette étape permet de :")}
           <ul className="list-disc pl-5 pt-2 text-[#374151] text-justify">
-            <li>Sélectionner la source des données : Un fichier texte ou B2A</li>
-            <li>Renseigner la période de la paie.</li>
+            <li>{t('payrollSettings.step3.item1', "Sélectionner la source des données : Un fichier texte ou B2A")}</li>
+            <li>{t('payrollSettings.step3.item2', "Renseigner la période de la paie.")}</li>
             <li>
-              Affiner la sélection en renseignant des matricules, tranches de décompte, sociétés …
+              {t('payrollSettings.step3.item3', "Affiner la sélection en renseignant des matricules, tranches de décompte, sociétés …")}
             </li>
-            <li>Choisir le mode d'exécution du programme</li>
-            <li>Préciser la méthode de récupération des fichiers B2A ainsi que les résultats du contrôle (Par mail, fichiers Excel en local/serveur).
+            <li>{t('payrollSettings.step3.item4', "Choisir le mode d'exécution du programme")}</li>
+            <li>{t('payrollSettings.step3.item5', "Préciser la méthode de récupération des fichiers B2A ainsi que les résultats du contrôle (Par mail, fichiers Excel en local/serveur).")}
             </li>
           </ul>
         </>
@@ -77,11 +79,23 @@ const PayrollSettings = () => {
     "Exécution du contrôle": <TbShieldChevron size={24} />,
   };
 
+  const getTranslatedButtonText = (key) => {
+    const translations = {
+      "Paramétrage des blocs DSN": t('payrollSettings.buttons.dsnConfig', "Paramétrage des blocs DSN"),
+      "Sélection des données": t('payrollSettings.buttons.dataSelection', "Sélection des données"),
+      "Exécution du contrôle": t('payrollSettings.buttons.controlExecution', "Exécution du contrôle"),
+    };
+    return translations[key] || key;
+  };
+
   return (
     <main className="w-full flex flex-col bg-[#F9FAFB] pt-10 relative z-40">
 
       <div className="hidden lg:block xl:block xxl:block ipad-pro:hidden w-full text-center py-8">
-        <h1 className="text-3xl mb-4 font-bold">Contrôler votre DSN qu'en <br/> trois étapes :</h1>
+        <h1 className="text-3xl mb-4 font-bold">
+          {t('payrollSettings.mainTitle', "Contrôler votre DSN qu'en")} <br/>
+          {t('payrollSettings.mainTitlePart2', "trois étapes :")}
+        </h1>
         <div className="flex space-x-6 justify-center pt-6">
           {Object.keys(contentOptions).map((key) => (
             <button
@@ -93,7 +107,7 @@ const PayrollSettings = () => {
               }`}
               onClick={() => setSelectedContent(contentOptions[key])}
             >
-              {buttonIcons[key]} <span>{key}</span>
+              {buttonIcons[key]} <span>{getTranslatedButtonText(key)}</span>
             </button>
           ))}
         </div>
@@ -113,7 +127,11 @@ const PayrollSettings = () => {
               </div>
               {selectedContent.img && (
                 <div className="w-1/2 flex pl-2 justify-center">
-                  <img src={selectedContent.img} alt="Illustration" className="max-w-full h-auto rounded-lg" />
+                  <img 
+                    src={selectedContent.img} 
+                    alt={t('payrollSettings.imageAlt', "Illustration")} 
+                    className="max-w-full h-auto rounded-lg" 
+                  />
                 </div>
               )}
             </div>
@@ -124,7 +142,9 @@ const PayrollSettings = () => {
 
       <div className="hidden md:block ipad-pro:block lg:hidden w-full">
         <div className="bg-[#F9FAFB] w-full mx-auto py-8 text-center">
-          <h1 className="text-3xl mb-4 font-bold">Contrôler votre DSN qu'en trois étapes :</h1>
+          <h1 className="text-3xl mb-4 font-bold">
+            {t('payrollSettings.mainTitle', "Contrôler votre DSN qu'en")} {t('payrollSettings.mainTitlePart2', "trois étapes :")}
+          </h1>
           
           <div className="flex space-x-4 md:p-6 justify-center pt-6">
             {Object.keys(contentOptions).map((key) => (
@@ -137,7 +157,7 @@ const PayrollSettings = () => {
                 }`}
                 onClick={() => setSelectedContent(contentOptions[key])}
               >
-                {buttonIcons[key]} <span className="text-sm">{key}</span>
+                {buttonIcons[key]} <span className="text-sm">{getTranslatedButtonText(key)}</span>
               </button>
             ))}
           </div>
@@ -161,7 +181,11 @@ const PayrollSettings = () => {
               
               {selectedContent.img && (
                 <div className="w-full md:w-1/2 md:pl-6 md:space-y-6">
-                  <img src={selectedContent.img} alt="Illustration" className="max-w-full h-auto rounded-lg" />
+                  <img 
+                    src={selectedContent.img} 
+                    alt={t('payrollSettings.imageAlt', "Illustration")} 
+                    className="max-w-full h-auto rounded-lg" 
+                  />
                 </div>
               )}
             </div>
@@ -170,7 +194,9 @@ const PayrollSettings = () => {
       </div>
 
       <div className="block md:hidden w-full p-4 text-center py-8">
-        <h1 className="text-3xl mb-4 font-bold">Contrôler votre DSN qu'en trois étapes :</h1>
+        <h1 className="text-3xl mb-4 font-bold">
+          {t('payrollSettings.mainTitle', "Contrôler votre DSN qu'en")} {t('payrollSettings.mainTitlePart2', "trois étapes :")}
+        </h1>
         
         <div className="flex flex-col space-y-4 items-center pt-6">
           {Object.keys(contentOptions).map((key) => (
@@ -184,7 +210,7 @@ const PayrollSettings = () => {
               }}
               onClick={() => setSelectedContent(contentOptions[key])}
             >
-              {buttonIcons[key]} <span>{key}</span>
+              {buttonIcons[key]} <span>{getTranslatedButtonText(key)}</span>
             </button>
           ))}
         </div>
@@ -198,7 +224,11 @@ const PayrollSettings = () => {
             
             {selectedContent.img && (
               <div className="w-full flex justify-center pt-6">
-                <img src={selectedContent.img} alt="Illustration" className="max-w-full h-auto rounded-lg" />
+                <img 
+                  src={selectedContent.img} 
+                  alt={t('payrollSettings.imageAlt', "Illustration")} 
+                  className="max-w-full h-auto rounded-lg" 
+                />
               </div>
             )}
           </div>

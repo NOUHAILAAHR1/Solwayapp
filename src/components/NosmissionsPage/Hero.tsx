@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from 'react-i18next';
 
-const Hero  = () => {
+const Hero = () => {
+  const { t } = useTranslation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [fileName, setFileName] = useState("");
   const fileInputRef = useRef(null);
@@ -34,16 +36,20 @@ const Hero  = () => {
     <>
      <div className="flex flex-col space-y-9 pt-12">
         <div className="md:hidden w-full flex flex-col items-center text-center pt-6">
-          <h1 className="text-3xl font-extrabold text-[#000000] p-6">SOLWAY <br/> Nos Missions <br/> Déposez votre candidature</h1>
+          <h1 className="text-3xl font-extrabold text-[#000000] p-6">
+            {t('careers.title', "SOLWAY")} <br/> 
+            {t('careers.subtitle', "Nos Missions")} <br/> 
+            {t('careers.applyTitle', "Déposez votre candidature")}
+          </h1>
           <p className="text-md max-w-xs text-[#000000]">
-            Pour les missions à pourvoir chez nos clients
+            {t('careers.description', "Pour les missions à pourvoir chez nos clients")}
           </p>
 
           <div className="w-full px-4 pt-6">
             <form className="w-full bg-white p-4 rounded-lg shadow-lg mb-8">
               <div className="mb-4">
                 <div className="mb-2">
-                  <label className="block text-left mb-1">Nom (requis)</label>
+                  <label className="block text-left mb-1">{t('careers.form.lastName', "Nom (requis)")}</label>
                   <input
                     type="text"
                     className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
@@ -51,7 +57,7 @@ const Hero  = () => {
                   />
                 </div>
                 <div className="mb-2">
-                  <label className="block text-left mb-1">Prénom (requis)</label>
+                  <label className="block text-left mb-1">{t('careers.form.firstName', "Prénom (requis)")}</label>
                   <input
                     type="text"
                     className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
@@ -60,7 +66,7 @@ const Hero  = () => {
                 </div>
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Email (requis)</label>
+                <label className="block text-left mb-1">{t('careers.form.email', "Email (requis)")}</label>
                 <input
                   type="email"
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
@@ -68,41 +74,41 @@ const Hero  = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Mission – Voir notre page LinkedIn (requis)</label>
+                <label className="block text-left mb-1">{t('careers.form.mission', "Mission – Voir notre page LinkedIn (requis)")}</label>
                 <select
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
                   required
                 >
-                  <option value="">—Veuillez choisir une option—</option>
-                  <option value="developpeur-fullstack">Développeur Full Stack</option>
-                  <option value="developpeur-frontend">Développeur Frontend</option>
-                  <option value="developpeur-backend">Développeur Backend</option>
-                  <option value="admin-systeme">Administrateur Système</option>
-                  <option value="admin-reseaux">Administrateur Réseaux</option>
-                  <option value="data-analyst">Data Analyst</option>
-                  <option value="data-scientist">Data Scientist</option>
-                  <option value="chef-projet">Chef de Projet</option>
-                  <option value="scrum-master">Scrum Master</option>
-                  <option value="product-owner">Product Owner</option>
+                  <option value="">{t('careers.form.chooseOption', "—Veuillez choisir une option—")}</option>
+                  <option value="developpeur-fullstack">{t('careers.form.options.fullstack', "Développeur Full Stack")}</option>
+                  <option value="developpeur-frontend">{t('careers.form.options.frontend', "Développeur Frontend")}</option>
+                  <option value="developpeur-backend">{t('careers.form.options.backend', "Développeur Backend")}</option>
+                  <option value="admin-systeme">{t('careers.form.options.sysadmin', "Administrateur Système")}</option>
+                  <option value="admin-reseaux">{t('careers.form.options.netadmin', "Administrateur Réseaux")}</option>
+                  <option value="data-analyst">{t('careers.form.options.dataAnalyst', "Data Analyst")}</option>
+                  <option value="data-scientist">{t('careers.form.options.dataScientist', "Data Scientist")}</option>
+                  <option value="chef-projet">{t('careers.form.options.projectManager', "Chef de Projet")}</option>
+                  <option value="scrum-master">{t('careers.form.options.scrumMaster', "Scrum Master")}</option>
+                  <option value="product-owner">{t('careers.form.options.productOwner', "Product Owner")}</option>
                 </select>
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Niveau d'expérience : (requis)</label>
+                <label className="block text-left mb-1">{t('careers.form.experienceLevel', "Niveau d'expérience : (requis)")}</label>
                 <select
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
                   required
                 >
-                  <option value="">—Veuillez choisir une option—</option>
-                  <option value="etudiant">Étudiant</option>
-                  <option value="stage">Stage</option>
-                  <option value="junior">Junior (0-2 ans)</option>
-                  <option value="intermediaire">Intermédiaire (3-5 ans)</option>
-                  <option value="senior">Senior (5+ ans)</option>
-                  <option value="expert">Expert</option>
+                  <option value="">{t('careers.form.chooseOption', "—Veuillez choisir une option—")}</option>
+                  <option value="etudiant">{t('careers.form.levels.student', "Étudiant")}</option>
+                  <option value="stage">{t('careers.form.levels.internship', "Stage")}</option>
+                  <option value="junior">{t('careers.form.levels.junior', "Junior (0-2 ans)")}</option>
+                  <option value="intermediaire">{t('careers.form.levels.intermediate', "Intermédiaire (3-5 ans)")}</option>
+                  <option value="senior">{t('careers.form.levels.senior', "Senior (5+ ans)")}</option>
+                  <option value="expert">{t('careers.form.levels.expert', "Expert")}</option>
                 </select>
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">TJM (requis)</label>
+                <label className="block text-left mb-1">{t('careers.form.dailyRate', "TJM (requis)")}</label>
                 <input
                   type="text"
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
@@ -110,7 +116,7 @@ const Hero  = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Disponible à partir de (requis)</label>
+                <label className="block text-left mb-1">{t('careers.form.availableFrom', "Disponible à partir de (requis)")}</label>
                 <input
                   type="date"
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
@@ -119,7 +125,7 @@ const Hero  = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Veuillez joindre votre CV (requis)</label>
+                <label className="block text-left mb-1">{t('careers.form.cv', "Veuillez joindre votre CV (requis)")}</label>
                 <div className="flex items-center">
                   <input 
                     ref={mobileFileInputRef}
@@ -131,21 +137,21 @@ const Hero  = () => {
                   />
                   <div className="w-full flex items-center">
                     <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] text-left truncate">
-                      {fileName || " Aucun fichier sélectionné"}
+                      {fileName || t('careers.form.noFileSelected', " Aucun fichier sélectionné")}
                     </div>
                     <button 
                       type="button" 
                       onClick={() => triggerFileInput(mobileFileInputRef)}
                       className="bg-[#F9FAFB] text-[#374151] p-2 rounded-r-md border-t border-r border-b border-[#D1D5DB] hover:bg-gray-300"
                     >
-                      Choisir un fichier
+                      {t('careers.form.chooseFile', "Choisir un fichier")}
                     </button>
                   </div>
                 </div>
               </div>
               
               <div className="mb-4">
-                <label className="block text-left mb-1">Message</label>
+                <label className="block text-left mb-1">{t('careers.form.message', "Message")}</label>
                 <textarea
                   className="w-full p-2 border border-[#D1D5DB] rounded-md h-32 focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
                 />
@@ -155,7 +161,7 @@ const Hero  = () => {
                   type="submit"
                   className="w-52 bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 transition duration-300"
                 >
-                  Envoyer ma candidature
+                  {t('careers.form.submit', "Envoyer ma candidature")}
                 </button>
               </div>
             </form>
@@ -168,10 +174,12 @@ const Hero  = () => {
               <div className={`${isTablet ? 'max-w-2xl text-center mb-8' : 'max-w-[35rem] text-left pl-14'} space-y-6`}>
                 <div>
                   <h1 className="text-3xl font-extrabold text-[#000000] mb-4">
-                    SOLWAY <br/> Nos Missions <br/> Déposez votre candidature
+                    {t('careers.title', "SOLWAY")} <br/> 
+                    {t('careers.subtitle', "Nos Missions")} <br/> 
+                    {t('careers.applyTitle', "Déposez votre candidature")}
                   </h1>
                   <p className={`text-medium text-[#000000] ${isTablet ? 'mx-auto' : 'max-w-xl'}`}>
-                    Pour les missions à pourvoir chez nos clients
+                    {t('careers.description', "Pour les missions à pourvoir chez nos clients")}
                   </p>
                 </div>
               </div>
@@ -179,7 +187,7 @@ const Hero  = () => {
                 <form className="w-full max-w-lg mb-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                      <FormLabel>Nom (requis)</FormLabel>
+                      <FormLabel>{t('careers.form.lastName', "Nom (requis)")}</FormLabel>
                       <input 
                         type="text" 
                         className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]" 
@@ -187,7 +195,7 @@ const Hero  = () => {
                       />
                     </div>
                     <div>
-                      <FormLabel>Prénom (requis)</FormLabel>
+                      <FormLabel>{t('careers.form.firstName', "Prénom (requis)")}</FormLabel>
                       <input 
                         type="text" 
                         className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]" 
@@ -196,7 +204,7 @@ const Hero  = () => {
                     </div>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Email(requis)</FormLabel>
+                    <FormLabel>{t('careers.form.email', "Email (requis)")}</FormLabel>
                     <input 
                       type="text" 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]" 
@@ -204,41 +212,41 @@ const Hero  = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Mission – Voir notre page LinkedIn (requis)</FormLabel>
+                    <FormLabel>{t('careers.form.mission', "Mission – Voir notre page LinkedIn (requis)")}</FormLabel>
                     <select 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]" 
                       required
                     >
-                      <option value="">—Veuillez choisir une option—</option>
-                      <option value="developpeur-fullstack">Développeur Full Stack</option>
-                      <option value="developpeur-frontend">Développeur Frontend</option>
-                      <option value="developpeur-backend">Développeur Backend</option>
-                      <option value="admin-systeme">Administrateur Système</option>
-                      <option value="admin-reseaux">Administrateur Réseaux</option>
-                      <option value="data-analyst">Data Analyst</option>
-                      <option value="data-scientist">Data Scientist</option>
-                      <option value="chef-projet">Chef de Projet</option>
-                      <option value="scrum-master">Scrum Master</option>
-                      <option value="product-owner">Product Owner</option>
+                      <option value="">{t('careers.form.chooseOption', "—Veuillez choisir une option—")}</option>
+                      <option value="developpeur-fullstack">{t('careers.form.options.fullstack', "Développeur Full Stack")}</option>
+                      <option value="developpeur-frontend">{t('careers.form.options.frontend', "Développeur Frontend")}</option>
+                      <option value="developpeur-backend">{t('careers.form.options.backend', "Développeur Backend")}</option>
+                      <option value="admin-systeme">{t('careers.form.options.sysadmin', "Administrateur Système")}</option>
+                      <option value="admin-reseaux">{t('careers.form.options.netadmin', "Administrateur Réseaux")}</option>
+                      <option value="data-analyst">{t('careers.form.options.dataAnalyst', "Data Analyst")}</option>
+                      <option value="data-scientist">{t('careers.form.options.dataScientist', "Data Scientist")}</option>
+                      <option value="chef-projet">{t('careers.form.options.projectManager', "Chef de Projet")}</option>
+                      <option value="scrum-master">{t('careers.form.options.scrumMaster', "Scrum Master")}</option>
+                      <option value="product-owner">{t('careers.form.options.productOwner', "Product Owner")}</option>
                     </select>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Niveau d'expérience : (requis)</FormLabel>
+                    <FormLabel>{t('careers.form.experienceLevel', "Niveau d'expérience : (requis)")}</FormLabel>
                     <select 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]" 
                       required
                     >
-                      <option value="">—Veuillez choisir une option—</option>
-                      <option value="etudiant">Étudiant</option>
-                      <option value="stage">Stage</option>
-                      <option value="junior">Junior (0-2 ans)</option>
-                      <option value="intermediaire">Intermédiaire (3-5 ans)</option>
-                      <option value="senior">Senior (5+ ans)</option>
-                      <option value="expert">Expert</option>
+                      <option value="">{t('careers.form.chooseOption', "—Veuillez choisir une option—")}</option>
+                      <option value="etudiant">{t('careers.form.levels.student', "Étudiant")}</option>
+                      <option value="stage">{t('careers.form.levels.internship', "Stage")}</option>
+                      <option value="junior">{t('careers.form.levels.junior', "Junior (0-2 ans)")}</option>
+                      <option value="intermediaire">{t('careers.form.levels.intermediate', "Intermédiaire (3-5 ans)")}</option>
+                      <option value="senior">{t('careers.form.levels.senior', "Senior (5+ ans)")}</option>
+                      <option value="expert">{t('careers.form.levels.expert', "Expert")}</option>
                     </select>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>TJM (requis)</FormLabel>
+                    <FormLabel>{t('careers.form.dailyRate', "TJM (requis)")}</FormLabel>
                     <input
                       type="text"
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
@@ -246,7 +254,7 @@ const Hero  = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Disponible à partir de (requis)</FormLabel>
+                    <FormLabel>{t('careers.form.availableFrom', "Disponible à partir de (requis)")}</FormLabel>
                     <input
                       type="date"
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]"
@@ -255,7 +263,7 @@ const Hero  = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Veuillez joindre votre CV (requis)</FormLabel>
+                    <FormLabel>{t('careers.form.cv', "Veuillez joindre votre CV (requis)")}</FormLabel>
                     <div className="flex items-center">
                       <input 
                         ref={fileInputRef}
@@ -267,20 +275,20 @@ const Hero  = () => {
                       />
                       <div className="w-full flex items-center">
                         <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] truncate">
-                          {fileName || " Aucun fichier sélectionné"}
+                          {fileName || t('careers.form.noFileSelected', " Aucun fichier sélectionné")}
                         </div>
                         <button 
                           type="button" 
                           onClick={() => triggerFileInput(fileInputRef)}
                           className="bg-[#F9FAFB] text-[#374151] p-2 rounded-r-md border-t border-r border-b border-[#D1D5DB] hover:bg-gray-300"
                         >
-                          Choisir un fichier
+                          {t('careers.form.chooseFile', "Choisir un fichier")}
                         </button>
                       </div>
                     </div>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel>{t('careers.form.message', "Message")}</FormLabel>
                     <textarea 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md h-32 focus:outline-none focus:ring-1 focus:ring-[#D1D5DB] text-[#030712]" 
                     />
@@ -290,7 +298,7 @@ const Hero  = () => {
                       type="submit" 
                       className="w-52 bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 transition duration-300"
                     >
-                      Envoyer ma candidature
+                      {t('careers.form.submit', "Envoyer ma candidature")}
                     </button>
                   </div>
                 </form>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Slider from '../Slider/Slider';
 import containerImage from "../../assets/img/background.png";
 import etap1 from "../../assets/img/etap1.png";
@@ -9,36 +10,38 @@ import etap5 from "../../assets/img/etap3.png";
 import etap6 from "../../assets/img/etap3-1.png";
 
 const PayrollSettingsSlider = () => {
+  const { t } = useTranslation();
+
   const slides = [
     {
       id: 1,
       image: etap1,
-      alt: "ETAPE 1 : Paramétrage Blocs DNS"
+      alt: "STEP 1: DSN Block Configuration"
     },
     {
       id: 2,
       image: etap2,
-      alt: "ETAPE 2 : Sélection des données"
+      alt:  "STEP 2: Data Selection"
     },
     {
       id: 3,
       image: etap3,
-      alt: "ETAPE 3 : Exécution du contrôle"
+      alt:  "STEP 3: Control Execution"
     },
     {
       id: 4,
       image: etap4,
-      alt: "ETAPE 3 : Exécution du contrôle"
+      alt:  "STEP 4: Control Execution"
     },
     {
       id: 5,
       image: etap5,
-      alt: "ETAPE 3 : Exécution du contrôle"
+      alt:  "STEP 5: Control Execution"
     },
     {
       id: 6,
       image: etap6,
-      alt: "ETAPE 3 : Exécution du contrôle"
+      alt:  "STEP 6: Control Execution"
     }
   ];
   
@@ -76,10 +79,10 @@ const PayrollSettingsSlider = () => {
       </div>
       
       <button className="hidden lg:block md:block ipad-pro:block sm:hidden bg-[#E0AC00] text-white font-bold mt-6 py-3 px-6 transition duration-300 hover:bg-[#c99b00] w-[134px] h-[48px]">
-        Brochure
+        {t('brochure', "Brochure")}
       </button>
       <button className="bg-[#E0AC00] text-white font-bold mt-6 py-3 px-6 transition duration-300 hover:bg-[#c99b00] md:hidden lg:hidden ipad-pro:hidden sm:block w-[90%]">
-        Brochure
+        {t('brochure', "Brochure")}
       </button>
     </div>
   );
@@ -87,9 +90,9 @@ const PayrollSettingsSlider = () => {
   return (
     <section className="relative py-12 bg-[#F9FAFB] sm:bg-[#F9FAFB] md:bg-[#F9FAFB] bg-white w-full">
       <div className="">
-        <h1 className="text-3xl font-bold text-center">Vérifier toutes les étapes</h1>
+        <h1 className="text-3xl font-bold text-center">{t('payroll.checkAllSteps')}</h1>
         
-        <Slider 
+        <Slider
           slides={slides}
           autoplayInterval={5000}
           containerClassName="mx-auto"

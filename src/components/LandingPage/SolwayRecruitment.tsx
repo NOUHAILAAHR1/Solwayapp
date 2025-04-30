@@ -21,13 +21,13 @@ const SolwayRecruitment = () => {
         >
           <div className="bg-[#E0AC00] shadow-xl rounded-lg p-16 mx-auto w-[75rem] text-center">
             <h1 className="font-bold text-4xl text-white mb-6">
-              {t('recruitment.title')}<br/> {t('recruitment.question')}
+              {t('recruitmentCase.title')}<br/> {t('recruitmentCase.question')}
             </h1>
             <p className="mt-4 text-white text-lg mb-8 max-w-xl mx-auto">
-              {t('recruitment.description')}
+              {t('recruitmentCase.description')}
             </p>
             <button className="bg-white text-[#E0AC00] px-8 py-3 rounded-lg hover:bg-gray-100 transition duration-300 flex items-center mx-auto">
-              {t('recruitment.joinButton')}
+              {t('recruitmentCase.joinButton')}
             </button>
           </div>
         </div>
@@ -36,13 +36,13 @@ const SolwayRecruitment = () => {
       <div className="hidden md:block lg:hidden ipad-pro:block w-full p-10 text-center py-10">
           <div className="bg-[#E0AC00] shadow-xl rounded-lg mx-auto w-full p-12 text-center">
             <h1 className="font-bold text-2xl text-white mb-4">
-              {t('recruitment.title')} <br/> {t('recruitment.question')}
+              {t('recruitmentCase.title')} <br/> {t('recruitmentCase.question')}
             </h1>
             <p className="mt-3 text-white text-base mb-6 max-w-2l mx-auto">
-              {t('recruitment.description')}
+              {t('recruitmentCase.description')}
             </p>
             <button className="bg-white text-[#E0AC00] px-6 py-3 rounded-lg hover:bg-gray-100 transition duration-300 flex items-center mx-auto">
-              {t('recruitment.joinButton')}
+              {t('recruitmentCase.joinButton')}
             </button>
           </div>
       </div>
@@ -50,13 +50,13 @@ const SolwayRecruitment = () => {
       <div className="block md:hidden w-full text-center py-8">
           <div className="bg-[#E0AC00] shadow-xl rounded-lg p-5 pt-10 pb-8 mx-4 text-center">
             <h1 className="font-bold text-xl text-white mb-4">
-              {t('recruitment.title')}<br/> {t('recruitment.question')}
+              {t('recruitmentCase.title')}<br/> {t('recruitmentCase.question')}
             </h1>
             <p className="mt-2 text-white text-sm mb-6">
-              {t('recruitment.description')}
+              {t('recruitmentCase.description')}
             </p>
             <button className="bg-white mb-6 text-[#E0AC00] w-full py-3 rounded-lg hover:bg-gray-100 transition duration-300 flex items-center justify-center">
-              {t('recruitment.joinButton')}
+              {t('recruitmentCase.joinButton')}
             </button>
           </div>
         </div>

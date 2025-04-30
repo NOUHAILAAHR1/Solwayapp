@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [fileName, setFileName] = useState("Aucun fichier sélectionné");
+  const [fileName, setFileName] = useState(t('missions.form.noFileSelected', "Aucun fichier sélectionné"));
   const isTablet = windowWidth >= 768 && windowWidth <= 1024;
   const fileInputRef = useRef(null);
   const mobileFileInputRef = useRef(null);
@@ -13,11 +15,15 @@ const Hero = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    setFileName(t('missions.form.noFileSelected', "Aucun fichier sélectionné"));
+  }, [t]);
+
   const handleFileChange = (e) => {
     if (e.target.files[0]) {
       setFileName(e.target.files[0].name);
     } else {
-      setFileName("Aucun fichier sélectionné");
+      setFileName(t('missions.form.noFileSelected', "Aucun fichier sélectionné"));
     }
   };
 
@@ -36,15 +42,17 @@ const Hero = () => {
     <>
      <div className="flex flex-col space-y-9 pt-12 mb-6">
         <div className="md:hidden px-4  w-full flex flex-col items-center text-center pt-6">
-          <h1 className="text-3xl font-extrabold text-[#000000] mb-4 pt-5">SOLWAY <br/>Vos Missions</h1>
+          <h1 className="text-3xl font-extrabold text-[#000000] mb-4 pt-5">
+            SOLWAY <br/>{t('missions.title', "Vos Missions")}
+          </h1>
           <p className="text-md max-w-xs text-[#000000] mb-4">
-            Déposez vos propositions de missions Nous nous occupons du reste
+            {t('missions.description', "Déposez vos propositions de missions Nous nous occupons du reste")}
           </p>
 
           <div className="w-full  pt-6">
             <form className="w-full bg-white p-4 rounded-lg shadow-lg">
               <div className="mb-4">
-                <label className="block text-left mb-1">Nom (requis)</label>
+                <label className="block text-left mb-1">{t('missions.form.lastName', "Nom (requis)")}</label>
                 <input
                   type="text"
                   className={inputClass}
@@ -52,7 +60,7 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Prénom (requis)</label>
+                <label className="block text-left mb-1">{t('missions.form.firstName', "Prénom (requis)")}</label>
                 <input
                   type="text"
                   className={inputClass}
@@ -60,7 +68,7 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Société (requis)</label>
+                <label className="block text-left mb-1">{t('missions.form.company', "Société (requis)")}</label>
                 <input
                   type="text"
                   className={inputClass}
@@ -68,7 +76,7 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Email (requis)</label>
+                <label className="block text-left mb-1">{t('missions.form.email', "Email (requis)")}</label>
                 <input
                   type="email"
                   className={inputClass}
@@ -76,28 +84,28 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Votre mission</label>
+                <label className="block text-left mb-1">{t('missions.form.mission', "Votre mission")}</label>
                 <input
                   type="text"
                   className={inputClass}
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Niveau d'expérience :</label>
+                <label className="block text-left mb-1">{t('missions.form.experienceLevel', "Niveau d'expérience :")}</label>
                 <select
                   className={selectClass}
                 >
-                  <option value="">—Veuillez choisir une option—</option>
-                  <option value="etudiant">Étudiant</option>
-                  <option value="stage">Stage</option>
-                  <option value="junior">Junior (0-2 ans)</option>
-                  <option value="intermediaire">Intermédiaire (3-5 ans)</option>
-                  <option value="senior">Senior (5+ ans)</option>
-                  <option value="expert">Expert</option>
+                  <option value="">{t('missions.form.chooseOption', "—Veuillez choisir une option—")}</option>
+                  <option value="etudiant">{t('missions.form.experience.student', "Étudiant")}</option>
+                  <option value="stage">{t('missions.form.experience.internship', "Stage")}</option>
+                  <option value="junior">{t('missions.form.experience.junior', "Junior (0-2 ans)")}</option>
+                  <option value="intermediaire">{t('missions.form.experience.intermediate', "Intermédiaire (3-5 ans)")}</option>
+                  <option value="senior">{t('missions.form.experience.senior', "Senior (5+ ans)")}</option>
+                  <option value="expert">{t('missions.form.experience.expert', "Expert")}</option>
                 </select>
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">TJM (requis)</label>
+                <label className="block text-left mb-1">{t('missions.form.dailyRate', "TJM (requis)")}</label>
                 <input
                   type="text"
                   className={inputClass}
@@ -105,7 +113,7 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">À pourvoir à partir de</label>
+                <label className="block text-left mb-1">{t('missions.form.startDate', "À pourvoir à partir de")}</label>
                 <input
                   type="date"
                   className={inputClass}
@@ -113,32 +121,32 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Durée de la mission en mois</label>
+                <label className="block text-left mb-1">{t('missions.form.duration', "Durée de la mission en mois")}</label>
                 <input
                   type="number"
                   className={inputClass}
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Localisation</label>
+                <label className="block text-left mb-1">{t('missions.form.location', "Localisation")}</label>
                 <input
                   type="text"
                   className={inputClass}
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Mode de travail</label>
+                <label className="block text-left mb-1">{t('missions.form.workMode', "Mode de travail")}</label>
                 <select
                   className={selectClass}
                 >
-                  <option value="">—Veuillez choisir une option—</option>
-                  <option value="presentiel">Présentiel</option>
-                  <option value="remote">Remote</option>
-                  <option value="hybride">Hybride</option>
+                  <option value="">{t('missions.form.chooseOption', "—Veuillez choisir une option—")}</option>
+                  <option value="presentiel">{t('missions.form.workModes.onSite', "Présentiel")}</option>
+                  <option value="remote">{t('missions.form.workModes.remote', "Remote")}</option>
+                  <option value="hybride">{t('missions.form.workModes.hybrid', "Hybride")}</option>
                 </select>
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Fiche de poste</label>
+                <label className="block text-left mb-1">{t('missions.form.jobDescription', "Fiche de poste")}</label>
                 <div className="flex text-left">
                   <input 
                     ref={mobileFileInputRef}
@@ -156,13 +164,13 @@ const Hero = () => {
                       onClick={() => triggerFileInput(mobileFileInputRef)}
                       className="bg-white text-gray-700 p-2 rounded-r-md border border-gray-300 hover:bg-gray-300 transition duration-200 text-sm h-9"
                     >
-                     Choisir un fichier
+                     {t('missions.form.chooseFile', "Choisir un fichier")}
                     </button>
                   </div>
                 </div>
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Message</label>
+                <label className="block text-left mb-1">{t('missions.form.message', "Message")}</label>
                 <textarea
                   className="w-full p-2 border border-gray-300 rounded-md h-24 text-gray-800 text-sm hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-400"
                 />
@@ -171,7 +179,7 @@ const Hero = () => {
                 type="submit"
                 className="w-full bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 transition duration-300"
               >
-                Envoyer ma candidature
+                {t('missions.form.submit', "Envoyer ma candidature")}
               </button>
             </form>
           </div>
@@ -183,10 +191,11 @@ const Hero = () => {
               <div className={`${isTablet ? 'max-w-2xl text-center mb-8' : 'max-w-[35rem] text-left pl-14'} space-y-6`}>
                 <div>
                   <h1 className="text-3xl font-extrabold pt-4 text-[#000000] mb-4">
-                    SOLWAY <br/>Vos Missions
+                    SOLWAY <br/>{t('missions.title', "Vos Missions")}
                   </h1>
                   <p className={`text-medium text-[#000000] ${isTablet ? 'mx-auto' : 'max-w-xl'}`}>
-                    Déposez vos propositions de missions,<br/>Nous nous occupons du reste
+                    {t('missions.description', "Déposez vos propositions de missions,")}<br/>
+                    {t('missions.description2', "Nous nous occupons du reste")}
                   </p>
                 </div>
               </div>
@@ -194,7 +203,7 @@ const Hero = () => {
                 <form className="w-full max-w-lg mb-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                      <FormLabel>Nom (requis)</FormLabel>
+                      <FormLabel>{t('missions.form.lastName', "Nom (requis)")}</FormLabel>
                       <input 
                         type="text" 
                         className={inputClass}
@@ -202,7 +211,7 @@ const Hero = () => {
                       />
                     </div>
                     <div>
-                      <FormLabel>Prénom (requis)</FormLabel>
+                      <FormLabel>{t('missions.form.firstName', "Prénom (requis)")}</FormLabel>
                       <input 
                         type="text" 
                         className={inputClass}
@@ -212,7 +221,7 @@ const Hero = () => {
                   </div>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                      <FormLabel>Société (requis)</FormLabel>
+                      <FormLabel>{t('missions.form.company', "Société (requis)")}</FormLabel>
                       <input 
                         type="text" 
                         className={inputClass}
@@ -220,7 +229,7 @@ const Hero = () => {
                       />
                     </div>
                     <div>
-                      <FormLabel>Email (requis)</FormLabel>
+                      <FormLabel>{t('missions.form.email', "Email (requis)")}</FormLabel>
                       <input 
                         type="email" 
                         className={inputClass}
@@ -229,28 +238,28 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Votre mission</FormLabel>
+                    <FormLabel>{t('missions.form.mission', "Votre mission")}</FormLabel>
                     <input 
                       type="text" 
                       className={inputClass}
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Niveau d'expérience :</FormLabel>
+                    <FormLabel>{t('missions.form.experienceLevel', "Niveau d'expérience :")}</FormLabel>
                     <select 
                       className={selectClass}
                     >
-                      <option value="">—Veuillez choisir une option—</option>
-                      <option value="etudiant">Étudiant</option>
-                      <option value="stage">Stage</option>
-                      <option value="junior">Junior (0-2 ans)</option>
-                      <option value="intermediaire">Intermédiaire (3-5 ans)</option>
-                      <option value="senior">Senior (5+ ans)</option>
-                      <option value="expert">Expert</option>
+                      <option value="">{t('missions.form.chooseOption', "—Veuillez choisir une option—")}</option>
+                      <option value="etudiant">{t('missions.form.experience.student', "Étudiant")}</option>
+                      <option value="stage">{t('missions.form.experience.internship', "Stage")}</option>
+                      <option value="junior">{t('missions.form.experience.junior', "Junior (0-2 ans)")}</option>
+                      <option value="intermediaire">{t('missions.form.experience.intermediate', "Intermédiaire (3-5 ans)")}</option>
+                      <option value="senior">{t('missions.form.experience.senior', "Senior (5+ ans)")}</option>
+                      <option value="expert">{t('missions.form.experience.expert', "Expert")}</option>
                     </select>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>TJM (requis)</FormLabel>
+                    <FormLabel>{t('missions.form.dailyRate', "TJM (requis)")}</FormLabel>
                     <input
                       type="text"
                       className={inputClass}
@@ -258,7 +267,7 @@ const Hero = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>À pourvoir à partir de</FormLabel>
+                    <FormLabel>{t('missions.form.startDate', "À pourvoir à partir de")}</FormLabel>
                     <input
                       type="date"
                       className={inputClass}
@@ -266,32 +275,32 @@ const Hero = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Durée de la mission en mois</FormLabel>
+                    <FormLabel>{t('missions.form.duration', "Durée de la mission en mois")}</FormLabel>
                     <input 
                       type="number" 
                       className={inputClass}
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Localisation</FormLabel>
+                    <FormLabel>{t('missions.form.location', "Localisation")}</FormLabel>
                     <input 
                       type="text" 
                       className={inputClass}
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Mode de travail</FormLabel>
+                    <FormLabel>{t('missions.form.workMode', "Mode de travail")}</FormLabel>
                     <select 
                       className={selectClass}
                     >
-                      <option value="">—Veuillez choisir une option—</option>
-                      <option value="presentiel">Présentiel</option>
-                      <option value="remote">Remote</option>
-                      <option value="hybride">Hybride</option>
+                      <option value="">{t('missions.form.chooseOption', "—Veuillez choisir une option—")}</option>
+                      <option value="presentiel">{t('missions.form.workModes.onSite', "Présentiel")}</option>
+                      <option value="remote">{t('missions.form.workModes.remote', "Remote")}</option>
+                      <option value="hybride">{t('missions.form.workModes.hybrid', "Hybride")}</option>
                     </select>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Fiche de poste</FormLabel>
+                    <FormLabel>{t('missions.form.jobDescription', "Fiche de poste")}</FormLabel>
                     <div className="flex">
                       <input 
                         ref={fileInputRef}
@@ -309,13 +318,13 @@ const Hero = () => {
                           onClick={() => triggerFileInput(fileInputRef)}
                           className="bg-white text-gray-700 p-2 rounded-r-md border border-gray-300 hover:bg-gray-300 transition duration-200 text-sm h-9"
                         >
-                          Choisir un fichier
+                          {t('missions.form.chooseFile', "Choisir un fichier")}
                         </button>
                       </div>
                     </div>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Message</FormLabel>
+                    <FormLabel>{t('missions.form.message', "Message")}</FormLabel>
                     <textarea 
                       className="w-full p-2 border border-gray-300 rounded-md h-24 text-gray-800 text-sm hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-gray-400" 
                     />
@@ -324,7 +333,7 @@ const Hero = () => {
                     type="submit" 
                     className="w-52 bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 transition duration-300 text-sm h-9"
                   >
-                    Envoyer ma candidature
+                    {t('missions.form.submit', "Envoyer ma candidature")}
                   </button>
                 </form>
               </div>

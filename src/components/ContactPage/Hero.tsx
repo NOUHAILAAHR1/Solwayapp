@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const isTablet = windowWidth >= 768 && windowWidth <= 1024;
 
@@ -20,9 +22,11 @@ const Hero = () => {
 
         <div className="md:hidden w-full flex flex-col items-center text-center pt-6">
           <div className="w-full">
-            <h1 className="text-3xl font-extrabold text-[#000000] pt-5">N'hésitez pas à nous contacter pour plus d'informations</h1>
+            <h1 className="text-3xl font-extrabold text-[#000000] pt-5">
+              {t('contact1.title', "N'hésitez pas à nous contacter pour plus d'informations")}
+            </h1>
             <p className="text-md text-[#000000] p-4">
-              Nous sommes à votre disposition pour répondre à vos questions et vous fournir les informations nécessaires à la réussite de vos projets.
+              {t('contact1.description', "Nous sommes à votre disposition pour répondre à vos questions et vous fournir les informations nécessaires à la réussite de vos projets.")}
             </p>
           </div>
 
@@ -30,7 +34,7 @@ const Hero = () => {
             <form className="w-full bg-white p-4 rounded-lg shadow-lg">
               <div className="mb-4">
                 <div className="mb-2">
-                  <label className="block text-left mb-1">Nom (requis)</label>
+                  <label className="block text-left mb-1">{t('contact1.form.lastName', "Nom (requis)")}</label>
                   <input
                     type="text"
                     className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
@@ -38,7 +42,7 @@ const Hero = () => {
                   />
                 </div>
                 <div className="mb-2">
-                  <label className="block text-left mb-1">Prénom (requis)</label>
+                  <label className="block text-left mb-1">{t('contact1.form.firstName', "Prénom (requis)")}</label>
                   <input
                     type="text"
                     className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
@@ -47,7 +51,7 @@ const Hero = () => {
                 </div>
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Email (requis)</label>
+                <label className="block text-left mb-1">{t('contact1.form.email', "Email (requis)")}</label>
                 <input
                   type="email"
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
@@ -55,7 +59,7 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Téléphone</label>
+                <label className="block text-left mb-1">{t('contact1.form.phone', "Téléphone")}</label>
                 <input
                   type="tel"
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
@@ -63,7 +67,7 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Fonction</label>
+                <label className="block text-left mb-1">{t('contact1.form.function', "Fonction")}</label>
                 <input
                   type="text"
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
@@ -71,7 +75,7 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Société</label>
+                <label className="block text-left mb-1">{t('contact1.form.company', "Société")}</label>
                 <input
                   type="text"
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
@@ -79,7 +83,7 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Objet</label>
+                <label className="block text-left mb-1">{t('contact1.form.subject', "Objet")}</label>
                 <input
                   type="text"
                   className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
@@ -87,7 +91,7 @@ const Hero = () => {
                 />
               </div>
               <div className="mb-4">
-                <label className="block text-left mb-1">Votre Message</label>
+                <label className="block text-left mb-1">{t('contact1.form.message', "Votre Message")}</label>
                 <textarea
                   className="w-full p-2 border border-[#D1D5DB] rounded-md h-32 focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]"
                 />
@@ -96,7 +100,7 @@ const Hero = () => {
                 type="submit"
                 className="w-full bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 transition duration-300"
               >
-                Envoyer
+                {t('contact1.form.submit', "Envoyer")}
               </button>
             </form>
           </div>
@@ -113,10 +117,10 @@ const Hero = () => {
               `}>
                 <div>
                   <h1 className="text-3xl font-extrabold pt-4 text-[#000000] mb-4">
-                    N'hésitez pas à nous contacter pour plus d'informations
+                    {t('contact1.title', "N'hésitez pas à nous contacter pour plus d'informations")}
                   </h1>
                   <p className="text-medium text-[#000000]">
-                    Nous sommes à votre disposition pour répondre à vos questions et vous fournir les informations nécessaires à la réussite de vos projets.
+                    {t('contact1.description', "Nous sommes à votre disposition pour répondre à vos questions et vous fournir les informations nécessaires à la réussite de vos projets.")}
                   </p>
                 </div>
               </div>
@@ -126,7 +130,7 @@ const Hero = () => {
                 <form className="w-full max-w-lg mb-6 bg-white p-8 rounded-lg shadow-lg border border-gray-200">
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                      <FormLabel>Nom (requis)</FormLabel>
+                      <FormLabel>{t('contact1.form.lastName', "Nom (requis)")}</FormLabel>
                       <input 
                         type="text" 
                         className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
@@ -134,7 +138,7 @@ const Hero = () => {
                       />
                     </div>
                     <div>
-                      <FormLabel>Prénom (requis)</FormLabel>
+                      <FormLabel>{t('contact1.form.firstName', "Prénom (requis)")}</FormLabel>
                       <input 
                         type="text" 
                         className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
@@ -143,7 +147,7 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Email (requis)</FormLabel>
+                    <FormLabel>{t('contact1.form.email', "Email (requis)")}</FormLabel>
                     <input 
                       type="email" 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
@@ -151,7 +155,7 @@ const Hero = () => {
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Téléphone</FormLabel>
+                    <FormLabel>{t('contact1.form.phone', "Téléphone")}</FormLabel>
                     <input 
                       type="tel" 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
@@ -159,14 +163,14 @@ const Hero = () => {
                   </div>
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     <div>
-                      <FormLabel>Fonction</FormLabel>
+                      <FormLabel>{t('contact1.form.function', "Fonction")}</FormLabel>
                       <input 
                         type="text" 
                         className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
                       />
                     </div>
                     <div>
-                      <FormLabel>Société</FormLabel>
+                      <FormLabel>{t('contact1.form.company', "Société")}</FormLabel>
                       <input 
                         type="text" 
                         className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
@@ -174,14 +178,14 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Objet</FormLabel>
+                    <FormLabel>{t('contact1.form.subject', "Objet")}</FormLabel>
                     <input 
                       type="text" 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
                     />
                   </div>
                   <div className="mb-4">
-                    <FormLabel>Votre Message</FormLabel>
+                    <FormLabel>{t('contact1.form.message', "Votre Message")}</FormLabel>
                     <textarea 
                       className="w-full p-2 border border-[#D1D5DB] rounded-md h-32 focus:outline-none focus:ring-1 focus:ring-[#D1D5DB]" 
                     />
@@ -190,7 +194,7 @@ const Hero = () => {
                     type="submit" 
                     className="w-32 bg-yellow-500 text-white p-2 rounded hover:bg-yellow-600 transition duration-300"
                   >
-                    Envoyer
+                    {t('contact1.form.submit', "Envoyer")}
                   </button>
                 </form>
               </div>

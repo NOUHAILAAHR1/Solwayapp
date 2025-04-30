@@ -98,15 +98,15 @@ const Navbar = ({ alwaysWhite = false }) => {
               <h3 className="font-bold text-lg mb-6">{t('nav.solutions')}</h3>
               <ul className="space-y-6 w-44">
                 <li><Link to="/verifdsn" className="cursor-pointer" onClick={handleNavLinkClick}>VERIF'DSN</Link></li>
-                <li><Link to="/verifdsnplus" className="cursor-pointer" onClick={handleNavLinkClick}>VERIF'DSN PLUS</Link></li>
-                <li className="cursor-pointer flex flex-col"><Link to="/SolwaySynchronisationHRPage" onClick={handleNavLinkClick}>
+                <li><Link to="/verifdsn-plus" className="cursor-pointer" onClick={handleNavLinkClick}>VERIF'DSN PLUS</Link></li>
+                <li className="cursor-pointer flex flex-col"><Link to="/Solway-Synchronisation-HR-Page" onClick={handleNavLinkClick}>
                   <span>SOLWAY</span><br />
                   <span>{t('nav.synchronization')}</span>
                 </Link></li>
-                <li><Link to="/soldeskpage" className="cursor-pointer" onClick={handleNavLinkClick}>SOLDESK</Link></li>
-                <li><Link to="/solwayhrpage" className="cursor-pointer" onClick={handleNavLinkClick}>SOLWAY HR</Link></li>
-                <li><Link to="/solwayInvoice" className="cursor-pointer" onClick={handleNavLinkClick}>SOLWAY INVOICE</Link></li>
-                <li className="cursor-pointer flex flex-col"><Link to="/associationsolway" onClick={handleNavLinkClick}>
+                <li><Link to="/soldesk-page" className="cursor-pointer" onClick={handleNavLinkClick}>SOLDESK</Link></li>
+                <li><Link to="/solway-hr-page" className="cursor-pointer" onClick={handleNavLinkClick}>SOLWAY HR</Link></li>
+                <li><Link to="/solway-Invoice" className="cursor-pointer" onClick={handleNavLinkClick}>SOLWAY INVOICE</Link></li>
+                <li className="cursor-pointer flex flex-col"><Link to="/association-solway" onClick={handleNavLinkClick}>
                   <span>{t('nav.association')}</span><br />
                   <span>{t('nav.solidarity')}</span>
                 </Link></li>
@@ -115,10 +115,10 @@ const Navbar = ({ alwaysWhite = false }) => {
             <div>
               <h3 className="font-bold text-lg mb-6">{t('nav.careers')}</h3>
               <ul className="space-y-6 w-44">
-                <li><Link to="/OffresdemploisPage" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.jobOffers')}</Link></li>
-                <li><Link to="/CandidaturePage" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.applications')}</Link></li>
-                <li><Link to="/NosmissionsPage" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.ourMissions')}</Link></li>
-                <li><Link to="/VosmissionsPage" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.yourMissions')}</Link></li>
+                <li><Link to="/Offres-demplois-Page" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.jobOffers')}</Link></li>
+                <li><Link to="/Candidature-Page" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.applications')}</Link></li>
+                <li><Link to="/Nosmissions-Page" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.ourMissions')}</Link></li>
+                <li><Link to="/Vosmissions-Page" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.yourMissions')}</Link></li>
               </ul>
             </div>
             <div>
@@ -163,22 +163,22 @@ const Navbar = ({ alwaysWhite = false }) => {
                   <h3 className="font-bold text-lg mb-4">{t('nav.solutions')}</h3>
                   <ul className="grid grid-cols-2 text-xs gap-4 w-full">
                     <li><Link to="/verifdsn" className="cursor-pointer" onClick={handleNavLinkClick}>VERIF'DSN</Link></li>
-                    <li><Link to="/solwayhrpage" className="cursor-pointer" onClick={handleNavLinkClick}>SOLWAY HR</Link></li>
-                    <li><Link to="/verifdsnplus" className="cursor-pointer" onClick={handleNavLinkClick}>VERIF'DSN PLUS</Link></li>
-                    <li><Link to="/solwayInvoice" className="cursor-pointer" onClick={handleNavLinkClick}>SOLWAY INVOICE</Link></li>
-                    <li className="cursor-pointer"><Link to="/SolwaySynchronisationHRPage" onClick={handleNavLinkClick}>SOLWAY <br />{t('nav.synchronization')}</Link></li>
-                    <li className="cursor-pointer"><Link to="/associationsolway" onClick={handleNavLinkClick}>{t('nav.association')} {t('nav.solidarity')}</Link></li>
-                    <li><Link to="/soldeskpage" className="cursor-pointer" onClick={handleNavLinkClick}>SOLDESK</Link></li>
+                    <li><Link to="/solway-hr-page" className="cursor-pointer" onClick={handleNavLinkClick}>SOLWAY HR</Link></li>
+                    <li><Link to="/verifdsn-plus" className="cursor-pointer" onClick={handleNavLinkClick}>VERIF'DSN PLUS</Link></li>
+                    <li><Link to="/solway-Invoice" className="cursor-pointer" onClick={handleNavLinkClick}>SOLWAY INVOICE</Link></li>
+                    <li className="cursor-pointer"><Link to="/Solway-Synchronisation-HR-Page" onClick={handleNavLinkClick}>SOLWAY <br />{t('nav.synchronization')}</Link></li>
+                    <li className="cursor-pointer"><Link to="/association-solway" onClick={handleNavLinkClick}>{t('nav.association')} {t('nav.solidarity')}</Link></li>
+                    <li><Link to="/soldesk-page" className="cursor-pointer" onClick={handleNavLinkClick}>SOLDESK</Link></li>
                   </ul>
                 </div>
 
                 <div>
                   <h3 className="font-bold text-lg mb-4">{t('nav.careers')}</h3>
                   <ul className="grid grid-cols-2 gap-4 w-full">
-                    <li><Link to="/OffresdemploisPage" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.jobOffers')}</Link></li>
-                    <li><Link to="/NosmissionsPage" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.ourMissions')}</Link></li>
-                    <li><Link to="/CandidaturePage" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.applications')}</Link></li>
-                    <li><Link to="/VosmissionsPage" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.yourMissions')}</Link></li>
+                    <li><Link to="/Offres-demplois-Page" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.jobOffers')}</Link></li>
+                    <li><Link to="/Nosmissions-Page" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.ourMissions')}</Link></li>
+                    <li><Link to="/Candidature-Page" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.applications')}</Link></li>
+                    <li><Link to="/Vosmissions-Page" className="cursor-pointer" onClick={handleNavLinkClick}>{t('nav.yourMissions')}</Link></li>
                   </ul>
                 </div>
 

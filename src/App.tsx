@@ -45,7 +45,7 @@ function App() {
           </LandingLayout>
         } />
        
-        <Route path="/associationsolway" element={
+        <Route path="/association-solway" element={
           <AssociationLayout>
             <AssociationSolwayPage />
           </AssociationLayout>
@@ -62,7 +62,7 @@ function App() {
             <VerifdsnPage />
           </DefaultLayout>
         } />
-        <Route path="/solwayhrpage" element={
+        <Route path="/solway-hr-page" element={
           <DefaultLayout theme="yellow">
             <SolwayhrPage />
           </DefaultLayout>
@@ -72,43 +72,43 @@ function App() {
             <ContactPage />
           </DefaultLayout>
         } />
-        <Route path="/verifdsnplus" element={
+        <Route path="/verifdsn-plus" element={
           <DefaultLayout theme="yellow">
             <VerifdsnPlusPage />
           </DefaultLayout>
         } />
-        <Route path="/SolwaySynchronisationHRPage" element={
+        <Route path="/Solway-Synchronisation-HR-Page" element={
           <DefaultLayout theme="yellow">
             <SolwaySynchronisationHRPage />
           </DefaultLayout>
         } />
-        <Route path="/soldeskpage" element={
+        <Route path="/soldesk-page" element={
           <DefaultLayout theme="yellow">
             <SoldeskPage />
           </DefaultLayout>
         } />
-        <Route path="/solwayInvoice" element={
+        <Route path="/solway-Invoice" element={
           <DefaultLayout theme="yellow">
             <SolwayInvoicePage />
           </DefaultLayout>
         } />
-        <Route path="/OffresdemploisPage" element={
+        <Route path="/Offres-demplois-Page" element={
           <OffreEmploiLayout theme="yellow">
             <OffresdemploisPage />
           </OffreEmploiLayout>
         } />
-        <Route path="/CandidaturePage" element={
+        <Route path="/Candidature-Page" element={
           <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <CandidaturePage />
           </DefaultLayout>
         } />
-         <Route path="/NosmissionsPage" element={
+         <Route path="/Nosmissions-Page" element={
         <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <NosmissionsPage />
           </DefaultLayout>
         } />
         
-         <Route path="/VosmissionsPage" element={
+         <Route path="/Vosmissions-Page" element={
           <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <VosmissionsPage/>
           </DefaultLayout>
