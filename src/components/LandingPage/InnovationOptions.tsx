@@ -24,7 +24,7 @@ const InnovationOptions = () => {
       title: t('innovations.verifdnsplus.title'),
       text: t('innovations.verifdnsplus.text'),
       img: youtubeImage,
-      link: "/verifdsn-plus"
+      link: "/verifdsnplus"
     },
     "SOLWAY Synchronisation HR": {
       title: t('innovations.solwaySyncHR.title'),
@@ -33,7 +33,7 @@ const InnovationOptions = () => {
           {t('innovations.solwaySyncHR.text.part1')} <br/> {t('innovations.solwaySyncHR.text.part2')}
         </>
       ),
-      link: "/solway-synchronisation-hr"
+      link: "/SolwaySynchronisationHRPage"
     },
   };
 
