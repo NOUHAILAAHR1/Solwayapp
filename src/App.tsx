@@ -62,7 +62,7 @@ function App() {
             <VerifdsnPage />
           </DefaultLayout>
         } />
-        <Route path="/solway-hr-page" element={
+        <Route path="/solway-hr" element={
           <DefaultLayout theme="yellow">
             <SolwayhrPage />
           </DefaultLayout>
@@ -77,12 +77,12 @@ function App() {
             <VerifdsnPlusPage />
           </DefaultLayout>
         } />
-        <Route path="/solway-synchronisation-hr-page" element={
+        <Route path="/solway-synchronisation-hr" element={
           <DefaultLayout theme="yellow">
             <SolwaySynchronisationHRPage />
           </DefaultLayout>
         } />
-        <Route path="/soldesk-page" element={
+        <Route path="/soldesk" element={
           <DefaultLayout theme="yellow">
             <SoldeskPage />
           </DefaultLayout>
@@ -92,23 +92,23 @@ function App() {
             <SolwayInvoicePage />
           </DefaultLayout>
         } />
-        <Route path="offres-demplois-page" element={
+        <Route path="offres-demplois" element={
           <OffreEmploiLayout theme="yellow">
             <OffresdemploisPage />
           </OffreEmploiLayout>
         } />
-        <Route path="/candidature-page" element={
+        <Route path="/candidature" element={
           <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <CandidaturePage />
           </DefaultLayout>
         } />
-         <Route path="/nosmissions-page" element={
+         <Route path="/nosmissions" element={
         <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <NosmissionsPage />
           </DefaultLayout>
         } />
         
-         <Route path="/vosmissions-page" element={
+         <Route path="/vosmissions" element={
           <DefaultLayout theme="yellow" alwaysWhiteNavbar={false}>
             <VosmissionsPage/>
           </DefaultLayout>
