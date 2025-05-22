@@ -162,7 +162,7 @@ const Hero = () => {
                     <button 
                       type="button" 
                       onClick={() => triggerFileInput(mobileFileInputRef)}
-                      className="bg-white text-gray-700 p-2 rounded-r-md border border-gray-300 hover:bg-gray-300 transition duration-200 text-sm h-9"
+                      className="bg-white text-[#374151] p-2 rounded-r-md border border-gray-300 hover:bg-gray-300 transition duration-200 text-sm h-9"
                     >
                      {t('missions.form.chooseFile', "Choisir un fichier")}
                     </button>

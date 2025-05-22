@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 const Hero = () => {
   const { t } = useTranslation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [fileName, setFileName] = useState("");
+  const [fileName, setFileName] = useState(t('missions.form.noFileSelected', "Aucun fichier sélectionné"));
   const fileInputRef = useRef(null);
   const mobileFileInputRef = useRef(null);
   
@@ -136,13 +136,13 @@ const Hero = () => {
                     required
                   />
                   <div className="w-full flex items-center">
-                    <div className="flex-grow p-2 border border-[#D1D5DB] rounded-l-md bg-white text-[#6B7280] text-left truncate">
-                      {fileName || t('careers.form.noFileSelected', " Aucun fichier sélectionné")}
+                  <div className="flex-grow p-2 border border-r-0 border-gray-300 rounded-l-md bg-white text-gray-500 truncate text-sm h-9">
+                      {fileName} 
                     </div>
                     <button 
                       type="button" 
                       onClick={() => triggerFileInput(mobileFileInputRef)}
-                      className="bg-[#F9FAFB] text-[#374151] p-2 rounded-r-md border-t border-r border-b border-[#D1D5DB] hover:bg-gray-300"
+                     className="bg-white text-[#374151] p-2 rounded-r-md border border-gray-300 hover:bg-gray-300 transition duration-200 text-sm h-9"
                     >
                       {t('careers.form.chooseFile', "Choisir un fichier")}
                     </button>
